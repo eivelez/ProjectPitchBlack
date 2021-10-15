@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private FieldOfViewController fieldOfViewController;
     public float SPEED = 5f;
     public Rigidbody2D rb;
     public Animator animator;
