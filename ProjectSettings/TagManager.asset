@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - Walls and Objects
+  - Walls
   - Mask
   - BehindMask
-  - 
+  - Black
   - 
   - 
   - 
@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Top
+    uniqueID: 2448620503
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
