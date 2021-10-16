@@ -9,7 +9,7 @@ public class FieldOfViewController : MonoBehaviour
     [SerializeField] private int RAYCOUNT = 50;
     [SerializeField] private float VIEWDISTANCE = 5f;
     private Mesh mesh;
-    private Vector3 origin;
+    private Vector3 origin = Vector3.zero;
     private float initialAngle;
 
     void Start()
@@ -21,25 +21,22 @@ public class FieldOfViewController : MonoBehaviour
     private void LateUpdate() {
         float angle = initialAngle;
         float angleIncrease = FOV/RAYCOUNT;
-        origin = Vector3.zero;
 
         Vector3[] vertices = new Vector3[RAYCOUNT + 2];
         Vector2[] uv = new Vector2[vertices.Length];
         int[] triangles = new int[RAYCOUNT * 3];
-
-        vertices[0] = origin;
 
         int vertexIndex = 1;
         int triangleIndex = 0;
         for (int i=0; i <= RAYCOUNT; i++){
             Vector3 direction = GetVectorFromAngle(angle);
             Vector3 vertex;
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, direction, VIEWDISTANCE, layerMask);
+            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.parent.position, direction, VIEWDISTANCE, layerMask);
 
             if (raycastHit2D.collider == null){
-                vertex = origin + direction * VIEWDISTANCE;
+                vertex = direction * VIEWDISTANCE;
             }else{
-                vertex = raycastHit2D.point;
+                vertex = raycastHit2D.point - new Vector2(transform.parent.position.x, transform.parent.position.y);
             }
 
             vertices[vertexIndex] = vertex;
@@ -54,6 +51,8 @@ public class FieldOfViewController : MonoBehaviour
             vertexIndex++;
             angle -= angleIncrease;
         }
+
+        Debug.Log(vertices[1]);
 
         mesh.vertices = vertices;
         mesh.uv = uv;

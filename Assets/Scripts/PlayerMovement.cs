@@ -26,6 +26,5 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 aimDir = (mousePos - transform.position).normalized;
         fieldOfViewController.SetAimDirection(aimDir);
-        fieldOfViewController.SetOrigin(transform.position);
     }
 }
