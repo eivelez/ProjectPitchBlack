@@ -18,7 +18,7 @@ public class FieldOfViewController : MonoBehaviour
         GetComponent<MeshFilter>().mesh = mesh;
     }
 
-    private void Update() {
+    private void LateUpdate() {
         float angle = initialAngle;
         float angleIncrease = FOV/RAYCOUNT;
         origin = Vector3.zero;
@@ -79,6 +79,6 @@ public class FieldOfViewController : MonoBehaviour
     }
 
     public void SetAimDirection(Vector3 aimDirection){
-        initialAngle = GetAngleFromVector3(aimDirection) - FOV / 2F;
+        initialAngle = GetAngleFromVector3(aimDirection) + FOV / 2F;
     }
 }
