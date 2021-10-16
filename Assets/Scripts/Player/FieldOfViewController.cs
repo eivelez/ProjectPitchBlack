@@ -6,8 +6,8 @@ public class FieldOfViewController : MonoBehaviour
 {
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private float FOV = 90f;
-    [SerializeField] private int RAYCOUNT = 50;
     [SerializeField] private float VIEWDISTANCE = 5f;
+    private int RAYCOUNT = 50;
     private Mesh mesh;
     private Vector3 origin = Vector3.zero;
     private float initialAngle;
@@ -52,8 +52,6 @@ public class FieldOfViewController : MonoBehaviour
             angle -= angleIncrease;
         }
 
-        Debug.Log(vertices[1]);
-
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;
@@ -71,10 +69,6 @@ public class FieldOfViewController : MonoBehaviour
             n+=360;
         }
         return n;
-    }
-
-    public void SetOrigin(Vector3 origin){
-        this.origin = origin;
     }
 
     public void SetAimDirection(Vector3 aimDirection){
