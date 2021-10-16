@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FieldOfViewController : MonoBehaviour
 {
-    [SerializeField] private LayerMask layerMask;
-    [SerializeField] private float FOV = 90f;
+    [SerializeField] private LayerMask layerMaskToObstructLight;
+    [SerializeField] private float FOV = 70f;
     [SerializeField] private float VIEWDISTANCE = 5f;
     private int RAYCOUNT = 50;
     private Mesh mesh;
@@ -31,7 +31,7 @@ public class FieldOfViewController : MonoBehaviour
         for (int i=0; i <= RAYCOUNT; i++){
             Vector3 direction = GetVectorFromAngle(angle);
             Vector3 vertex;
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.parent.position, direction, VIEWDISTANCE, layerMask);
+            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.parent.position, direction, VIEWDISTANCE, layerMaskToObstructLight);
 
             if (raycastHit2D.collider == null){
                 vertex = direction * VIEWDISTANCE;
@@ -55,6 +55,7 @@ public class FieldOfViewController : MonoBehaviour
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;
+        mesh.bounds = new Bounds(transform.parent.position, Vector3.one * 1000f);
     }
 
     private Vector3 GetVectorFromAngle(float angle){
