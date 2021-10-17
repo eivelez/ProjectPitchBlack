@@ -8,6 +8,10 @@ public class Hide : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private PlayerMovement playerMovement;
 
+    public GameObject iconEKey;
+    public GameObject iconHideEye;
+    public GameObject redArrow;
+
     private bool canHide = false;
     private bool hiding = false;
 
@@ -20,12 +24,17 @@ public class Hide : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerMovement = GetComponent<PlayerMovement>();
+
+        iconEKey.SetActive(false);
+        iconHideEye.SetActive(false);
+        redArrow.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         PlayerHides();
+
     }
 
     private void FixedUpdate()
@@ -42,14 +51,17 @@ public class Hide : MonoBehaviour
 
     private void PlayerHides() 
     {
-        if (canHide && Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            Hides(true, 0);
-            transform.position = new Vector2(positionXHide,positionYHide);
-        }
-        else if (Input.GetKey(KeyCode.Q))
-        {
-            Hides(false, 2);
+            if (canHide && !hiding)
+            {
+                Hides(true, 0);
+                transform.position = new Vector2(positionXHide, positionYHide);
+            }
+            else if (canHide && hiding)
+            {
+                Hides(false, 2);
+            }
         }
     }
 
@@ -64,6 +76,18 @@ public class Hide : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        GameObject hidingPlace = other.gameObject;
+
+        if (hidingPlace.tag.Equals("HidingPlace"))
+        {
+            iconEKey.SetActive(true);
+            iconHideEye.SetActive(true);
+            ActivateOrDescativateRedArrow();
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         GameObject hidingPlace = other.gameObject;
@@ -71,9 +95,23 @@ public class Hide : MonoBehaviour
         if (hidingPlace.tag.Equals("HidingPlace"))
         {
             canHide = false;
+            iconEKey.SetActive(false);
+            iconHideEye.SetActive(false);
+            redArrow.SetActive(false);
         }
     }
 
+    private void ActivateOrDescativateRedArrow() 
+    {
+        if (spriteRenderer.sortingOrder == 0)
+        {
+            redArrow.SetActive(true);
+        }
+        else if (spriteRenderer.sortingOrder == 2)
+        {
+            redArrow.SetActive(false);
+        }
+    }
     private void Hides(bool isHidden, int orderInLayer) 
     {
         Physics2D.IgnoreLayerCollision(8, 9, isHidden);
