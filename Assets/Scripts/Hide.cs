@@ -7,8 +7,12 @@ public class Hide : MonoBehaviour
     private Rigidbody2D rigidbody2d;
     private SpriteRenderer spriteRenderer;
     private PlayerMovement playerMovement;
+
     private bool canHide = false;
     private bool hiding = false;
+
+    private float positionXHide = 0;
+    private float positionYHide = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -16,24 +20,12 @@ public class Hide : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerMovement = GetComponent<PlayerMovement>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canHide && Input.GetKey(KeyCode.E))
-        {
-            Physics2D.IgnoreLayerCollision(8, 9, true);
-            spriteRenderer.sortingOrder = 0;
-            hiding = true;
-        }
-        else if(Input.GetKey(KeyCode.Q))
-        {
-            Physics2D.IgnoreLayerCollision(8, 9, false);
-            spriteRenderer.sortingOrder = 2;
-            hiding = false;
-        }
+        PlayerHides();
     }
 
     private void FixedUpdate()
@@ -42,25 +34,56 @@ public class Hide : MonoBehaviour
         {
             playerMovement.SPEED = 0f;
         }
-        else 
+        else
         {
             playerMovement.SPEED = 5f;
         }
     }
 
+    private void PlayerHides() 
+    {
+        if (canHide && Input.GetKey(KeyCode.E))
+        {
+            Hides(true, 0);
+            transform.position = new Vector2(positionXHide,positionYHide);
+        }
+        else if (Input.GetKey(KeyCode.Q))
+        {
+            Hides(false, 2);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag.Equals("HidingPlace"))
+        GameObject hidingPlace = other.gameObject;
+
+        if (hidingPlace.tag.Equals("HidingPlace"))
         {
+            SetPositionHide(other.gameObject);
             canHide = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag.Equals("HidingPlace"))
+        GameObject hidingPlace = other.gameObject;
+
+        if (hidingPlace.tag.Equals("HidingPlace"))
         {
             canHide = false;
         }
+    }
+
+    private void Hides(bool isHidden, int orderInLayer) 
+    {
+        Physics2D.IgnoreLayerCollision(8, 9, isHidden);
+        spriteRenderer.sortingOrder = orderInLayer;
+        hiding = isHidden;
+    }
+
+    private void SetPositionHide(GameObject hide) 
+    {
+        positionXHide = hide.transform.position.x;
+        positionYHide = hide.transform.position.y;
     }
 }
