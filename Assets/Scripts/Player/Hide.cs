@@ -72,7 +72,33 @@ public class Hide : MonoBehaviour
         }
     }
 
-    public void SetPositionHide(GameObject hide) 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject hidingPlace = collision.gameObject;
+
+        if (hidingPlace.tag.Equals("HidingPlace"))
+        {
+            iconEKey.SetActive(true);
+            iconHideEye.SetActive(true);
+            SetPositionToHide(hidingPlace);
+            canHide = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        GameObject hidingPlace = collision.gameObject;
+
+        if (hidingPlace.tag.Equals("HidingPlace"))
+        {
+            canHide = false;
+            iconEKey.SetActive(false);
+            iconHideEye.SetActive(false);
+            redArrow.SetActive(false);
+        }
+    }
+
+    public void SetPositionToHide(GameObject hide) 
     {
         positionXHide = hide.transform.position.x;
         positionYHide = hide.transform.position.y;
