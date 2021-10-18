@@ -525,6 +525,7 @@ GameObject:
   - component: {fileID: 8257315522402288229}
   - component: {fileID: 8276814141226552303}
   - component: {fileID: 6840288909709453589}
+  - component: {fileID: 3588982191905707453}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -730,3 +731,16 @@ MonoBehaviour:
   iconHideEye: {fileID: 5364702040886300417}
   redArrow: {fileID: 5125377434087703997}
   shopIcon: {fileID: 7576105862479987571}
+--- !u!114 &3588982191905707453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8285159855341361285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75e099ad0fb97c14db39c4935a60e3ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8285159855341361285}
