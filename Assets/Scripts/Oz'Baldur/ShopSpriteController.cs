@@ -22,10 +22,22 @@ public class ShopSpriteController : MonoBehaviour
         slot3.SetActive(false);
     }
 
-    public void ShowProductsSprites(){
+    public void ShowProductsSprites(Dictionary<string, HealingItem> productsDictionary){
         dollarSign.SetActive(false);
-        slot1.SetActive(true);
-        slot2.SetActive(true);
-        slot3.SetActive(true);
+
+        //Slot 1
+        if (productsDictionary["Slot 1"] != null){
+            slot1.SetActive(true);
+        }
+
+        //Slot 2
+        if (productsDictionary["Slot 2"] != null){
+            slot2.SetActive(true);
+        }
+
+        //Slot 3
+        if (productsDictionary["Slot 3"] != null){
+            slot3.SetActive(true);
+        }
     }
 }

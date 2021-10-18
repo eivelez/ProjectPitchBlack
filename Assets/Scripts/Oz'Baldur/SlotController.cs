@@ -13,8 +13,7 @@ public class SlotController : MonoBehaviour
 
     void OnMouseDown(){
         if (shopTransactionController.playerShoping){
-            this.gameObject.SetActive(false);
-            shopTransactionController.BuyItem(this.name);
+            shopTransactionController.BuyItem(this.gameObject);
         }
     }   
 }

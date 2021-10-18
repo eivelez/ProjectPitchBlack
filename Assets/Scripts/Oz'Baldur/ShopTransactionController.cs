@@ -24,8 +24,10 @@ public class ShopTransactionController : MonoBehaviour
         slotController3.Setup(this);
     }
 
-    public void BuyItem(string slotName){
-        productsDictionary[slotName].Use();
+    public void BuyItem(GameObject slot){
+        productsDictionary[slot.name].Use();
+        productsDictionary[slot.name] = null;
+        slot.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -38,7 +40,7 @@ public class ShopTransactionController : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other) {
         if (other.gameObject.tag == "Player" && Input.GetKey(KeyCode.E)){
             player.GetComponent<PlayerSpriteController>().HideShopSprites();
-            shopSpriteController.ShowProductsSprites();
+            shopSpriteController.ShowProductsSprites(productsDictionary);
             playerShoping = true;
         }
     }
