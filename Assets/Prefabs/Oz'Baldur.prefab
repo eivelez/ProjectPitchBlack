@@ -32,9 +32,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2054171383574861053}
-  - {fileID: 1439943871227320612}
   - {fileID: 6823992517338956440}
   - {fileID: 1081237139147378879}
+  - {fileID: 1439943871227320612}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -146,6 +146,9 @@ MonoBehaviour:
   dollarSign: {fileID: 8412422227171553871}
   iconEKey: {fileID: 0}
   shopIcon: {fileID: 0}
+  oneupIcon: {fileID: 2561108359704150730}
+  firstAidKitIcon: {fileID: 4233734202274833083}
+  band_aidIcon: {fileID: 7208779609656880922}
 --- !u!1 &2561108359704150730
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +160,7 @@ GameObject:
   - component: {fileID: 1439943871227320612}
   - component: {fileID: 3021055280261284704}
   m_Layer: 0
-  m_Name: 1UP
+  m_Name: 1UP Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,11 +174,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2561108359704150730}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5599976, y: 0.9799957, z: 0.33727822}
+  m_LocalPosition: {x: 1.01, y: 0.9799957, z: 0.33727822}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4661750266770334620}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3021055280261284704
 SpriteRenderer:
@@ -214,9 +217,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingLayerID: -858049545
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bad3cbe9ca6183a41aa6fa64eb4fd2d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -239,7 +242,7 @@ GameObject:
   - component: {fileID: 6823992517338956440}
   - component: {fileID: 3093147005980031372}
   m_Layer: 0
-  m_Name: First Aid Kit
+  m_Name: First Aid Kit Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,11 +256,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233734202274833083}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5899963, y: 0.94999695, z: 0.33727822}
+  m_LocalPosition: {x: -1.06, y: 0.94999695, z: 0.33727822}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4661750266770334620}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3093147005980031372
 SpriteRenderer:
@@ -296,9 +299,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingLayerID: -858049545
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b9931d37e67af5c4fa62a731503a986d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -321,7 +324,7 @@ GameObject:
   - component: {fileID: 1081237139147378879}
   - component: {fileID: 4412216618335877793}
   m_Layer: 0
-  m_Name: Band-aid
+  m_Name: Band-aid  Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -339,7 +342,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4661750266770334620}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4412216618335877793
 SpriteRenderer:
@@ -378,9 +381,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingLayerID: -858049545
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 41ce3967d19202943831e0df3249ccf3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -460,9 +463,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingLayerID: -858049545
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5f7deff3c8624894ca707d9e0fd73bb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
