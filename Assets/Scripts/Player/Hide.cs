@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Hide : MonoBehaviour
 {
-    private Rigidbody2D rigidbody2d;
-    private SpriteRenderer spriteRenderer;
     private PlayerMovement playerMovement;
     private BoxCollider2D boxCollider;
 
@@ -22,8 +20,6 @@ public class Hide : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody2d = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         playerMovement = GetComponent<PlayerMovement>();
         boxCollider = GetComponent<BoxCollider2D>();
 
@@ -68,6 +64,7 @@ public class Hide : MonoBehaviour
                 redArrow.SetActive(false);
                 boxCollider.enabled = !boxCollider.enabled;
                 hiding = false;
+                transform.position = new Vector2(positionXHide, positionYHide - 1);
             }
         }
     }
@@ -91,10 +88,10 @@ public class Hide : MonoBehaviour
 
         if (hidingPlace.tag.Equals("HidingPlace"))
         {
-            canHide = false;
             iconEKey.SetActive(false);
             iconHideEye.SetActive(false);
             redArrow.SetActive(false);
+            canHide = false;
         }
     }
 
