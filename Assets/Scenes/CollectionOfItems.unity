@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 69215711}
   - component: {fileID: 69215710}
   - component: {fileID: 69215712}
-  - component: {fileID: 69215713}
   m_Layer: 8
   m_Name: HidingPlace
   m_TagString: HidingPlace
@@ -233,18 +232,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &69215713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69215709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37a0a3f40862f8a4bb2e3cfdd99a84c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &586438560
 PrefabInstance:
   m_ObjectHideFlags: 0
