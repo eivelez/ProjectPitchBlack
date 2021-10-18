@@ -7,12 +7,13 @@ public class Hide : MonoBehaviour
     private Rigidbody2D rigidbody2d;
     private SpriteRenderer spriteRenderer;
     private PlayerMovement playerMovement;
+    private BoxCollider2D boxCollider;
 
     public GameObject iconEKey;
     public GameObject iconHideEye;
     public GameObject redArrow;
 
-    private bool canHide = false;
+    public bool canHide = false;
     private bool hiding = false;
 
     private float positionXHide = 0;
@@ -24,6 +25,7 @@ public class Hide : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerMovement = GetComponent<PlayerMovement>();
+        boxCollider = GetComponent<BoxCollider2D>();
 
         iconEKey.SetActive(false);
         iconHideEye.SetActive(false);
@@ -34,7 +36,6 @@ public class Hide : MonoBehaviour
     void Update()
     {
         PlayerHides();
-
     }
 
     private void FixedUpdate()
@@ -55,42 +56,38 @@ public class Hide : MonoBehaviour
         {
             if (canHide && !hiding)
             {
-                Hides(true, 0);
+                boxCollider.enabled = !boxCollider.enabled;
+                iconEKey.SetActive(true);
+                iconHideEye.SetActive(true);
+                redArrow.SetActive(true);
+                hiding = true;
                 transform.position = new Vector2(positionXHide, positionYHide);
             }
-            else if (canHide && hiding)
+            else if (hiding)
             {
-                Hides(false, 2);
+                redArrow.SetActive(false);
+                boxCollider.enabled = !boxCollider.enabled;
+                hiding = false;
             }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameObject hidingPlace = other.gameObject;
-
-        if (hidingPlace.tag.Equals("HidingPlace"))
-        {
-            SetPositionHide(other.gameObject);
-            canHide = true;
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        GameObject hidingPlace = other.gameObject;
+        GameObject hidingPlace = collision.gameObject;
 
         if (hidingPlace.tag.Equals("HidingPlace"))
         {
             iconEKey.SetActive(true);
             iconHideEye.SetActive(true);
-            ActivateOrDescativateRedArrow();
+            SetPositionToHide(hidingPlace);
+            canHide = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        GameObject hidingPlace = other.gameObject;
+        GameObject hidingPlace = collision.gameObject;
 
         if (hidingPlace.tag.Equals("HidingPlace"))
         {
@@ -101,25 +98,7 @@ public class Hide : MonoBehaviour
         }
     }
 
-    private void ActivateOrDescativateRedArrow() 
-    {
-        if (spriteRenderer.sortingOrder == 0)
-        {
-            redArrow.SetActive(true);
-        }
-        else if (spriteRenderer.sortingOrder == 2)
-        {
-            redArrow.SetActive(false);
-        }
-    }
-    private void Hides(bool isHidden, int orderInLayer) 
-    {
-        Physics2D.IgnoreLayerCollision(8, 9, isHidden);
-        spriteRenderer.sortingOrder = orderInLayer;
-        hiding = isHidden;
-    }
-
-    private void SetPositionHide(GameObject hide) 
+    public void SetPositionToHide(GameObject hide) 
     {
         positionXHide = hide.transform.position.x;
         positionYHide = hide.transform.position.y;
