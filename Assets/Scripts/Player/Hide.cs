@@ -5,7 +5,7 @@ using UnityEngine;
 public class Hide : MonoBehaviour
 {
     private PlayerMovement playerMovement;
-    private BoxCollider2D boxCollider;
+    private BoxCollider2D boxColliderHidingPlace;
 
     public GameObject iconEKey;
     public GameObject iconHideEye;
@@ -21,11 +21,9 @@ public class Hide : MonoBehaviour
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
-        boxCollider = GetComponent<BoxCollider2D>();
+        boxColliderHidingPlace = GetComponent<BoxCollider2D>();
 
-        iconEKey.SetActive(false);
-        iconHideEye.SetActive(false);
-        redArrow.SetActive(false);
+        DisableIcons();
     }
 
     // Update is called once per frame
@@ -52,17 +50,15 @@ public class Hide : MonoBehaviour
         {
             if (canHide && !hiding)
             {
-                boxCollider.enabled = !boxCollider.enabled;
-                iconEKey.SetActive(true);
-                iconHideEye.SetActive(true);
-                redArrow.SetActive(true);
+                ActivateOrDisableCollider(boxColliderHidingPlace);
+                ActivateIcons();
                 hiding = true;
                 transform.position = new Vector2(positionXHide, positionYHide);
             }
             else if (hiding)
             {
-                redArrow.SetActive(false);
-                boxCollider.enabled = !boxCollider.enabled;
+                ActivateOrDisableCollider(boxColliderHidingPlace);
+                DisableIcons();
                 hiding = false;
                 transform.position = new Vector2(positionXHide, positionYHide - 1);
             }
@@ -88,9 +84,7 @@ public class Hide : MonoBehaviour
 
         if (hidingPlace.tag.Equals("HidingPlace"))
         {
-            iconEKey.SetActive(false);
-            iconHideEye.SetActive(false);
-            redArrow.SetActive(false);
+            DisableIcons();
             canHide = false;
         }
     }
@@ -99,5 +93,24 @@ public class Hide : MonoBehaviour
     {
         positionXHide = hide.transform.position.x;
         positionYHide = hide.transform.position.y;
+    }
+
+    private void ActivateIcons() 
+    {
+        iconEKey.SetActive(true);
+        iconHideEye.SetActive(true);
+        redArrow.SetActive(true);
+    }
+
+    private void DisableIcons() 
+    {
+        iconEKey.SetActive(false);
+        iconHideEye.SetActive(false);
+        redArrow.SetActive(false);
+    }
+
+    private void ActivateOrDisableCollider(BoxCollider2D boxCollider2D) 
+    {
+        boxCollider2D.enabled = !boxCollider2D.enabled;
     }
 }
