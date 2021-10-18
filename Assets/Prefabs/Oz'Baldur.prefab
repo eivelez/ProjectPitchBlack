@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1790031802402561980}
   - component: {fileID: 8361845638439982298}
   - component: {fileID: 1122669610624579607}
+  - component: {fileID: 5071415526576642772}
   m_Layer: 0
   m_Name: Oz'Baldur
   m_TagString: Untagged
@@ -143,9 +144,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24995f37599c7ba4db754ad95bae02d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopSpriteController: {fileID: 5071415526576642772}
+--- !u!114 &5071415526576642772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709023803352799339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a04f94ba2c886f4da11436b6091244d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   dollarSign: {fileID: 8412422227171553871}
-  iconEKey: {fileID: 0}
-  shopIcon: {fileID: 0}
   oneupIcon: {fileID: 2561108359704150730}
   firstAidKitIcon: {fileID: 4233734202274833083}
   band_aidIcon: {fileID: 7208779609656880922}

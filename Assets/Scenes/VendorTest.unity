@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &115364731 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7576105862479987571, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
+  m_PrefabInstance: {fileID: 636733273}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &393589052
 GameObject:
   m_ObjectHideFlags: 0
@@ -58080,11 +58085,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &979767901 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5097838261178388122, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
-  m_PrefabInstance: {fileID: 636733273}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1430389470
 GameObject:
   m_ObjectHideFlags: 0
@@ -60943,7 +60943,7 @@ PrefabInstance:
     - target: {fileID: 1122669610624579607, guid: 076b578cb35c5ee4e8bf9d4d359f6788, type: 3}
       propertyPath: shopIcon
       value: 
-      objectReference: {fileID: 979767901}
+      objectReference: {fileID: 115364731}
     - target: {fileID: 1709023803352799339, guid: 076b578cb35c5ee4e8bf9d4d359f6788, type: 3}
       propertyPath: m_Name
       value: Oz'Baldur
