@@ -5,29 +5,30 @@ using UnityEngine;
 public class ShopSpriteController : MonoBehaviour
 {
     [SerializeField] private GameObject dollarSign;
-    [SerializeField] private GameObject oneupIcon;
-    [SerializeField] private GameObject firstAidKitIcon;
-    [SerializeField] private GameObject band_aidIcon;
+    [SerializeField] private GameObject firstAidKit;
+    [SerializeField] private GameObject band_aid;
+    [SerializeField] private GameObject oneup;
+    
     // Start is called before the first frame update
     void Start()
     {
         dollarSign.SetActive(true);
-        oneupIcon.SetActive(false);
-        firstAidKitIcon.SetActive(false);
-        band_aidIcon.SetActive(false);
+        oneup.SetActive(false);
+        firstAidKit.SetActive(false);
+        band_aid.SetActive(false);
     }
 
     public void ShowProductsSprites(){
         dollarSign.SetActive(false);
-        oneupIcon.SetActive(true);
-        firstAidKitIcon.SetActive(true);
-        band_aidIcon.SetActive(true);
+        oneup.SetActive(true);
+        firstAidKit.SetActive(true);
+        band_aid.SetActive(true);
     }
 
     public void HideProductsSprites(){
         dollarSign.SetActive(true);
-        oneupIcon.SetActive(false);
-        firstAidKitIcon.SetActive(false);
-        band_aidIcon.SetActive(false);
+        oneup.SetActive(false);
+        firstAidKit.SetActive(false);
+        band_aid.SetActive(false);
     }
 }

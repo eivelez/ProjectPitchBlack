@@ -60936,6 +60936,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 130753599872326209, guid: 076b578cb35c5ee4e8bf9d4d359f6788, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1122669610624579607, guid: 076b578cb35c5ee4e8bf9d4d359f6788, type: 3}
       propertyPath: iconEKey
       value: 
@@ -60990,6 +60994,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4661750266770334620, guid: 076b578cb35c5ee4e8bf9d4d359f6788, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302162779599138127, guid: 076b578cb35c5ee4e8bf9d4d359f6788, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302162779599138127, guid: 076b578cb35c5ee4e8bf9d4d359f6788, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302162779599138127, guid: 076b578cb35c5ee4e8bf9d4d359f6788, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
