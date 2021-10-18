@@ -14,7 +14,7 @@ public class SlotController : MonoBehaviour
     void OnMouseDown(){
         if (shopTransactionController.playerShoping){
             this.gameObject.SetActive(false);
-            //ver diccionario y shop.comprar()
+            shopTransactionController.BuyItem(this.name);
         }
     }   
 }

@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 1439943871227320612}
   - component: {fileID: 3021055280261284704}
   m_Layer: 5
-  m_Name: 1UP Icon
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 6823992517338956440}
   - component: {fileID: 3093147005980031372}
   m_Layer: 5
-  m_Name: First Aid Kit Icon
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -681,7 +681,7 @@ GameObject:
   - component: {fileID: 5133520208758410144}
   - component: {fileID: 6861659927124710969}
   m_Layer: 5
-  m_Name: 1UP Price
+  m_Name: Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -788,7 +788,7 @@ GameObject:
   - component: {fileID: 7807516228276403340}
   - component: {fileID: 3698926391853781778}
   m_Layer: 5
-  m_Name: Band-aid Price
+  m_Name: Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -895,7 +895,7 @@ GameObject:
   - component: {fileID: 7896489890221002227}
   - component: {fileID: 7548624210487327359}
   m_Layer: 5
-  m_Name: First Aid Kit Price
+  m_Name: Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1115,7 +1115,7 @@ GameObject:
   - component: {fileID: 1081237139147378879}
   - component: {fileID: 4412216618335877793}
   m_Layer: 5
-  m_Name: Band-aid Icon
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1196,7 +1196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5201377508302844908}
   m_Layer: 5
-  m_Name: 1UP
+  m_Name: Extra Life
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

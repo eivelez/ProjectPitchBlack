@@ -10,17 +10,22 @@ public class ShopTransactionController : MonoBehaviour
     [SerializeField] private SlotController slotController3;
     private GameObject player;
     [HideInInspector] public bool playerShoping = false;
-
-    /*TODO: USAR DICCIONARIO DE KEY: SLOT Y VALUE: OBJETO CON PRECIO O ALGO ASI Y Q EL SLOT ACCEDA A ÉL.
-    private int SLOT1PRICE = 10;
-    private int SLOT2PRICE = 5;
-    private int SLOT3PRICE = 15;*/
+    private Dictionary<string, HealingItem> productsDictionary;
 
     private void Start(){
         shopSpriteController = GetComponent<ShopSpriteController>();
+        productsDictionary = new Dictionary<string, HealingItem>(){
+            {"Slot 1", new FirstAidKit()},
+            {"Slot 2", new Band_aid()},
+            {"Slot 3", new ExtraLife()}
+        };
         slotController1.Setup(this);
         slotController2.Setup(this);
         slotController3.Setup(this);
+    }
+
+    public void BuyItem(string slotName){
+        productsDictionary[slotName].Use();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
