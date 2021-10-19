@@ -15,14 +15,9 @@ public class MasterMiniGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
-
-        MashMiniGame.SetActive(false);
+        /*MashMiniGame.SetActive(false);
         SequenceMiniGame.SetActive(false);
-        gameObject.SetActive(false);
-
-
+        gameObject.SetActive(false);*/
     }
 
     void OnEnable(){

@@ -10,6 +10,7 @@ public class Hide : MonoBehaviour
     public GameObject iconEKey;
     public GameObject iconHideEye;
     public GameObject redArrow;
+    public GameObject masterMiniGames;
 
     public bool canHide = false;
     private bool hiding = false;
@@ -65,6 +66,7 @@ public class Hide : MonoBehaviour
         }
     }
 
+    //HEYYYYY agregue logica para cochar con enemigos y activar el minijuego. Atte el gracia
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject hidingPlace = collision.gameObject;
@@ -75,6 +77,12 @@ public class Hide : MonoBehaviour
             iconHideEye.SetActive(true);
             SetPositionToHide(hidingPlace);
             canHide = true;
+        }
+
+        if (collision.gameObject.tag.Equals("Enemy"))
+        {
+            Debug.Log("enter Enemy");
+            masterMiniGames.SetActive(true);
         }
     }
 
@@ -87,6 +95,7 @@ public class Hide : MonoBehaviour
             DisableIcons();
             canHide = false;
         }
+
     }
 
     public void SetPositionToHide(GameObject hide) 

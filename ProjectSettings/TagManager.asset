@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HidingPlace
   - LockDoor
+  - Enemy
   layers:
   - Default
   - TransparentFX
