@@ -11,7 +11,7 @@ public class UnlockExit : MonoBehaviour
     public GameObject noKeyIcon;
     public GameObject eKeyIcon;
 
-    public int TOTAL_NUMBER_OF_KEYS = 1;
+    public int TOTAL_NUMBER_OF_KEYS = 3;
     private bool unlockDoor = false;
     private bool colliderDoorOff = false;
 
