@@ -23,13 +23,6 @@ public class SequenceMiniGameScript : MonoBehaviour
     private string[] selectedKeys= new string[6];
     private Text[] keybuttons= new Text[5];
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     void OnEnable(){
 
         keybuttons[0]=keyText1;
@@ -81,10 +74,12 @@ public class SequenceMiniGameScript : MonoBehaviour
 
     void ResetVariables(){
         if(currentTime<0){
-            inventory.hp-=50;
+            inventory.TakeDamage(50);
+            //inventory.hp-=50;
         }
         if(mash==5){
-            inventory.hp-=10;
+            inventory.TakeDamage(10);
+            //inventory.hp-=10;
         }
         Debug.Log(inventory.hp);
         Fail.SetActive(false);
