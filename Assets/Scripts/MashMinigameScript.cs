@@ -23,6 +23,10 @@ public class MashMinigameScript : MonoBehaviour
     void Start()
     {
         //gameObject.SetActive(false);
+
+    }
+
+    void OnEnable(){
         Success.SetActive(false);
         Fail.SetActive(false);
         selectedKey=possibleKey[Random.Range (0, possibleKey.Length)];
@@ -69,8 +73,8 @@ public class MashMinigameScript : MonoBehaviour
         stopper=true;
         numberOfMash.text="0/"+maxMash;
         gameObject.SetActive(false);
-        SceneManager.LoadScene(0);
-        //Time.timeScale = 1;
+        //SceneManager.LoadScene(0);
+        Time.timeScale = 1;
     }
 
     IEnumerator waiterNReset()

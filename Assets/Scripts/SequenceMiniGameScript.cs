@@ -26,6 +26,11 @@ public class SequenceMiniGameScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+
+    void OnEnable(){
+
         keybuttons[0]=keyText1;
         keybuttons[1]=keyText2;
         keybuttons[2]=keyText3;
@@ -40,6 +45,7 @@ public class SequenceMiniGameScript : MonoBehaviour
           keybuttons[i].text=selectedKeys[i].ToUpper();
         }
         selectedKeys[5]=possibleKey[Random.Range (0, possibleKey.Length)];
+
     }
 
     // Update is called once per frame
@@ -80,8 +86,8 @@ public class SequenceMiniGameScript : MonoBehaviour
         stopper=true;
         numberOfSequence.text="0/5";
         gameObject.SetActive(false);
-        SceneManager.LoadScene(0);
-        //Time.timeScale = 1;
+        //SceneManager.LoadScene(0);
+        Time.timeScale = 1;
     }
 
     IEnumerator waiterNReset()

@@ -15,14 +15,23 @@ public class MasterMiniGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mashMinigameScript= gameObject.GetComponent<MashMinigameScript>();
-        sequenceMiniGameScript= gameObject.GetComponent<SequenceMiniGameScript>();
+
 
 
         MashMiniGame.SetActive(false);
         SequenceMiniGame.SetActive(false);
+        gameObject.SetActive(false);
+
+
+    }
+
+    void OnEnable(){
+        Time.timeScale = 0;
+        mashMinigameScript= gameObject.GetComponent<MashMinigameScript>();
+        sequenceMiniGameScript= gameObject.GetComponent<SequenceMiniGameScript>();
         listOfMiniGames[0]=MashMiniGame;
         listOfMiniGames[1]=SequenceMiniGame;
+
         for (int i = 0; i < listOfMiniGames.Length; i++) 
         {
           listOfMiniGames[i].SetActive(false);
