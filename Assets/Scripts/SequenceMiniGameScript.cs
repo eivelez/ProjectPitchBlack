@@ -89,7 +89,7 @@ public class SequenceMiniGameScript : MonoBehaviour
         Debug.Log(inventory.hp);
         Fail.SetActive(false);
         Success.SetActive(false);
-        currentTime=10f;
+        currentTime=5f;
         mash=0;
         stopper=true;
         numberOfSequence.text="0/5";
