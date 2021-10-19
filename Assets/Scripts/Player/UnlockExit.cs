@@ -7,6 +7,10 @@ public class UnlockExit : MonoBehaviour
     Inventory inventory;
     BoxCollider2D boxColliderDoor;
 
+    public GameObject keyIcon;
+    public GameObject noKeyIcon;
+    public GameObject eKeyIcon;
+
     public int TOTAL_NUMBER_OF_KEYS = 1;
     private bool unlockDoor = false;
     private bool colliderDoorOff = false;
@@ -16,6 +20,8 @@ public class UnlockExit : MonoBehaviour
     {
         inventory = GetComponent<Inventory>();
         boxColliderDoor = GameObject.FindGameObjectWithTag("LockDoor").GetComponent<BoxCollider2D>();
+
+        DisaibleAllIcons();
     }
 
     // Update is called once per frame
@@ -37,6 +43,26 @@ public class UnlockExit : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject door = collision.gameObject;
+
+        if (door.tag.Equals("LockDoor"))
+        {
+            eKeyIcon.SetActive(true);
+
+            if (PlayerHasAllTheKeys())
+            {
+                keyIcon.SetActive(true);
+            }
+            else 
+            {
+                noKeyIcon.SetActive(true);
+            }
+        }
+    }
+
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         GameObject door = collision.gameObject;
@@ -45,8 +71,23 @@ public class UnlockExit : MonoBehaviour
         {
             if (PlayerHasAllTheKeys())
             {
+                keyIcon.SetActive(true);
                 unlockDoor = true;
             }
+            else
+            {
+                noKeyIcon.SetActive(true);
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        GameObject door = collision.gameObject;
+
+        if (door.tag.Equals("LockDoor"))
+        {
+            DisaibleAllIcons();
         }
     }
 
@@ -65,5 +106,12 @@ public class UnlockExit : MonoBehaviour
     private void RemovePlayerKeys() 
     {
         inventory.key = 0;
+    }
+
+    private void DisaibleAllIcons() 
+    {
+        keyIcon.SetActive(false);
+        noKeyIcon.SetActive(false);
+        eKeyIcon.SetActive(false);
     }
 }
