@@ -526,6 +526,7 @@ GameObject:
   - component: {fileID: 8276814141226552303}
   - component: {fileID: 6840288909709453589}
   - component: {fileID: 3588982191905707453}
+  - component: {fileID: 4170862091041522833}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -701,6 +702,7 @@ MonoBehaviour:
   iconEKey: {fileID: 191440828046153558}
   iconHideEye: {fileID: 5364702040886300417}
   redArrow: {fileID: 5125377434087703997}
+  masterMiniGames: {fileID: 0}
   canHide: 0
 --- !u!114 &8276814141226552303
 MonoBehaviour:
@@ -715,6 +717,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 0
+  hp: 100
+  lives: 0
 --- !u!114 &6840288909709453589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,3 +748,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8285159855341361285}
+--- !u!114 &4170862091041522833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8285159855341361285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de692d5842d19d34e85beff34aed4ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TOTAL_NUMBER_OF_KEYS: 1

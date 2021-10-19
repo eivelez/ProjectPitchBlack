@@ -1268,6 +1268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Success: {fileID: 4444390952143169554}
   Fail: {fileID: 4444390952339390789}
+  inventory: {fileID: 0}
   keyText: {fileID: 4444390952778889716}
   countDownText: {fileID: 4444390953176741616}
   numberOfMash: {fileID: 4444390953124262627}
@@ -1285,6 +1286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Success: {fileID: 4444390952747345605}
   Fail: {fileID: 4444390954056447026}
+  inventory: {fileID: 0}
   keyText1: {fileID: 4444390953004380715}
   keyText2: {fileID: 4444390952195221202}
   keyText3: {fileID: 4444390952350223757}
