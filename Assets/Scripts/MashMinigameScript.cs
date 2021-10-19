@@ -71,6 +71,9 @@ public class MashMinigameScript : MonoBehaviour
         if(currentTime<0){
             inventory.hp-=50;
         }
+        if(mash==maxMash){
+            inventory.hp-=10;
+        }
         Debug.Log(inventory.hp);
         Fail.SetActive(false);
         Success.SetActive(false);

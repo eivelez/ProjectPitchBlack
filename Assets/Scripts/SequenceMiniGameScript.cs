@@ -83,6 +83,9 @@ public class SequenceMiniGameScript : MonoBehaviour
         if(currentTime<0){
             inventory.hp-=50;
         }
+        if(mash==5){
+            inventory.hp-=10;
+        }
         Debug.Log(inventory.hp);
         Fail.SetActive(false);
         Success.SetActive(false);
