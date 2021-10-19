@@ -8,6 +8,7 @@ public class ShopTransactionController : MonoBehaviour
     [SerializeField] private SlotController slotController1;
     [SerializeField] private SlotController slotController2;
     [SerializeField] private SlotController slotController3;
+    [SerializeField] private Inventory inventory;
     private GameObject player;
     [HideInInspector] public bool playerShoping = false;
     private Dictionary<string, HealingItem> productsDictionary;
@@ -25,7 +26,7 @@ public class ShopTransactionController : MonoBehaviour
     }
 
     public void BuyItem(GameObject slot){
-        productsDictionary[slot.name].Use();
+        productsDictionary[slot.name].Use(inventory);
         productsDictionary[slot.name] = null;
         slot.SetActive(false);
     }

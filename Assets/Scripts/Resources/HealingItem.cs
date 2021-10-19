@@ -6,7 +6,7 @@ public abstract class HealingItem
 {
     public string name;
     public int price;
-    public abstract void Use();
+    public abstract void Use(Inventory inventory);
 }
 
 public class ExtraLife : HealingItem
@@ -16,9 +16,10 @@ public class ExtraLife : HealingItem
         price = 15;
     }
 
-    public override void Use()
+    public override void Use(Inventory inventory)
     {
         Debug.Log("Compraste y usaste un Extra Life");
+        inventory.AddExtraLife();
     }
 }
 
@@ -29,9 +30,10 @@ public class Band_aid : HealingItem
         price = 5;
     }
 
-    public override void Use()
+    public override void Use(Inventory inventory)
     {
         Debug.Log("Compraste y usaste un Band-aid");
+        inventory.Heal(25);
     }
 }
 
@@ -42,8 +44,9 @@ public class FirstAidKit : HealingItem
         price = 10;
     }
 
-    public override void Use()
+    public override void Use(Inventory inventory)
     {
         Debug.Log("Compraste y usaste un First Aid Kit");
+        inventory.Heal(50);
     }
 }
