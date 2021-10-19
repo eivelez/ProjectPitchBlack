@@ -41,4 +41,16 @@ public class Inventory : MonoBehaviour
         hp -= damageTaken;
         healthBar.SetHealth(hp);
     }
+
+    public void Heal(int quantityOfHealthRestored){
+        hp += quantityOfHealthRestored;
+        if (hp > 100){
+            hp = 100;
+        }
+        healthBar.SetHealth(hp);
+    }
+
+    public void AddExtraLife(){
+        lives += 1;
+    }
 }

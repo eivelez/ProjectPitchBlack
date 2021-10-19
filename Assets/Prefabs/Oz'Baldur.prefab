@@ -345,6 +345,7 @@ MonoBehaviour:
   slotController1: {fileID: 3650564101932162057}
   slotController2: {fileID: 1956455289644870916}
   slotController3: {fileID: 9212621158346079489}
+  inventory: {fileID: 0}
   playerShoping: 0
 --- !u!114 &5071415526576642772
 MonoBehaviour:
