@@ -9,6 +9,7 @@ public class SequenceMiniGameScript : MonoBehaviour
     private int mash=0;
     public GameObject Success;
     public GameObject Fail;
+    public Inventory inventory;
     public Text keyText1;
     public Text keyText2;
     public Text keyText3;
@@ -79,6 +80,10 @@ public class SequenceMiniGameScript : MonoBehaviour
     }
 
     void ResetVariables(){
+        if(currentTime<0){
+            inventory.hp-=50;
+        }
+        Debug.Log(inventory.hp);
         Fail.SetActive(false);
         Success.SetActive(false);
         currentTime=10f;

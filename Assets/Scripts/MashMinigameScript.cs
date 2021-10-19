@@ -11,6 +11,7 @@ public class MashMinigameScript : MonoBehaviour
     private int maxMash=50;
     public GameObject Success;
     public GameObject Fail;
+    public Inventory inventory;
     public Text keyText;
     public Text countDownText;
     public Text numberOfMash;
@@ -57,6 +58,7 @@ public class MashMinigameScript : MonoBehaviour
 
             }else if(mash<maxMash && currentTime<0){
                 Fail.SetActive(true);
+                
                 numberOfMash.text="";
                 stopper=false;
                 StartCoroutine(waiterNReset());
@@ -66,6 +68,10 @@ public class MashMinigameScript : MonoBehaviour
     }
 
     void ResetVariables(){
+        if(currentTime<0){
+            inventory.hp-=50;
+        }
+        Debug.Log(inventory.hp);
         Fail.SetActive(false);
         Success.SetActive(false);
         currentTime=10f;
