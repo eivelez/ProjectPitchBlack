@@ -27,14 +27,14 @@ public class ShopTransactionController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Player"){
             GameObject player = other.gameObject;
-            player.GetComponent<PlayerSpriteController>().ShowShopSprites();
+            player.GetComponent<PlayerSprite>().ShowShopSprites();
         }
     }
 
     private void OnTriggerStay2D(Collider2D other) {
         if (other.gameObject.tag == "Player" && Input.GetKey(KeyCode.E)){
             GameObject player = other.gameObject;
-            player.GetComponent<PlayerSpriteController>().HideShopSprites();
+            player.GetComponent<PlayerSprite>().HideShopSprites();
             shop.shopSpriteController.ShowProductsSprites(productsDictionary);
             shop.playerShoping = true;
         }
@@ -42,7 +42,7 @@ public class ShopTransactionController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other) {
         GameObject player = other.gameObject;
-        player.GetComponent<PlayerSpriteController>().HideShopSprites();
+        player.GetComponent<PlayerSprite>().HideShopSprites();
         shop.shopSpriteController.HideProductsSprites();
         shop.playerShoping = false;
     }

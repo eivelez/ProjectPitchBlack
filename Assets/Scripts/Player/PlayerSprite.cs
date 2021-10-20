@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSpriteController : MonoBehaviour
+public class PlayerSprite : MonoBehaviour
 {
     [SerializeField] private GameObject iconEKey;
     [SerializeField] private GameObject iconHideEye;

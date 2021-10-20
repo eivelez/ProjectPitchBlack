@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hide : MonoBehaviour
 {
-    private PlayerMovement playerMovement;
+    private Player player;
     private BoxCollider2D boxColliderHidingPlace;
 
     public GameObject iconEKey;
@@ -12,7 +12,7 @@ public class Hide : MonoBehaviour
     public GameObject redArrow;
     public GameObject masterMiniGames;
 
-    public bool canHide = false;
+    [HideInInspector] public bool canHide = false;
     private bool hiding = false;
 
     private float positionXHide = 0;
@@ -21,7 +21,7 @@ public class Hide : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerMovement = GetComponent<PlayerMovement>();
+        player = GetComponent<Player>();
         boxColliderHidingPlace = GetComponent<BoxCollider2D>();
 
         DisableIcons();
@@ -37,11 +37,11 @@ public class Hide : MonoBehaviour
     {
         if (hiding)
         {
-            playerMovement.SPEED = 0f;
+            player.SPEED = 0f;
         }
         else
         {
-            playerMovement.SPEED = 5f;
+            player.SPEED = 5f;
         }
     }
 
