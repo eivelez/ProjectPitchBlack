@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 3230083756984212932}
   - component: {fileID: 1122669610624579607}
   - component: {fileID: 5071415526576642772}
+  - component: {fileID: 136980954983005681}
   m_Layer: 0
   m_Name: Oz'Baldur
   m_TagString: Untagged
@@ -344,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopSpriteController: {fileID: 5071415526576642772}
   shopTransactionController: {fileID: 1122669610624579607}
-  inventory: {fileID: 0}
+  shopCollisionController: {fileID: 136980954983005681}
   slotController1: {fileID: 3650564101932162057}
   slotController2: {fileID: 1956455289644870916}
   slotController3: {fileID: 9212621158346079489}
@@ -377,6 +378,18 @@ MonoBehaviour:
   slot1: {fileID: 4017572839323716658}
   slot2: {fileID: 8156257343941211969}
   slot3: {fileID: 3403631020882924636}
+--- !u!114 &136980954983005681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709023803352799339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70aec1109f8e1d4d8686d60d4fe2c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2561108359704150730
 GameObject:
   m_ObjectHideFlags: 0

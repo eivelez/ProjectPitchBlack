@@ -27,4 +27,18 @@ public class PlayerSprite : MonoBehaviour
         iconEKey.SetActive(false);
         shopIcon.SetActive(false);
     }
+
+    public void ShowHidingSprites() 
+    {
+        iconEKey.SetActive(true);
+        iconHideEye.SetActive(true);
+        redArrow.SetActive(true);
+    }
+
+    public void HideHidingSprites() 
+    {
+        iconEKey.SetActive(false);
+        iconHideEye.SetActive(false);
+        redArrow.SetActive(false);
+    }
 }

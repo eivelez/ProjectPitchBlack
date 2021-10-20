@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HideController : MonoBehaviour
 {
-    private BoxCollider2D boxColliderHidingPlace;
+    private CapsuleCollider2D capsuleColliderHidingPlace;
 
     [SerializeField] private GameObject iconEKey;
     [SerializeField] private GameObject iconHideEye;
@@ -17,8 +17,7 @@ public class HideController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boxColliderHidingPlace = GetComponent<BoxCollider2D>();
-        DisableIcons();
+        capsuleColliderHidingPlace = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
@@ -33,14 +32,14 @@ public class HideController : MonoBehaviour
         {
             if (canHide && !player.isHiding)
             {
-                ActivateOrDisableCollider(boxColliderHidingPlace);
+                ActivateOrDisableCollider(capsuleColliderHidingPlace);
                 ActivateIcons();
                 player.isHiding = true;
                 transform.position = positionToHide;
             }
             else if (player.isHiding)
             {
-                ActivateOrDisableCollider(boxColliderHidingPlace);
+                ActivateOrDisableCollider(capsuleColliderHidingPlace);
                 DisableIcons();
                 player.isHiding = false;
                 transform.position = positionToHide - new Vector2(0, 1);
@@ -61,7 +60,7 @@ public class HideController : MonoBehaviour
             canHide = true;
         }
 
-        if (collision.gameObject.tag.Equals("Enemy"))
+        else if (collision.gameObject.tag.Equals("Enemy"))
         {
             Debug.Log("enter Enemy");
             masterMiniGames.SetActive(true);
@@ -99,8 +98,8 @@ public class HideController : MonoBehaviour
         redArrow.SetActive(false);
     }
 
-    private void ActivateOrDisableCollider(BoxCollider2D boxCollider2D) 
+    private void ActivateOrDisableCollider(CapsuleCollider2D capsuleCollider2D) 
     {
-        boxCollider2D.enabled = !boxCollider2D.enabled;
+        capsuleCollider2D.enabled = !capsuleCollider2D.enabled;
     }
 }
