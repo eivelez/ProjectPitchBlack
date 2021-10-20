@@ -8,8 +8,9 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private PlayerAnimator playerAnimator;
-    public float SPEED = 5f;
+    [SerializeField] private HideController hideController;
     [HideInInspector] public Vector2 movement;
+    [HideInInspector] public bool isHiding;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,8 @@ public class Player : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         playerInput = GetComponent<PlayerInput>();
         playerAnimator = GetComponent<PlayerAnimator>();
+        hideController = GetComponent<HideController>();
+        isHiding = false;
     }
 
     // Update is called once per frame
@@ -24,6 +27,7 @@ public class Player : MonoBehaviour
     {
         playerInput.update(this);
         playerAnimator.update(this);
+        hideController.update(this);
     }
 
     void FixedUpdate()

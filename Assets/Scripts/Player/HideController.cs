@@ -2,66 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hide : MonoBehaviour
+public class HideController : MonoBehaviour
 {
-    private Player player;
     private BoxCollider2D boxColliderHidingPlace;
 
-    public GameObject iconEKey;
-    public GameObject iconHideEye;
-    public GameObject redArrow;
-    public GameObject masterMiniGames;
+    [SerializeField] private GameObject iconEKey;
+    [SerializeField] private GameObject iconHideEye;
+    [SerializeField] private GameObject redArrow;
+    [SerializeField] private GameObject masterMiniGames;
 
-    [HideInInspector] public bool canHide = false;
-    private bool hiding = false;
-
-    private float positionXHide = 0;
-    private float positionYHide = 0;
+    private bool canHide = false;
+    private Vector2 positionToHide = Vector2.zero;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GetComponent<Player>();
         boxColliderHidingPlace = GetComponent<BoxCollider2D>();
-
         DisableIcons();
     }
 
     // Update is called once per frame
-    void Update()
+    public void update(Player player)
     {
-        PlayerHides();
+        PlayerHides(player);
     }
 
-    private void FixedUpdate()
-    {
-        if (hiding)
-        {
-            player.SPEED = 0f;
-        }
-        else
-        {
-            player.SPEED = 5f;
-        }
-    }
-
-    private void PlayerHides() 
+    private void PlayerHides(Player player) 
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (canHide && !hiding)
+            if (canHide && !player.isHiding)
             {
                 ActivateOrDisableCollider(boxColliderHidingPlace);
                 ActivateIcons();
-                hiding = true;
-                transform.position = new Vector2(positionXHide, positionYHide);
+                player.isHiding = true;
+                transform.position = positionToHide;
             }
-            else if (hiding)
+            else if (player.isHiding)
             {
                 ActivateOrDisableCollider(boxColliderHidingPlace);
                 DisableIcons();
-                hiding = false;
-                transform.position = new Vector2(positionXHide, positionYHide - 1);
+                player.isHiding = false;
+                transform.position = positionToHide - new Vector2(0, 1);
             }
         }
     }
@@ -100,8 +82,7 @@ public class Hide : MonoBehaviour
 
     public void SetPositionToHide(GameObject hide) 
     {
-        positionXHide = hide.transform.position.x;
-        positionYHide = hide.transform.position.y;
+        positionToHide = hide.transform.position;
     }
 
     private void ActivateIcons() 

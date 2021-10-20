@@ -855,8 +855,9 @@ MonoBehaviour:
   playerMovement: {fileID: 8285159855341361307}
   playerInput: {fileID: 6387805543386264885}
   playerAnimator: {fileID: 1373329872335942901}
-  SPEED: 5
+  hideController: {fileID: 8257315522402288229}
   movement: {x: 0, y: 0}
+  isHiding: 0
 --- !u!114 &8285159855341361307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -926,7 +927,6 @@ MonoBehaviour:
   iconHideEye: {fileID: 5364702040886300417}
   redArrow: {fileID: 5125377434087703997}
   masterMiniGames: {fileID: 0}
-  canHide: 0
 --- !u!114 &8276814141226552303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -958,4 +958,4 @@ MonoBehaviour:
   keyIcon: {fileID: 4327769438065578006}
   noKeyIcon: {fileID: 976584274496281834}
   eKeyIcon: {fileID: 191440828046153558}
-  TOTAL_NUMBER_OF_KEYS: 1
+  TOTAL_NUMBER_OF_KEYS: 3

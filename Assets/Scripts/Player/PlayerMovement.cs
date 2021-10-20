@@ -5,12 +5,18 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private float SPEED = 5f;
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
     }
 
     public void fixedUpdate(Player player) {
-        rb.MovePosition(rb.position + player.movement * player.SPEED * Time.fixedDeltaTime);
+        if (player.isHiding)
+        {
+            return;
+        }
+
+        rb.MovePosition(rb.position + player.movement * SPEED * Time.fixedDeltaTime);
     }
 }
