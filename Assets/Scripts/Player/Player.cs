@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private PlayerAnimator playerAnimator;
     [SerializeField] private HideController hideController;
+    public PlayerSprite playerSprite;
     [HideInInspector] public Vector2 movement;
     [HideInInspector] public bool isHiding;
 
@@ -19,7 +20,9 @@ public class Player : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         playerAnimator = GetComponent<PlayerAnimator>();
         hideController = GetComponent<HideController>();
+        playerSprite = GetComponent<PlayerSprite>();
         isHiding = false;
+        hideController.Setup(this);
     }
 
     // Update is called once per frame
@@ -27,7 +30,7 @@ public class Player : MonoBehaviour
     {
         playerInput.update(this);
         playerAnimator.update(this);
-        hideController.update(this);
+        hideController.update();
     }
 
     void FixedUpdate()

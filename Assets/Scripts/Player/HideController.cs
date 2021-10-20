@@ -5,42 +5,39 @@ using UnityEngine;
 public class HideController : MonoBehaviour
 {
     private CapsuleCollider2D capsuleColliderHidingPlace;
-
-    [SerializeField] private GameObject iconEKey;
-    [SerializeField] private GameObject iconHideEye;
-    [SerializeField] private GameObject redArrow;
     [SerializeField] private GameObject masterMiniGames;
-
     private bool canHide = false;
     private Vector2 positionToHide = Vector2.zero;
+    private Player player;
 
     // Start is called before the first frame update
-    void Start()
+    public void Setup(Player player)
     {
+        this.player = player;
         capsuleColliderHidingPlace = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
-    public void update(Player player)
+    public void update()
     {
-        PlayerHides(player);
+        PlayerHides();
     }
 
-    private void PlayerHides(Player player) 
+    private void PlayerHides() 
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (canHide && !player.isHiding)
             {
                 ActivateOrDisableCollider(capsuleColliderHidingPlace);
-                ActivateIcons();
+                player.playerSprite.ShowHidingSprites();
                 player.isHiding = true;
                 transform.position = positionToHide;
             }
             else if (player.isHiding)
             {
                 ActivateOrDisableCollider(capsuleColliderHidingPlace);
-                DisableIcons();
+                player.playerSprite.HideHidingSprites();
                 player.isHiding = false;
                 transform.position = positionToHide - new Vector2(0, 1);
             }
@@ -54,8 +51,7 @@ public class HideController : MonoBehaviour
 
         if (hidingPlace.tag.Equals("HidingPlace"))
         {
-            iconEKey.SetActive(true);
-            iconHideEye.SetActive(true);
+            player.playerSprite.ShowHidingPromptSprites();
             SetPositionToHide(hidingPlace);
             canHide = true;
         }
@@ -73,7 +69,7 @@ public class HideController : MonoBehaviour
 
         if (hidingPlace.tag.Equals("HidingPlace"))
         {
-            DisableIcons();
+            player.playerSprite.HideHidingSprites();
             canHide = false;
         }
 
@@ -82,20 +78,6 @@ public class HideController : MonoBehaviour
     public void SetPositionToHide(GameObject hide) 
     {
         positionToHide = hide.transform.position;
-    }
-
-    private void ActivateIcons() 
-    {
-        iconEKey.SetActive(true);
-        iconHideEye.SetActive(true);
-        redArrow.SetActive(true);
-    }
-
-    private void DisableIcons() 
-    {
-        iconEKey.SetActive(false);
-        iconHideEye.SetActive(false);
-        redArrow.SetActive(false);
     }
 
     private void ActivateOrDisableCollider(CapsuleCollider2D capsuleCollider2D) 
