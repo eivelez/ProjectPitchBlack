@@ -6,9 +6,11 @@ public class ShopTransactionController : MonoBehaviour
 {
     private Shop shop;
     private Dictionary<string, HealingItem> productsDictionary;
+    private Inventory inventory;
 
     public void Setup(Shop shop){
         this.shop = shop;
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         productsDictionary = new Dictionary<string, HealingItem>(){
             {"Slot 1", new FirstAidKit()},
             {"Slot 2", new Band_aid()},
@@ -17,7 +19,7 @@ public class ShopTransactionController : MonoBehaviour
     }
 
     public void BuyItem(GameObject slot){
-        productsDictionary[slot.name].Use(shop.inventory);
+        productsDictionary[slot.name].Use(inventory);
         productsDictionary[slot.name] = null;
         slot.SetActive(false);
     }

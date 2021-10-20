@@ -339,6 +339,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3230083756984212932, guid: 076b578cb35c5ee4e8bf9d4d359f6788, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 759910353}
     - target: {fileID: 4661750266770334620, guid: 076b578cb35c5ee4e8bf9d4d359f6788, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -382,6 +386,10 @@ PrefabInstance:
     - target: {fileID: 4661750266770334620, guid: 076b578cb35c5ee4e8bf9d4d359f6788, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071415526576642772, guid: 076b578cb35c5ee4e8bf9d4d359f6788, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5302162779599138127, guid: 076b578cb35c5ee4e8bf9d4d359f6788, type: 3}
       propertyPath: m_Color.b

@@ -6,7 +6,6 @@ public class Shop : MonoBehaviour
 {
     public ShopSpriteController shopSpriteController;
     public ShopTransactionController shopTransactionController;
-    public Inventory inventory;
     [SerializeField] private SlotController slotController1;
     [SerializeField] private SlotController slotController2;
     [SerializeField] private SlotController slotController3;
