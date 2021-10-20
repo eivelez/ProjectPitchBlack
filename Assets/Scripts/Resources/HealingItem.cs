@@ -11,7 +11,8 @@ public abstract class HealingItem
 
 public class ExtraLife : HealingItem
 {
-    public ExtraLife(){
+    public ExtraLife()
+    {
         name = "Extra Life";
         price = 15;
     }
@@ -25,7 +26,8 @@ public class ExtraLife : HealingItem
 
 public class Band_aid : HealingItem
 {
-    public Band_aid(){
+    public Band_aid()
+    {
         name = "Band-aid";
         price = 5;
     }
@@ -39,7 +41,8 @@ public class Band_aid : HealingItem
 
 public class FirstAidKit : HealingItem
 {
-    public FirstAidKit(){
+    public FirstAidKit()
+    {
         name = "First Aid Kit";
         price = 10;
     }

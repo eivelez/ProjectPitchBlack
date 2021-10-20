@@ -28,20 +28,25 @@ public class FieldOfViewController : MonoBehaviour
 
         int vertexIndex = 1;
         int triangleIndex = 0;
-        for (int i=0; i <= RAYCOUNT; i++){
+        for (int i=0; i <= RAYCOUNT; i++)
+        {
             Vector3 direction = GetVectorFromAngle(angle);
             Vector3 vertex;
             RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.parent.position, direction, VIEWDISTANCE, layerMaskToObstructLight);
 
-            if (raycastHit2D.collider == null){
+            if (raycastHit2D.collider == null)
+            {
                 vertex = direction * VIEWDISTANCE;
-            }else{
+            }
+            else
+            {
                 vertex = raycastHit2D.point - new Vector2(transform.parent.position.x, transform.parent.position.y);
             }
 
             vertices[vertexIndex] = vertex;
 
-            if (i>0){
+            if (i>0)
+            {
                 triangles[triangleIndex] = 0;
                 triangles[triangleIndex + 1] = vertexIndex - 1;
                 triangles[triangleIndex + 2] = vertexIndex;
