@@ -4089,7 +4089,7 @@ GameObject:
   - component: {fileID: 3437961111729721218}
   - component: {fileID: 5571473510959436634}
   m_Layer: 31
-  m_Name: TilePalette
+  m_Name: Office Tile Palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
