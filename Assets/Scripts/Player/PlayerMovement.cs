@@ -4,27 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private FieldOfViewController fieldOfViewController;
-    public float SPEED = 5f;
-    public Rigidbody2D rb;
-    public Animator animator;
-    private Vector3 mousePos;
-    private Vector2 movement;
+    private Rigidbody2D rb;
+    private float SPEED = 5f;
 
-    void Update() {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+    void Start() {
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate() {
-        rb.MovePosition(rb.position + movement * SPEED * Time.fixedDeltaTime);
+    public void fixedUpdate(Player player) {
+        if (player.isHiding)
+        {
+            return;
+        }
 
-        Vector3 aimDir = (mousePos - transform.position).normalized;
-        fieldOfViewController.SetAimDirection(aimDir);
+        rb.MovePosition(rb.position + player.movement * SPEED * Time.fixedDeltaTime);
     }
 }
