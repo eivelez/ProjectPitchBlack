@@ -19,6 +19,10 @@ public class FieldOfViewController : MonoBehaviour
     }
 
     private void LateUpdate() {
+        CreateMeshCone();
+    }
+
+    private void CreateMeshCone(){
         float angle = initialAngle;
         float angleIncrease = FOV/RAYCOUNT;
 
@@ -28,16 +32,20 @@ public class FieldOfViewController : MonoBehaviour
 
         int vertexIndex = 1;
         int triangleIndex = 0;
+        //We start locating all of the vertex of the cone by increasing the angle bit by bit
         for (int i=0; i <= RAYCOUNT; i++)
         {
             Vector3 direction = GetVectorFromAngle(angle);
             Vector3 vertex;
+            //Cast a raycast to see if any vertex of the cone collides with a wall collider (the wall layer)
             RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.parent.position, direction, VIEWDISTANCE, layerMaskToObstructLight);
 
+            //If the raycast doesnt hit anything, put the vertex on the maximum distance (VIEWDISTANCE)
             if (raycastHit2D.collider == null)
             {
                 vertex = direction * VIEWDISTANCE;
             }
+            //If it hits something, put the vertex where it collided
             else
             {
                 vertex = raycastHit2D.point - new Vector2(transform.parent.position.x, transform.parent.position.y);
@@ -63,11 +71,13 @@ public class FieldOfViewController : MonoBehaviour
         mesh.bounds = new Bounds(transform.parent.position, Vector3.one * 1000f);
     }
 
+    //To obtain a Vector3 from an angle
     private Vector3 GetVectorFromAngle(float angle){
         float angleRad = angle * (Mathf.PI / 180f);
         return new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad));
     }
 
+    //To obtain an angle from a Vector3 (the inverse of the above function)
     private float GetAngleFromVector3(Vector3 direction){
         direction = direction.normalized;
         float n = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -77,6 +87,7 @@ public class FieldOfViewController : MonoBehaviour
         return n;
     }
 
+    //To set direction of the cone to the mouse pointer
     public void SetAimDirection(Vector3 aimDirection){
         initialAngle = GetAngleFromVector3(aimDirection) + FOV / 2F;
     }
