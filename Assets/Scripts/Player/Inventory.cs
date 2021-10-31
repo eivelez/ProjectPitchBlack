@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour
     public int lives;
     public int fingers = 0;
     public HealthBarController healthBar;
+    [SerializeField] private LivesCounterController livesCounter;
 
     //Sound Effects
     [SerializeField] private AudioClip fingerSFX;
@@ -23,6 +24,7 @@ public class Inventory : MonoBehaviour
         Debug.Log("lives: "+lives);
 
         healthBar.SetMaxHealth(hp);
+        livesCounter.SetLivesCounter(lives);
     }
 
     void Update(){
@@ -31,6 +33,7 @@ public class Inventory : MonoBehaviour
             PlayerPrefs.SetInt("Lives", lives);
             hp=100;
             healthBar.SetHealth(hp);
+            livesCounter.SetLivesCounter(lives);
             Debug.Log("Te moriste XDDDDDDDD y te quedan: "+lives+" vidas");
             if(lives==0){
                 Debug.Log("Te real moriste XDDDD");
@@ -56,6 +59,7 @@ public class Inventory : MonoBehaviour
 
     public void AddExtraLife(){
         lives += 1;
+        livesCounter.SetLivesCounter(lives);
     }
 
     private void PickUpFinger(Collider2D other){
