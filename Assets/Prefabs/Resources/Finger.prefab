@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2738075956671233703}
   - component: {fileID: 5530161820330595123}
+  - component: {fileID: 7344491161076960606}
   m_Layer: 0
   m_Name: Finger
-  m_TagString: Untagged
+  m_TagString: Finger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,3 +83,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &7344491161076960606
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924260505873444129}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0019819287, y: 0.0054959357}
+  m_Size: {x: 0.12473712, y: 0.4228226}
+  m_Direction: 0

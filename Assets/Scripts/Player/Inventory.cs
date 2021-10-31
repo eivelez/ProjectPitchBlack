@@ -8,7 +8,11 @@ public class Inventory : MonoBehaviour
     public int key = 0;
     public int hp=100;
     public int lives;
+    public int fingers = 0;
     public HealthBarController healthBar;
+
+    //Sound Effects
+    [SerializeField] private AudioClip fingerSFX;
 
     void Start(){
         if (!PlayerPrefs.HasKey("Lives"))
@@ -52,5 +56,17 @@ public class Inventory : MonoBehaviour
 
     public void AddExtraLife(){
         lives += 1;
+    }
+
+    private void PickUpFinger(Collider2D other){
+        fingers += 1;
+        AudioSource.PlayClipAtPoint(fingerSFX, transform.position);
+        Destroy(other.gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "Finger"){
+            PickUpFinger(other);
+        }
     }
 }
