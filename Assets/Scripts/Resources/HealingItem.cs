@@ -64,7 +64,7 @@ public class BulletproofVest : HealingItem
 
     public override void Use(Inventory inventory)
     {
-        Debug.Log("Usaste un Bulletproof Vest");
-        inventory.ExtendHP(25);
+        Debug.Log("Te equipaste un Bulletproof Vest");
+        inventory.IncreaseArmour(10);
     }
 }

@@ -10,10 +10,11 @@ public class HealthBarController : MonoBehaviour
     [SerializeField] private Image fill;
     
 
-    public void SetMaxHealth(int maxHealth){
-        slider.maxValue = maxHealth;
+    public void SetMaxHealth(int health){
+        slider.maxValue = health;
+        SetHealth(health);
 
-        fill.color = gradient.Evaluate(slider.normalizedValue);
+        fill.color = gradient.Evaluate(1f);
     }
 
     public void SetHealth(int health){

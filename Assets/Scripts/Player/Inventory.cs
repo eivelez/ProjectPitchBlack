@@ -7,7 +7,8 @@ public class Inventory : MonoBehaviour
 {
     public int key = 0;
     public int hp = 100;
-    private int maximumHp = 100;
+    private const int MAXIMUM_HP = 100;
+    public int defense = 0;
     public int lives;
     public int fingers = 0;
 
@@ -26,7 +27,7 @@ public class Inventory : MonoBehaviour
         if(hp<=0){
             lives-=1;
             PlayerPrefs.SetInt("Lives", lives);
-            hp=maximumHp;
+            hp=MAXIMUM_HP;
             healthBar.SetHealth(hp);
             livesCounter.SetLivesCounter(lives);
             Debug.Log("Te moriste XDDDDDDDD y te quedan: "+lives+" vidas");
@@ -42,6 +43,7 @@ public class Inventory : MonoBehaviour
     private void SetPlayerStats(){
         SetPlayerLives();
         SetPlayerMaxHp();
+        SetPlayerDefense();
         Debug.Log("lives: "+lives + "   hp:" + hp);
     }
 
@@ -55,19 +57,21 @@ public class Inventory : MonoBehaviour
     }
 
     private void SetPlayerMaxHp(){
-        if (!PlayerPrefs.HasKey("MAXIMUM_HP"))
-        {
-            PlayerPrefs.SetInt("MAXIMUM_HP", 100);
-        }
-        maximumHp=PlayerPrefs.GetInt("MAXIMUM_HP");
-        hp = maximumHp;
+        hp = MAXIMUM_HP;
         healthBar.SetMaxHealth(hp);
-        healthBar.SetHealth(hp);
+    }
+
+    private void SetPlayerDefense(){
+        if (!PlayerPrefs.HasKey("Defense"))
+        {
+            PlayerPrefs.SetInt("Defense", 0);
+        }
+        defense=PlayerPrefs.GetInt("Defense");
     }
 
     private void ResetPlayerStatsAfterGameOver(){
         PlayerPrefs.SetInt("Lives", 3);
-        PlayerPrefs.SetInt("MAXIMUM_HP", 100);
+        PlayerPrefs.SetInt("Defense", 0);
     }
 
     public void TakeDamage(int damageTaken){
@@ -88,10 +92,9 @@ public class Inventory : MonoBehaviour
         livesCounter.SetLivesCounter(lives);
     }
 
-    public void ExtendHP(int extraHealth){
-        maximumHp += extraHealth;
-        PlayerPrefs.SetInt("MAXIMUM_HP", maximumHp);
-        healthBar.SetMaxHealth(maximumHp);
+    public void IncreaseArmour(int addedDefense){
+        defense += addedDefense;
+        PlayerPrefs.SetInt("Defense", defense);
     }
 
     private void PickUpFinger(Collider2D other){

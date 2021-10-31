@@ -60988,6 +60988,38 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3362606950182679771, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 24.100006
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362606950182679771, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897697007217067469, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.0697937
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897697007217067469, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.1246033
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389450745138642412, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.201477
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389450745138642412, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.4000244
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500230465244932219, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 27.548004
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500230465244932219, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8257315522402288229, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
       propertyPath: masterMiniGames
       value: 
