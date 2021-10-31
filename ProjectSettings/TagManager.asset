@@ -8,6 +8,7 @@ TagManager:
   - LockDoor
   - Enemy
   - Finger
+  - BulletproofVest
   layers:
   - Default
   - TransparentFX

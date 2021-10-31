@@ -18,6 +18,7 @@ public class Inventory : MonoBehaviour
 
     //Sound Effects
     [SerializeField] private AudioClip fingerSFX;
+    [SerializeField] private AudioClip bulletproofVestSFX;
 
     void Start(){
         SetPlayerStats();
@@ -103,9 +104,19 @@ public class Inventory : MonoBehaviour
         Destroy(other.gameObject);
     }
 
+    private void PickUpBulletproofVest(Collider2D other){
+        BulletproofVest item = new BulletproofVest();
+        item.Use(this);
+        AudioSource.PlayClipAtPoint(bulletproofVestSFX, transform.position);
+        Destroy(other.gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Finger"){
             PickUpFinger(other);
+        }
+        else if (other.tag == "BulletproofVest"){
+            PickUpBulletproofVest(other);
         }
     }
 }

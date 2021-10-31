@@ -6,6 +6,7 @@ public class ShopTransactionController : MonoBehaviour
 {
     private Shop shop;
     private Inventory playerInventory;
+    [SerializeField] private AudioClip shopSFX;
 
     public void Setup(Shop shop){
         this.shop = shop;
@@ -29,6 +30,7 @@ public class ShopTransactionController : MonoBehaviour
             shop.productsDictionary[slot.name] = null;
             slot.SetActive(false);
             playerInventory.fingers -= healingItem.price;
+            AudioSource.PlayClipAtPoint(shopSFX, transform.position);
         }
     }
 }

@@ -1115,11 +1115,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: 0
   hp: 100
+  defense: 0
   lives: 0
   fingers: 0
   healthBar: {fileID: 959680329044749017}
   livesCounter: {fileID: 6693152157870346288}
   fingerSFX: {fileID: 8300000, guid: 655960bcc011ab540a0ab3582cac17de, type: 3}
+  bulletproofVestSFX: {fileID: 8300000, guid: 7697626ccce1fea4fb401c684c4406d2, type: 3}
 --- !u!114 &4170862091041522833
 MonoBehaviour:
   m_ObjectHideFlags: 0
