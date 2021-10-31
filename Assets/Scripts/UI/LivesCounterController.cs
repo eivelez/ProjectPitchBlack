@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class LivesCounterController : MonoBehaviour
 {
-    [SerializeField] private Text livesCountText;
+    [SerializeField] private TextMeshProUGUI livesCountText;
 
     public void SetLivesCounter(int lives){
         livesCountText.text = lives.ToString();
