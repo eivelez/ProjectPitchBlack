@@ -8,7 +8,9 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private PlayerAnimator playerAnimator;
+    [SerializeField] private PlayerCollision playerCollision;
     [SerializeField] private HideController hideController;
+    public Inventory inventory;
     public PlayerSprite playerSprite;
     [HideInInspector] public Vector2 movement;
     [HideInInspector] public bool isHiding;
@@ -19,7 +21,10 @@ public class Player : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         playerInput = GetComponent<PlayerInput>();
         playerAnimator = GetComponent<PlayerAnimator>();
+        playerCollision = GetComponent<PlayerCollision>();
+        playerCollision.Setup(this);
         hideController = GetComponent<HideController>();
+        inventory = GetComponent<Inventory>();
         playerSprite = GetComponent<PlayerSprite>();
         isHiding = false;
         hideController.Setup(this);

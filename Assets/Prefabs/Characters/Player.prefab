@@ -874,6 +874,7 @@ GameObject:
   - component: {fileID: 1373329872335942901}
   - component: {fileID: 6840288909709453589}
   - component: {fileID: 8257315522402288229}
+  - component: {fileID: 8207106227623002790}
   - component: {fileID: 8276814141226552303}
   - component: {fileID: 4170862091041522833}
   m_Layer: 0
@@ -1030,8 +1031,10 @@ MonoBehaviour:
   playerMovement: {fileID: 8285159855341361307}
   playerInput: {fileID: 6387805543386264885}
   playerAnimator: {fileID: 1373329872335942901}
+  playerCollision: {fileID: 8207106227623002790}
   hideController: {fileID: 8257315522402288229}
-  playerSprite: {fileID: 0}
+  inventory: {fileID: 8276814141226552303}
+  playerSprite: {fileID: 6840288909709453589}
   movement: {x: 0, y: 0}
   isHiding: 0
 --- !u!114 &8285159855341361307
@@ -1101,6 +1104,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masterMiniGames: {fileID: 0}
+--- !u!114 &8207106227623002790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8285159855341361285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d122cfbc3654a438d8a03ab83120d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fingerSFX: {fileID: 8300000, guid: 655960bcc011ab540a0ab3582cac17de, type: 3}
+  bulletproofVestSFX: {fileID: 8300000, guid: 7697626ccce1fea4fb401c684c4406d2, type: 3}
+  medikit_bandaid_SFX: {fileID: 8300000, guid: 3dc843ec02575804aae906ea1b690c10, type: 3}
+  extraLifeSFX: {fileID: 8300000, guid: c71b4541e0048c043acc6129cf549509, type: 3}
 --- !u!114 &8276814141226552303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1120,10 +1139,6 @@ MonoBehaviour:
   fingers: 0
   healthBar: {fileID: 959680329044749017}
   livesCounter: {fileID: 6693152157870346288}
-  fingerSFX: {fileID: 8300000, guid: 655960bcc011ab540a0ab3582cac17de, type: 3}
-  bulletproofVestSFX: {fileID: 8300000, guid: 7697626ccce1fea4fb401c684c4406d2, type: 3}
-  medikit_bandaid_SFX: {fileID: 8300000, guid: 3dc843ec02575804aae906ea1b690c10, type: 3}
-  extraLifeSFX: {fileID: 8300000, guid: c71b4541e0048c043acc6129cf549509, type: 3}
 --- !u!114 &4170862091041522833
 MonoBehaviour:
   m_ObjectHideFlags: 0
