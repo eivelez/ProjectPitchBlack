@@ -81,7 +81,7 @@ public class ArrowMiniGameScript : MonoBehaviour
         }
 
         //Key Logic
-        /*if (Input.GetKeyDown("e") && stopper) {
+        if (Input.GetKeyDown("e") && stopper) {
             pointerSpeed=0;
             stopper=false;
             if(pointerPosition<minBrownZone && pointerPosition>maxBrownZone){
@@ -91,7 +91,7 @@ public class ArrowMiniGameScript : MonoBehaviour
             }
             //Damage Logic
             StartCoroutine(waiterNReset(pointerPosition));
-        }*/
+        }
 
         //TimeoutLogic
         /*if(currentTime<0f && stopper){
