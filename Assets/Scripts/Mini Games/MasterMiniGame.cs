@@ -6,11 +6,13 @@ public class MasterMiniGame : MonoBehaviour
 {
     public GameObject MashMiniGame;
     public GameObject SequenceMiniGame;
+    public GameObject ArrowMiniGame;
 
     public MashMinigameScript mashMinigameScript;
     public SequenceMiniGameScript sequenceMiniGameScript;
+    public ArrowMiniGameScript arrowMiniGameScript;
 
-    private GameObject[] listOfMiniGames = new GameObject[2];
+    private GameObject[] listOfMiniGames = new GameObject[3];
     private GameObject selectedMiniGame;
     // Start is called before the first frame update
     void Start()
@@ -24,8 +26,10 @@ public class MasterMiniGame : MonoBehaviour
         Time.timeScale = 0;
         mashMinigameScript= gameObject.GetComponent<MashMinigameScript>();
         sequenceMiniGameScript= gameObject.GetComponent<SequenceMiniGameScript>();
+        arrowMiniGameScript= gameObject.GetComponent<ArrowMiniGameScript>();
         listOfMiniGames[0]=MashMiniGame;
         listOfMiniGames[1]=SequenceMiniGame;
+        listOfMiniGames[2]=ArrowMiniGame;
 
         for (int i = 0; i < listOfMiniGames.Length; i++) 
         {
@@ -43,6 +47,9 @@ public class MasterMiniGame : MonoBehaviour
         }
         if(selectedMiniGame==SequenceMiniGame){
             sequenceMiniGameScript.SequenceUpdate();
+        }
+        if(selectedMiniGame==ArrowMiniGame){
+            arrowMiniGameScript.ArrowUpdate();
         }
         
     }
