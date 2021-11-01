@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MashMinigameScript : MonoBehaviour
 {
     //Utility variables
+    public GameObject EnemyImage;
     private int mash=0;
     private int maxMash=50;
     public GameObject Success;
@@ -30,6 +31,7 @@ public class MashMinigameScript : MonoBehaviour
     }
 
     void OnEnable(){
+        EnemyImage.GetComponent<Image>().sprite=gameObject.GetComponent<MasterMiniGame>().Enemy;
         gameObject.transform.localScale = new Vector3(1, 1, 1);
         Success.SetActive(false);
         Fail.SetActive(false);
@@ -110,4 +112,5 @@ public class MashMinigameScript : MonoBehaviour
         Time.timeScale = 1;
         gameObject.SetActive(false);
     }
+        
 }

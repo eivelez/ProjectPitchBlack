@@ -10,6 +10,7 @@ public class SequenceMiniGameScript : MonoBehaviour
     public GameObject Success;
     public GameObject Fail;
     public Inventory inventory;
+    public GameObject EnemyImage;
     public Text keyText1;
     public Text keyText2;
     public Text keyText3;
@@ -26,6 +27,7 @@ public class SequenceMiniGameScript : MonoBehaviour
     public Animator transition;
 
     void OnEnable(){
+        EnemyImage.GetComponent<Image>().sprite=gameObject.GetComponent<MasterMiniGame>().Enemy;
         gameObject.transform.localScale = new Vector3(1, 1, 1);
         keybuttons[0]=keyText1;
         keybuttons[1]=keyText2;

@@ -13,6 +13,7 @@ public class ArrowMiniGameScript : MonoBehaviour
     public GameObject YellowZone;
     public GameObject BrownZone;
     public GameObject GreenZone;
+    public GameObject EnemyImage;
     public Inventory inventory;
     public Text countDownText;
     private bool stopper=true;
@@ -41,6 +42,7 @@ public class ArrowMiniGameScript : MonoBehaviour
     }
 
     void OnEnable(){
+        EnemyImage.GetComponent<Image>().sprite=gameObject.GetComponent<MasterMiniGame>().Enemy;
         gameObject.transform.localScale = new Vector3(1, 1, 1);
         Success.SetActive(false);
         Fail.SetActive(false);

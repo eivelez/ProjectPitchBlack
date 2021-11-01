@@ -2282,6 +2282,7 @@ MonoBehaviour:
   MashMiniGame: {fileID: 4444390953996925578}
   SequenceMiniGame: {fileID: 4444390953747421160}
   ArrowMiniGame: {fileID: 167944713}
+  Enemy: {fileID: 0}
   transition: {fileID: 0}
   mashMinigameScript: {fileID: 4444390953150835865}
   sequenceMiniGameScript: {fileID: 4444390953150835866}
@@ -2298,6 +2299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3f2b30304a066418b318787c6fc582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyImage: {fileID: 4444390954080667409}
   Success: {fileID: 4444390952143169554}
   Fail: {fileID: 4444390952339390789}
   inventory: {fileID: 0}
@@ -2320,6 +2322,7 @@ MonoBehaviour:
   Success: {fileID: 4444390952747345605}
   Fail: {fileID: 4444390954056447026}
   inventory: {fileID: 0}
+  EnemyImage: {fileID: 4444390953023424941}
   keyText1: {fileID: 4444390953004380715}
   keyText2: {fileID: 4444390952195221202}
   keyText3: {fileID: 4444390952350223757}
@@ -2348,9 +2351,10 @@ MonoBehaviour:
   YellowZone: {fileID: 337203382}
   BrownZone: {fileID: 635708580}
   GreenZone: {fileID: 1218221591}
+  EnemyImage: {fileID: 535248567}
   inventory: {fileID: 0}
   countDownText: {fileID: 1332933166}
-  pointerSpeed: 2500
+  pointerSpeed: 3000
   transition: {fileID: 0}
 --- !u!1 &4444390953166655604
 GameObject:

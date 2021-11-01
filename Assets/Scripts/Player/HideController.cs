@@ -59,6 +59,7 @@ public class HideController : MonoBehaviour
         else if (collision.gameObject.tag.Equals("Enemy"))
         {
             Debug.Log("enter Enemy");
+            masterMiniGames.GetComponent<MasterMiniGame>().setEnemy(collision.gameObject.GetComponent<SpriteRenderer>().sprite);
             masterMiniGames.SetActive(true);
         }
     }

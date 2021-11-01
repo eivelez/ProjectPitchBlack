@@ -8,6 +8,8 @@ public class MasterMiniGame : MonoBehaviour
     public GameObject SequenceMiniGame;
     public GameObject ArrowMiniGame;
 
+    public Sprite Enemy;
+
     public Animator transition;
 
     public MashMinigameScript mashMinigameScript;
@@ -32,8 +34,8 @@ public class MasterMiniGame : MonoBehaviour
         sequenceMiniGameScript= gameObject.GetComponent<SequenceMiniGameScript>();
         arrowMiniGameScript= gameObject.GetComponent<ArrowMiniGameScript>();
         listOfMiniGames[0]=MashMiniGame;
-        listOfMiniGames[1]=SequenceMiniGame;
-        listOfMiniGames[2]=ArrowMiniGame;
+        listOfMiniGames[1]=MashMiniGame;
+        listOfMiniGames[2]=MashMiniGame;
 
         for (int i = 0; i < listOfMiniGames.Length; i++) 
         {
@@ -62,6 +64,10 @@ public class MasterMiniGame : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(1);
         selectedMiniGame.SetActive(true);
+    }
+
+    public void setEnemy(Sprite enemyPassed){
+        Enemy=enemyPassed;
     }
 
 }
