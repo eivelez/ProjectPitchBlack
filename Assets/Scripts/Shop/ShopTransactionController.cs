@@ -5,21 +5,32 @@ using UnityEngine;
 public class ShopTransactionController : MonoBehaviour
 {
     private Shop shop;
-    private Inventory inventory;
+    private Inventory playerInventory;
+    [SerializeField] private AudioClip shopSFX;
 
     public void Setup(Shop shop){
         this.shop = shop;
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         shop.productsDictionary = new Dictionary<string, HealingItem>(){
-            {"Slot 1", new FirstAidKit()},
-            {"Slot 2", new Band_aid()},
-            {"Slot 3", new ExtraLife()}
+            {"Slot 1", new Band_aid()},
+            {"Slot 2", new FirstAidKit()},
+            {"Slot 3", new ExtraLife()},
+            {"Slot 4", new BulletproofVest()}
         };
     }
 
     public void BuyItem(GameObject slot){
-        shop.productsDictionary[slot.name].Use(inventory);
-        shop.productsDictionary[slot.name] = null;
-        slot.SetActive(false);
+        //Obtain the item on the slot selected
+        HealingItem healingItem = shop.productsDictionary[slot.name];
+
+        //We check the amount of money (fingers) of the player
+        if (playerInventory.fingers >= healingItem.price)
+        {
+            healingItem.Use(playerInventory);
+            shop.productsDictionary[slot.name] = null;
+            slot.SetActive(false);
+            playerInventory.fingers -= healingItem.price;
+            AudioSource.PlayClipAtPoint(shopSFX, transform.position);
+        }
     }
 }

@@ -19,7 +19,7 @@ public class ExtraLife : HealingItem
 
     public override void Use(Inventory inventory)
     {
-        Debug.Log("Compraste y usaste un Extra Life");
+        Debug.Log("Usaste un Extra Life");
         inventory.AddExtraLife();
     }
 }
@@ -34,7 +34,7 @@ public class Band_aid : HealingItem
 
     public override void Use(Inventory inventory)
     {
-        Debug.Log("Compraste y usaste un Band-aid");
+        Debug.Log("Usaste un Band-aid");
         inventory.Heal(25);
     }
 }
@@ -49,7 +49,22 @@ public class FirstAidKit : HealingItem
 
     public override void Use(Inventory inventory)
     {
-        Debug.Log("Compraste y usaste un First Aid Kit");
+        Debug.Log("Usaste un First Aid Kit");
         inventory.Heal(50);
+    }
+}
+
+public class BulletproofVest : HealingItem
+{
+    public BulletproofVest()
+    {
+        name = "Bulletproof Vest";
+        price = 30;
+    }
+
+    public override void Use(Inventory inventory)
+    {
+        Debug.Log("Te equipaste un Bulletproof Vest");
+        inventory.IncreaseArmour(10);
     }
 }

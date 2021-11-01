@@ -7,6 +7,11 @@ TagManager:
   - HidingPlace
   - LockDoor
   - Enemy
+  - Finger
+  - BulletproofVest
+  - Band-aid
+  - FirstAidKit
+  - 1UP
   layers:
   - Default
   - TransparentFX

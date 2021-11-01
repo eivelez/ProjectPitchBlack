@@ -8,6 +8,8 @@ public class ShopSpriteController : MonoBehaviour
     [SerializeField] private GameObject slot1;
     [SerializeField] private GameObject slot2;
     [SerializeField] private GameObject slot3;
+    [SerializeField] private GameObject slot4;
+    [SerializeField] private GameObject tip;
     
     // Start is called before the first frame update
     void Start()
@@ -20,10 +22,13 @@ public class ShopSpriteController : MonoBehaviour
         slot1.SetActive(false);
         slot2.SetActive(false);
         slot3.SetActive(false);
+        slot4.SetActive(false);
+        tip.SetActive(false);
     }
 
     public void ShowProductsSprites(Dictionary<string, HealingItem> productsDictionary){
         dollarSign.SetActive(false);
+        tip.SetActive(true);
 
         //Slot 1
         if (productsDictionary["Slot 1"] != null){
@@ -38,6 +43,11 @@ public class ShopSpriteController : MonoBehaviour
         //Slot 3
         if (productsDictionary["Slot 3"] != null){
             slot3.SetActive(true);
+        }
+
+        //Slot 4
+        if (productsDictionary["Slot 4"] != null){
+            slot4.SetActive(true);
         }
     }
 }

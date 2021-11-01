@@ -10,6 +10,7 @@ public class Shop : MonoBehaviour
     [SerializeField] private SlotController slotController1;
     [SerializeField] private SlotController slotController2;
     [SerializeField] private SlotController slotController3;
+    [SerializeField] private SlotController slotController4;
     [HideInInspector] public bool playerShoping = false;
     [HideInInspector] public Dictionary<string, HealingItem> productsDictionary;
 
@@ -20,5 +21,6 @@ public class Shop : MonoBehaviour
         slotController1.Setup(this);
         slotController2.Setup(this);
         slotController3.Setup(this);
+        slotController4.Setup(this);
     }
 }

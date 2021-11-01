@@ -6,7 +6,6 @@ public class ShopCollisionController : MonoBehaviour
 {
     private Shop shop;
 
-    // Start is called before the first frame update
     public void Setup(Shop shop)
     {
         this.shop = shop;
