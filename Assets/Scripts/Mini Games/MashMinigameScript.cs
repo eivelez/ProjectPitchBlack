@@ -76,16 +76,18 @@ public class MashMinigameScript : MonoBehaviour
         //timeout
         if(currentTime<0){
             if(mash<25){
-                inventory.TakeDamage(50*inventory.defense/100);
+                Debug.Log(50*(100-inventory.defense)/100);
+                inventory.TakeDamage(50*(100-inventory.defense)/100);
             }else {
-                inventory.TakeDamage(25*inventory.defense/100);
+                Debug.Log(25*inventory.defense/100);
+                inventory.TakeDamage(25*(100-inventory.defense)/100);
             }
             
             //inventory.hp-=50;
         }
         //success
         if(mash==maxMash){
-            inventory.TakeDamage(10*inventory.defense/100);
+            inventory.TakeDamage(10*(100-inventory.defense)/100);
             //inventory.hp-=10;
         }
         Debug.Log(inventory.hp);
