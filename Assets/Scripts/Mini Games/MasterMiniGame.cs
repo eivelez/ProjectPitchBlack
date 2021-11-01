@@ -8,6 +8,8 @@ public class MasterMiniGame : MonoBehaviour
     public GameObject SequenceMiniGame;
     public GameObject ArrowMiniGame;
 
+    public Animator transition;
+
     public MashMinigameScript mashMinigameScript;
     public SequenceMiniGameScript sequenceMiniGameScript;
     public ArrowMiniGameScript arrowMiniGameScript;
@@ -23,12 +25,14 @@ public class MasterMiniGame : MonoBehaviour
     }
 
     void OnEnable(){
+
         Time.timeScale = 0;
+        transition.SetTrigger("Start");
         mashMinigameScript= gameObject.GetComponent<MashMinigameScript>();
         sequenceMiniGameScript= gameObject.GetComponent<SequenceMiniGameScript>();
         arrowMiniGameScript= gameObject.GetComponent<ArrowMiniGameScript>();
-        listOfMiniGames[0]=MashMiniGame;
-        listOfMiniGames[1]=SequenceMiniGame;
+        listOfMiniGames[0]=ArrowMiniGame;
+        listOfMiniGames[1]=ArrowMiniGame;
         listOfMiniGames[2]=ArrowMiniGame;
 
         for (int i = 0; i < listOfMiniGames.Length; i++) 
@@ -36,7 +40,8 @@ public class MasterMiniGame : MonoBehaviour
           listOfMiniGames[i].SetActive(false);
         }
         selectedMiniGame=listOfMiniGames[Random.Range (0, listOfMiniGames.Length)];
-        selectedMiniGame.SetActive(true);
+        StartCoroutine(waiter());
+        
     }
 
     // Update is called once per frame
@@ -53,4 +58,10 @@ public class MasterMiniGame : MonoBehaviour
         }
         
     }
+    IEnumerator waiter()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        selectedMiniGame.SetActive(true);
+    }
+
 }

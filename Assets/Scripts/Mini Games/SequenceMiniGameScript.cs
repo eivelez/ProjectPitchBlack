@@ -17,14 +17,16 @@ public class SequenceMiniGameScript : MonoBehaviour
     public Text keyText5;
     public Text countDownText;
     public Text numberOfSequence;
-    private float currentTime= 5f;
+    private float currentTime= 6f;
     private bool stopper=true;
     private string[] possibleKey= {"w","a","s","d","e","f","q","a","r","d","t","y","z","x","c"};
     private string[] selectedKeys= new string[6];
     private Text[] keybuttons= new Text[5];
 
-    void OnEnable(){
+    public Animator transition;
 
+    void OnEnable(){
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
         keybuttons[0]=keyText1;
         keybuttons[1]=keyText2;
         keybuttons[2]=keyText3;
@@ -45,7 +47,7 @@ public class SequenceMiniGameScript : MonoBehaviour
     // Update is called once per frame
     public void SequenceUpdate()
     {
-        if(gameObject.activeSelf){
+        if(gameObject.activeSelf && stopper){
             if(currentTime>0f && stopper){       
                 currentTime -= 1* Time.unscaledDeltaTime;
                 countDownText.text=currentTime.ToString("0");
@@ -84,19 +86,25 @@ public class SequenceMiniGameScript : MonoBehaviour
         Debug.Log(inventory.hp);
         Fail.SetActive(false);
         Success.SetActive(false);
-        currentTime=5f;
+        currentTime=6f;
         mash=0;
         stopper=true;
         numberOfSequence.text="0/5";
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         //SceneManager.LoadScene(0);
-        Time.timeScale = 1;
+        gameObject.transform.localScale = new Vector3(0, 0, 0);
+        //Time.timeScale = 1;
     }
 
     IEnumerator waiterNReset()
     {
-    //Wait for 3 seconds
-    yield return new WaitForSecondsRealtime(3);
-    ResetVariables();
+        //Wait for 3 seconds
+        yield return new WaitForSecondsRealtime(3);
+        transition.SetTrigger("Start");
+        yield return new WaitForSecondsRealtime(1);
+        ResetVariables();
+        yield return new WaitForSecondsRealtime(1);
+        Time.timeScale = 1;
+        gameObject.SetActive(false);
     }
 }

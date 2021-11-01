@@ -15,10 +15,12 @@ public class MashMinigameScript : MonoBehaviour
     public Text keyText;
     public Text countDownText;
     public Text numberOfMash;
-    private float currentTime= 10f;
+    private float currentTime= 11f;
     private bool stopper=true;
     private string[] possibleKey= {"w","a","s","d","e","f","q","a","r","d","t","y","z","x","c"};
     private string selectedKey;
+
+    public Animator transition;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,7 @@ public class MashMinigameScript : MonoBehaviour
     }
 
     void OnEnable(){
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
         Success.SetActive(false);
         Fail.SetActive(false);
         selectedKey=possibleKey[Random.Range (0, possibleKey.Length)];
@@ -37,7 +40,7 @@ public class MashMinigameScript : MonoBehaviour
     // Update is called once per frame
     public void MashUpdate()
     {
-        if(gameObject.activeSelf){
+        if(gameObject.activeSelf && stopper){
             if(currentTime>0f && stopper){       
                 currentTime -= 1* Time.unscaledDeltaTime;
                 countDownText.text=currentTime.ToString("0");
@@ -79,19 +82,25 @@ public class MashMinigameScript : MonoBehaviour
         Debug.Log(inventory.hp);
         Fail.SetActive(false);
         Success.SetActive(false);
-        currentTime=10f;
+        currentTime=11f;
         mash=0;
         stopper=true;
         numberOfMash.text="0/"+maxMash;
-        gameObject.SetActive(false);
+        gameObject.transform.localScale = new Vector3(0, 0, 0);
+        //gameObject.SetActive(false);
         //SceneManager.LoadScene(0);
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
     }
 
     IEnumerator waiterNReset()
     {
     //Wait for 3 seconds
-    yield return new WaitForSecondsRealtime(3);
-    ResetVariables();
+        yield return new WaitForSecondsRealtime(3);
+        transition.SetTrigger("Start");
+        yield return new WaitForSecondsRealtime(1);
+        ResetVariables();
+        yield return new WaitForSecondsRealtime(1);
+        Time.timeScale = 1;
+        //gameObject.SetActive(false);
     }
 }
