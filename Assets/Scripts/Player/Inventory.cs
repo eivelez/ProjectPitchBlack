@@ -19,6 +19,8 @@ public class Inventory : MonoBehaviour
     //Sound Effects
     [SerializeField] private AudioClip fingerSFX;
     [SerializeField] private AudioClip bulletproofVestSFX;
+    [SerializeField] private AudioClip medikit_bandaid_SFX;
+    [SerializeField] private AudioClip extraLifeSFX;
 
     void Start(){
         SetPlayerStats();
@@ -98,25 +100,37 @@ public class Inventory : MonoBehaviour
         PlayerPrefs.SetInt("Defense", defense);
     }
 
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "Finger"){
+            PickUpFinger(other);
+        }
+
+        else if (other.tag == "BulletproofVest"){
+            PickUpHealingItem(other.gameObject, new BulletproofVest(), bulletproofVestSFX);
+        }
+        
+        else if (other.tag == "Band-aid"){
+            PickUpHealingItem(other.gameObject, new Band_aid(), medikit_bandaid_SFX);
+        }
+
+        else if (other.tag == "FirstAidKit"){
+            PickUpHealingItem(other.gameObject, new FirstAidKit(), medikit_bandaid_SFX);
+        }
+
+        else if (other.tag == "1UP"){
+            PickUpHealingItem(other.gameObject, new ExtraLife(), extraLifeSFX);
+        }
+    }
+
     private void PickUpFinger(Collider2D other){
         fingers += 1;
         AudioSource.PlayClipAtPoint(fingerSFX, transform.position);
         Destroy(other.gameObject);
     }
 
-    private void PickUpBulletproofVest(Collider2D other){
-        BulletproofVest item = new BulletproofVest();
-        item.Use(this);
-        AudioSource.PlayClipAtPoint(bulletproofVestSFX, transform.position);
-        Destroy(other.gameObject);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Finger"){
-            PickUpFinger(other);
-        }
-        else if (other.tag == "BulletproofVest"){
-            PickUpBulletproofVest(other);
-        }
+    private void PickUpHealingItem(GameObject itemGameObject, HealingItem healingItem, AudioClip soundEffect){
+        healingItem.Use(this);
+        AudioSource.PlayClipAtPoint(soundEffect, transform.position);
+        Destroy(itemGameObject);
     }
 }

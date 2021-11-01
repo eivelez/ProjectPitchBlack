@@ -1122,6 +1122,8 @@ MonoBehaviour:
   livesCounter: {fileID: 6693152157870346288}
   fingerSFX: {fileID: 8300000, guid: 655960bcc011ab540a0ab3582cac17de, type: 3}
   bulletproofVestSFX: {fileID: 8300000, guid: 7697626ccce1fea4fb401c684c4406d2, type: 3}
+  medikit_bandaid_SFX: {fileID: 8300000, guid: 3dc843ec02575804aae906ea1b690c10, type: 3}
+  extraLifeSFX: {fileID: 8300000, guid: c71b4541e0048c043acc6129cf549509, type: 3}
 --- !u!114 &4170862091041522833
 MonoBehaviour:
   m_ObjectHideFlags: 0

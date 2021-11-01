@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1021931608073056657
+--- !u!1 &761991939264838159
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1021931608073056652}
-  - component: {fileID: 1021931608073056659}
-  - component: {fileID: 2851161377813624181}
+  - component: {fileID: 8756336610183345798}
+  - component: {fileID: 7792437900380279922}
+  - component: {fileID: 2675208809749516249}
   m_Layer: 0
-  m_Name: Bulletproof Vest
-  m_TagString: BulletproofVest
+  m_Name: Band-aid
+  m_TagString: Band-aid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1021931608073056652
+--- !u!4 &8756336610183345798
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021931608073056657}
+  m_GameObject: {fileID: 761991939264838159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.22, y: -10.95, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -10.33, y: -11.06, z: 0}
+  m_LocalScale: {x: 0.6596, y: 0.6596, z: 0.6596}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1021931608073056659
+--- !u!212 &7792437900380279922
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021931608073056657}
+  m_GameObject: {fileID: 761991939264838159}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,40 +72,30 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: dd5ac8d7e39dab04f9f74213ed81e31e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41ce3967d19202943831e0df3249ccf3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.33, y: 0.93}
+  m_Size: {x: 0.696, y: 0.696}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2851161377813624181
-BoxCollider2D:
+--- !u!70 &2675208809749516249
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021931608073056657}
+  m_GameObject: {fileID: 761991939264838159}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.07810354}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.33, y: 0.93}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.49666595, y: 0.6181593}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.048030037, y: 0.0054959436}
+  m_Size: {x: 0.6904754, y: 0.6904754}
+  m_Direction: 0
