@@ -75,12 +75,17 @@ public class SequenceMiniGameScript : MonoBehaviour
     }
 
     void ResetVariables(){
+        //timeout
         if(currentTime<0){
-            inventory.TakeDamage(50);
+            if(mash<=2){
+                inventory.TakeDamage(50*inventory.defense/100);
+            }else{
+                inventory.TakeDamage(25*inventory.defense/100);
+            }
             //inventory.hp-=50;
         }
         if(mash==5){
-            inventory.TakeDamage(10);
+            inventory.TakeDamage(10*inventory.defense/100);
             //inventory.hp-=10;
         }
         Debug.Log(inventory.hp);

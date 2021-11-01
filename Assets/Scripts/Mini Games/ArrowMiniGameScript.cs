@@ -132,23 +132,23 @@ public class ArrowMiniGameScript : MonoBehaviour
             //Red Zone
             Debug.Log("Green Zone");
             //Fail.SetActive(true);
-            inventory.TakeDamage(10);
+            inventory.TakeDamage(10*inventory.defense/100);
         }else if(position>minBrownZone && position<maxBrownZone){
             //Yellow Zone
             Debug.Log("Brown Zone");
             //Fail.SetActive(true);
-            inventory.TakeDamage(30);
+            inventory.TakeDamage(30*inventory.defense/100);
         }
         else if(position>minYellowZone && position<maxYellowZone){
             //Brown Zone
             Debug.Log("Yellow Zone");
             //Fail.SetActive(true);
-            inventory.TakeDamage(40);
+            inventory.TakeDamage(40*inventory.defense/100);
         }else{
             //Green Zone
             Debug.Log("Red Zone");
             //Success.SetActive(true);
-            inventory.TakeDamage(50);
+            inventory.TakeDamage(50*inventory.defense/100);
         }
     }
 
