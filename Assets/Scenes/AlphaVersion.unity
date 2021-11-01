@@ -12241,6 +12241,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4444390953150835864, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
+      propertyPath: ExitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d0598974999de6449b2f9defa1b591d, type: 3}
+    - target: {fileID: 4444390953150835864, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
       propertyPath: transition
       value: 
       objectReference: {fileID: 1660389496}
@@ -12264,10 +12268,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MiniGameMaster
       objectReference: {fileID: 0}
-    - target: {fileID: 4444390953150835867, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5859042157477004332, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
       propertyPath: inventory
       value: 
@@ -12276,10 +12276,6 @@ PrefabInstance:
       propertyPath: transition
       value: 
       objectReference: {fileID: 1660389496}
-    - target: {fileID: 5859042157477004332, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
-      propertyPath: pointerSpeed
-      value: 3000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
 --- !u!1 &1332528906
@@ -61942,6 +61938,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1217223817}
+    - target: {fileID: 4725644385713586103, guid: 4872984808d78604faa92ee575a63b60, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4872984808d78604faa92ee575a63b60, type: 3}
 --- !u!1001 &2435681102545073428

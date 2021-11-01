@@ -8,6 +8,9 @@ public class MasterMiniGame : MonoBehaviour
     public GameObject SequenceMiniGame;
     public GameObject ArrowMiniGame;
 
+    [SerializeField] private AudioClip EnterSound;
+    [SerializeField] public AudioClip ExitSound;
+
     public Sprite Enemy;
 
     public Animator transition;
@@ -29,6 +32,7 @@ public class MasterMiniGame : MonoBehaviour
     void OnEnable(){
 
         Time.timeScale = 0;
+        AudioSource.PlayClipAtPoint(EnterSound, transform.position);
         transition.SetTrigger("Start");
         mashMinigameScript= gameObject.GetComponent<MashMinigameScript>();
         sequenceMiniGameScript= gameObject.GetComponent<SequenceMiniGameScript>();

@@ -162,6 +162,7 @@ public class ArrowMiniGameScript : MonoBehaviour
         //Wait for 3 seconds
         yield return new WaitForSecondsRealtime(3);
         transition.SetTrigger("Start");
+        AudioSource.PlayClipAtPoint(gameObject.GetComponent<MasterMiniGame>().ExitSound, transform.position);
         yield return new WaitForSecondsRealtime(1);
         ResetVariables(position);
         yield return new WaitForSecondsRealtime(1);
