@@ -2350,7 +2350,7 @@ MonoBehaviour:
   GreenZone: {fileID: 1218221591}
   inventory: {fileID: 0}
   countDownText: {fileID: 1332933166}
-  pointerSpeed: 0.5
+  pointerSpeed: 2500
   transition: {fileID: 0}
 --- !u!1 &4444390953166655604
 GameObject:

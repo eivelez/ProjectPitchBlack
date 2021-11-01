@@ -11624,7 +11624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &736290166
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12201,6 +12201,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 959680329771840660, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 959680329771840660, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8257315522402288229, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
       propertyPath: masterMiniGames
       value: 
@@ -12594,6 +12602,10 @@ PrefabInstance:
       propertyPath: transition
       value: 
       objectReference: {fileID: 1660389496}
+    - target: {fileID: 5859042157477004332, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
+      propertyPath: pointerSpeed
+      value: 3000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
 --- !u!1 &1332528906
