@@ -39,6 +39,9 @@ public class HideController : MonoBehaviour
                 player.playerSprite.ShowHidingSprites();
                 player.isHiding = true;
                 transform.position = positionToHide;
+                Color originalColor = player.GetComponent<SpriteRenderer>().color;
+                originalColor.a = 0;
+                player.GetComponent<SpriteRenderer>().color = originalColor;
                 AudioSource.PlayClipAtPoint(hideSound, transform.position);
             }
             else if (player.isHiding)
@@ -47,6 +50,9 @@ public class HideController : MonoBehaviour
                 player.playerSprite.HideHidingSprites();
                 player.isHiding = false;
                 transform.position = positionToHide - new Vector2(0, 1);
+                Color originalColor = player.GetComponent<SpriteRenderer>().color;
+                originalColor.a = 1;
+                player.GetComponent<SpriteRenderer>().color = originalColor;
                 AudioSource.PlayClipAtPoint(hideSound, transform.position);
             }
         }
