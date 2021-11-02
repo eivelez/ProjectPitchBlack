@@ -12,6 +12,8 @@ TagManager:
   - Band-aid
   - FirstAidKit
   - 1UP
+  - Key
+  - Item
   layers:
   - Default
   - TransparentFX

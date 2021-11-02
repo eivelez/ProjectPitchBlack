@@ -94,7 +94,7 @@ public class UnlockExit : MonoBehaviour
 
     private bool PlayerHasAllTheKeys() 
     {
-        if (inventory.key == TOTAL_NUMBER_OF_KEYS)
+        if (inventory.keys == TOTAL_NUMBER_OF_KEYS)
         {
             return true;
         }
@@ -106,7 +106,7 @@ public class UnlockExit : MonoBehaviour
 
     private void RemovePlayerKeys() 
     {
-        inventory.key = 0;
+        inventory.keys = 0;
     }
 
     private void DisaibleAllIcons() 

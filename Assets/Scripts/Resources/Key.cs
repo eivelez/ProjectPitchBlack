@@ -8,7 +8,7 @@ public class Key : MonoBehaviour
     {
         if (collision.tag.Equals("Player"))
         {
-            collision.gameObject.GetComponent<Inventory>().key += 1;
+            collision.gameObject.GetComponent<Inventory>().keys += 1;
             Destroy(gameObject);
         }
     }

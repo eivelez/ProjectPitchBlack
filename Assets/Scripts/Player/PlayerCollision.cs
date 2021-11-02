@@ -36,6 +36,11 @@ public class PlayerCollision : MonoBehaviour
         else if (other.tag == "1UP"){
             PickUpHealingItem(other.gameObject, new ExtraLife(), extraLifeSFX);
         }
+
+        else if (other.tag == "Key")
+        {
+            PickUpKey(other);
+        }
     }
 
     private void PickUpFinger(Collider2D other){
@@ -48,5 +53,12 @@ public class PlayerCollision : MonoBehaviour
         healingItem.Use(playerInventory);
         AudioSource.PlayClipAtPoint(soundEffect, transform.position);
         Destroy(itemGameObject);
+    }
+
+    private void PickUpKey(Collider2D key)
+    {
+        playerInventory.keys += 1;
+        //AudioSource.PlayClipAtPoint(fingerSFX, transform.position);
+        Destroy(key.gameObject);
     }
 }

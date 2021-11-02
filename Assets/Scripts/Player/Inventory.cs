@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Inventory : MonoBehaviour
 {
     //Player stats and inventory
-    public int key = 0;
+    public int keys = 0;
     public int hp = 100;
     private const int MAXIMUM_HP = 100;
     private const int MAXIMUM_DEFENSE = 50;
