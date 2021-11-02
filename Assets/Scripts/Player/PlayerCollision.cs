@@ -6,11 +6,14 @@ public class PlayerCollision : MonoBehaviour
 {
     private Inventory playerInventory;
 
+    //[SerializeField] private GameObject masterMiniGames;
+
     //Sound Effects
     [SerializeField] private AudioClip fingerSFX;
     [SerializeField] private AudioClip bulletproofVestSFX;
     [SerializeField] private AudioClip medikit_bandaid_SFX;
     [SerializeField] private AudioClip extraLifeSFX;
+    [SerializeField] private AudioClip keySound;
 
     public void Setup(Player player){
         playerInventory = player.inventory; 
@@ -37,11 +40,20 @@ public class PlayerCollision : MonoBehaviour
             PickUpHealingItem(other.gameObject, new ExtraLife(), extraLifeSFX);
         }
 
-        else if (other.tag == "Key")
-        {
+        else if (other.tag == "Key"){
             PickUpKey(other);
         }
     }
+
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("enter Enemy");
+            masterMiniGames.GetComponent<MasterMiniGame>().setEnemy(collision.gameObject.GetComponent<SpriteRenderer>().sprite);
+            masterMiniGames.SetActive(true);
+        }
+    }*/
 
     private void PickUpFinger(Collider2D other){
         playerInventory.fingers += 1;
@@ -58,7 +70,7 @@ public class PlayerCollision : MonoBehaviour
     private void PickUpKey(Collider2D key)
     {
         playerInventory.keys += 1;
-        //AudioSource.PlayClipAtPoint(fingerSFX, transform.position);
+        AudioSource.PlayClipAtPoint(keySound, transform.position);
         Destroy(key.gameObject);
     }
 }

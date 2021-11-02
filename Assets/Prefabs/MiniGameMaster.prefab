@@ -2249,7 +2249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4444390953150835815
 Transform:
   m_ObjectHideFlags: 0
@@ -2285,7 +2285,7 @@ MonoBehaviour:
   ArrowMiniGame: {fileID: 167944713}
   EnterSound: {fileID: 8300000, guid: b90a7e1641175c745ace4ad7655a7e17, type: 3}
   ExitSound: {fileID: 8300000, guid: 1d0598974999de6449b2f9defa1b591d, type: 3}
-  Enemy: {fileID: 0}
+  Enemy: {fileID: 6724303687778353271, guid: ff7983473a1006346846e77a35d0b438, type: 3}
   transition: {fileID: 540646782681828197}
   mashMinigameScript: {fileID: 4444390953150835865}
   sequenceMiniGameScript: {fileID: 4444390953150835866}

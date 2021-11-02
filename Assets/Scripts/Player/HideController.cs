@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class HideController : MonoBehaviour
 {
-    private CapsuleCollider2D capsuleColliderHidingPlace;
     [SerializeField] private GameObject masterMiniGames;
+    [SerializeField] private AudioClip hideSound;
+
+    private CapsuleCollider2D capsuleColliderHidingPlace;
+
     private bool canHide = false;
+
     private Vector2 positionToHide = Vector2.zero;
+
     private Player player;
+
+
 
     // Start is called before the first frame update
     public void Setup(Player player)
@@ -33,6 +40,7 @@ public class HideController : MonoBehaviour
                 player.playerSprite.ShowHidingSprites();
                 player.isHiding = true;
                 transform.position = positionToHide;
+                AudioSource.PlayClipAtPoint(hideSound, transform.position);
             }
             else if (player.isHiding)
             {
@@ -40,6 +48,7 @@ public class HideController : MonoBehaviour
                 player.playerSprite.HideHidingSprites();
                 player.isHiding = false;
                 transform.position = positionToHide - new Vector2(0, 1);
+                AudioSource.PlayClipAtPoint(hideSound, transform.position);
             }
         }
     }

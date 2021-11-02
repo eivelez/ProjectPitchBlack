@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e932c56eae06a4f47b1216cdf0caf697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterMiniGames: {fileID: 0}
+  hideSound: {fileID: 8300000, guid: a3ff1edee7a09524da8649013f57a549, type: 3}
 --- !u!114 &8207106227623002790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1116,10 +1116,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d122cfbc3654a438d8a03ab83120d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterMiniGames: {fileID: 4444390953150835867, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
   fingerSFX: {fileID: 8300000, guid: 655960bcc011ab540a0ab3582cac17de, type: 3}
   bulletproofVestSFX: {fileID: 8300000, guid: 7697626ccce1fea4fb401c684c4406d2, type: 3}
   medikit_bandaid_SFX: {fileID: 8300000, guid: 3dc843ec02575804aae906ea1b690c10, type: 3}
   extraLifeSFX: {fileID: 8300000, guid: c71b4541e0048c043acc6129cf549509, type: 3}
+  keySound: {fileID: 8300000, guid: fdd2e321b1a0f9245b0f9cffb44a82cf, type: 3}
 --- !u!114 &8276814141226552303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1132,7 +1134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265acdebb5e4523479c58a923cbf6e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 0
+  keys: 0
   hp: 100
   defense: 0
   lives: 0
