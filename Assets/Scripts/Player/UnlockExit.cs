@@ -20,7 +20,7 @@ public class UnlockExit : MonoBehaviour
     {
         inventory = GetComponent<Inventory>();
         //LO COMENTE POR MIENTRAS PARA EL FIRST FLOOR -Andres
-        //boxColliderDoor = GameObject.FindGameObjectWithTag("LockDoor").GetComponent<BoxCollider2D>();
+        boxColliderDoor = GameObject.FindGameObjectWithTag("LockDoor").GetComponent<BoxCollider2D>();
 
         DisaibleAllIcons();
     }
