@@ -24,6 +24,7 @@ public class Inventory : MonoBehaviour
 
     void Update(){
         if(hp<=0){
+            Time.timeScale = 1;
             lives-=1;
             PlayerPrefs.SetInt("Lives", lives);
             hp=MAXIMUM_HP;

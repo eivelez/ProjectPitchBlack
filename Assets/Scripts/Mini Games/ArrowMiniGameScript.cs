@@ -109,7 +109,7 @@ public class ArrowMiniGameScript : MonoBehaviour
                 pointerSpeed *= -1; 
             }
             Pointer.transform.position= new Vector3(Pointer.transform.position.x+(pointerSpeed*Time.unscaledDeltaTime),103,0);
-            Debug.Log("Pointer x loc "+(Pointer.transform.position.x));
+            //Debug.Log("Pointer x loc "+(Pointer.transform.position.x));
             //pointerPosition+=pointerSpeed;
         }
     }
