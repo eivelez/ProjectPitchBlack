@@ -6,7 +6,7 @@ public class PlayerCollision : MonoBehaviour
 {
     private Inventory playerInventory;
 
-    //[SerializeField] private GameObject masterMiniGames;
+    [SerializeField] private GameObject masterMiniGames;
 
     //Sound Effects
     [SerializeField] private AudioClip fingerSFX;
@@ -45,7 +45,7 @@ public class PlayerCollision : MonoBehaviour
         }
     }
 
-    /*private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
@@ -53,7 +53,7 @@ public class PlayerCollision : MonoBehaviour
             masterMiniGames.GetComponent<MasterMiniGame>().setEnemy(collision.gameObject.GetComponent<SpriteRenderer>().sprite);
             masterMiniGames.SetActive(true);
         }
-    }*/
+    }
 
     private void PickUpFinger(Collider2D other){
         playerInventory.fingers += 1;

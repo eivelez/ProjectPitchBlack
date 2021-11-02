@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HideController : MonoBehaviour
 {
-    [SerializeField] private GameObject masterMiniGames;
     [SerializeField] private AudioClip hideSound;
 
     private CapsuleCollider2D capsuleColliderHidingPlace;
@@ -53,7 +52,6 @@ public class HideController : MonoBehaviour
         }
     }
 
-    //HEYYYYY agregue logica para cochar con enemigos y activar el minijuego. Atte el gracia
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject hidingPlace = collision.gameObject;
@@ -63,13 +61,6 @@ public class HideController : MonoBehaviour
             player.playerSprite.ShowHidingPromptSprites();
             SetPositionToHide(hidingPlace);
             canHide = true;
-        }
-
-        else if (collision.gameObject.tag.Equals("Enemy"))
-        {
-            Debug.Log("enter Enemy");
-            masterMiniGames.GetComponent<MasterMiniGame>().setEnemy(collision.gameObject.GetComponent<SpriteRenderer>().sprite);
-            masterMiniGames.SetActive(true);
         }
     }
 
