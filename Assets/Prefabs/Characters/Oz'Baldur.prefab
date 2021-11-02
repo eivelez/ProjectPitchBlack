@@ -684,8 +684,8 @@ MonoBehaviour:
   shopSpriteController: {fileID: 5071415526576642772}
   shopTransactionController: {fileID: 1122669610624579607}
   shopCollisionController: {fileID: 136980954983005681}
-  slotController1: {fileID: 3650564101932162057}
-  slotController2: {fileID: 1956455289644870916}
+  slotController1: {fileID: 1956455289644870916}
+  slotController2: {fileID: 3650564101932162057}
   slotController3: {fileID: 9212621158346079489}
   slotController4: {fileID: 3839606149940135655}
   playerShoping: 0
@@ -715,8 +715,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dollarSign: {fileID: 8412422227171553871}
-  slot1: {fileID: 4017572839323716658}
-  slot2: {fileID: 8156257343941211969}
+  slot1: {fileID: 8156257343941211969}
+  slot2: {fileID: 4017572839323716658}
   slot3: {fileID: 3403631020882924636}
   slot4: {fileID: 7518252962132806470}
   tip: {fileID: 516264713020837277}

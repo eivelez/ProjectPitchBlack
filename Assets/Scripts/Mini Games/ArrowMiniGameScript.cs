@@ -32,13 +32,11 @@ public class ArrowMiniGameScript : MonoBehaviour
     private float maxGreenZone;
     private float minGreenZone;
     private RectTransform auxGreenZone;
+    private Animator transition;
 
-    public Animator transition;
-
-    // Start is called before the first frame update
-    void Start()
+    public void Setup(Animator transition)
     {
-
+        this.transition = transition;
     }
 
     void OnEnable(){

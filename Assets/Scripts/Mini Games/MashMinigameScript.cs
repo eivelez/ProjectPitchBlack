@@ -20,14 +20,11 @@ public class MashMinigameScript : MonoBehaviour
     private bool stopper=true;
     private string[] possibleKey= {"w","a","s","d","e","f","q","a","r","d","t","y","z","x","c"};
     private string selectedKey;
+    private Animator transition;
 
-    public Animator transition;
-
-    // Start is called before the first frame update
-    void Start()
+    public void Setup(Animator transition)
     {
-        //gameObject.SetActive(false);
-
+        this.transition = transition;
     }
 
     void OnEnable(){

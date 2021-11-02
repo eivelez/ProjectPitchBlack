@@ -24,7 +24,12 @@ public class SequenceMiniGameScript : MonoBehaviour
     private string[] selectedKeys= new string[6];
     private Text[] keybuttons= new Text[5];
 
-    public Animator transition;
+    private Animator transition;
+
+    public void Setup(Animator transition)
+    {
+        this.transition = transition;
+    }
 
     void OnEnable(){
         EnemyImage.GetComponent<Image>().sprite=gameObject.GetComponent<MasterMiniGame>().Enemy;

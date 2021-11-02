@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
     public int key = 0;
     public int hp = 100;
     private const int MAXIMUM_HP = 100;
+    private const int MAXIMUM_DEFENSE = 50;
     public int defense = 0;
     public int lives;
     public int fingers = 0;
@@ -91,7 +92,12 @@ public class Inventory : MonoBehaviour
     }
 
     public void IncreaseArmour(int addedDefense){
-        defense += addedDefense;
+        if (defense + addedDefense >= MAXIMUM_DEFENSE ){
+            defense = MAXIMUM_DEFENSE;
+        }
+        else{
+            defense += addedDefense;
+        }
         PlayerPrefs.SetInt("Defense", defense);
     }
 }

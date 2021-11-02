@@ -13,7 +13,7 @@ public class MasterMiniGame : MonoBehaviour
 
     public Sprite Enemy;
 
-    public Animator transition;
+    [SerializeField] private Animator transition;
 
     public MashMinigameScript mashMinigameScript;
     public SequenceMiniGameScript sequenceMiniGameScript;
@@ -21,16 +21,16 @@ public class MasterMiniGame : MonoBehaviour
 
     private GameObject[] listOfMiniGames = new GameObject[3];
     private GameObject selectedMiniGame;
+
     // Start is called before the first frame update
     void Start()
     {
-        /*MashMiniGame.SetActive(false);
-        SequenceMiniGame.SetActive(false);
-        gameObject.SetActive(false);*/
+        mashMinigameScript.Setup(transition);
+        sequenceMiniGameScript.Setup(transition);
+        arrowMiniGameScript.Setup(transition);
     }
 
     void OnEnable(){
-
         Time.timeScale = 0;
         AudioSource.PlayClipAtPoint(EnterSound, transform.position);
         transition.SetTrigger("Start");
