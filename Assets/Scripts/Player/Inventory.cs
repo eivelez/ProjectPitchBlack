@@ -18,23 +18,27 @@ public class Inventory : MonoBehaviour
     [SerializeField] private HealthBarController healthBar;
     [SerializeField] private LivesCounterController livesCounter;
 
+    public DeathUI DeathUIController;
+    public bool OneStateEnter;
+
     void Start(){
+        OneStateEnter = true;
         SetPlayerStats();
     }
 
     void Update(){
-        if (lives == 0)
+        if (lives <= 0 && OneStateEnter)
         {
-            SceneManager.LoadScene("Intro");
+            DeathUIController.Death();
         }
-        if (hp<=0){
-            Time.timeScale = 1;
+        else if (hp<=0 && OneStateEnter){
+            Time.timeScale = 0;
             lives-=1;
             PlayerPrefs.SetInt("Lives", lives);
             hp=MAXIMUM_HP;
             healthBar.SetHealth(hp);
             livesCounter.SetLivesCounter(lives);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            DeathUIController.Continue();
         }
     }
 
