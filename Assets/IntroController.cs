@@ -25,7 +25,6 @@ public class IntroController : MonoBehaviour
     IEnumerator ButtonAppear()
     {
         canvas.GetComponent<CanvasGroup>().alpha = 0;
-        yield return new WaitForSeconds(2);
         for(int i = 0; i<100; i++)
         {
             yield return new WaitForSeconds(0.02f);
