@@ -19,7 +19,6 @@ public class UnlockExit : MonoBehaviour
     void Start()
     {
         inventory = GetComponent<Inventory>();
-        //LO COMENTE POR MIENTRAS PARA EL FIRST FLOOR -Andres
         boxColliderDoor = GameObject.FindGameObjectWithTag("LockDoor").GetComponent<BoxCollider2D>();
 
         DisaibleAllIcons();
@@ -38,6 +37,7 @@ public class UnlockExit : MonoBehaviour
             if (unlockDoor && !colliderDoorOff) 
             {
                 boxColliderDoor.enabled = !boxColliderDoor.enabled;
+                boxColliderDoor.gameObject.SetActive(false);
                 colliderDoorOff = true;
                 RemovePlayerKeys();
             }
