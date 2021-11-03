@@ -50,9 +50,9 @@ public class WinAndDeathUI : MonoBehaviour
         DeathCanvasUI.SetActive(true);
         DeadTxt.SetActive(true);
         ContinueTxt.SetActive(false);
-        YesBtn.SetActive(false);
-        NoBtn.SetActive(false);
-        WinTxt.SetActive(false);
+        //YesBtn.SetActive(false);
+        //NoBtn.SetActive(false);
+        //WinTxt.SetActive(false);
         StartCoroutine(WaitForIntro());
 
     }
@@ -61,8 +61,8 @@ public class WinAndDeathUI : MonoBehaviour
         Player.GetComponent<Collider2D>().enabled = false;
         GameUI.SetActive(false);
         DeathCanvasUI.SetActive(true);
-        DeadTxt.SetActive(false);
-        WinTxt.SetActive(false);
+        //DeadTxt.SetActive(false);
+        //WinTxt.SetActive(false);
         ContinueTxt.SetActive(true);
         YesBtn.SetActive(true);
         NoBtn.SetActive(true);
@@ -82,8 +82,8 @@ public class WinAndDeathUI : MonoBehaviour
         GameUI.SetActive(false);
         DeathCanvasUI.SetActive(true);
         WinTxt.SetActive(true);
-        ContinueTxt.SetActive(false);
-        DeadTxt.SetActive(false);
+        //ContinueTxt.SetActive(false);
+        //DeadTxt.SetActive(false);
         YesBtn.SetActive(false);
         NoBtn.SetActive(false);
         StartCoroutine(WaitForIntro());
