@@ -11,7 +11,7 @@ public class FinishGameController : MonoBehaviour
 
         if (player.tag.Equals("Player")) 
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("Intro");
         }
     }
 }

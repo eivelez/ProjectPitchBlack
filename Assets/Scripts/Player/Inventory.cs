@@ -23,19 +23,17 @@ public class Inventory : MonoBehaviour
     }
 
     void Update(){
-        if(hp<=0){
+        if (lives == 0)
+        {
+            SceneManager.LoadScene("Intro");
+        }
+        if (hp<=0){
             Time.timeScale = 1;
             lives-=1;
             PlayerPrefs.SetInt("Lives", lives);
             hp=MAXIMUM_HP;
             healthBar.SetHealth(hp);
             livesCounter.SetLivesCounter(lives);
-            Debug.Log("Te moriste XDDDDDDDD y te quedan: "+lives+" vidas");
-            if(lives==0){
-                Debug.Log("Te real moriste XDDDD");
-                ResetPlayerStatsAfterGameOver();
-                Time.timeScale = 0;
-            }
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
