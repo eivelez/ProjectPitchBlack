@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class FinishGameController : MonoBehaviour
 {
+    public WinAndDeathUI WinDeathUI;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject player = collision.gameObject;
 
         if (player.tag.Equals("Player")) 
         {
-            SceneManager.LoadScene("Intro");
+            WinDeathUI.Win();
         }
     }
 }

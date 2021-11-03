@@ -18,7 +18,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private HealthBarController healthBar;
     [SerializeField] private LivesCounterController livesCounter;
 
-    public DeathUI DeathUIController;
+    public WinAndDeathUI DeathUIController;
     public bool OneStateEnter;
 
     void Start(){
