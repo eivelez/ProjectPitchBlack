@@ -30971,26 +30971,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3845747353202695371, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
-      propertyPath: m_Size.x
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3845747353202695371, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
-      propertyPath: m_Size.y
-      value: 0.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 3845747353202695371, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3845747353202695371, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4170862091041522833, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
-      propertyPath: TOTAL_NUMBER_OF_KEYS
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8207106227623002790, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
       propertyPath: masterMiniGames
       value: 
