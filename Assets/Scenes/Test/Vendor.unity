@@ -59356,6 +59356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f48b8f618c41a46ad5fc10aeb1b724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinDeathUI: {fileID: 0}
 --- !u!61 &550050620
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59532,11 +59533,6 @@ PrefabInstance:
       objectReference: {fileID: 1459669271}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
---- !u!1 &662385984 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4444390953150835867, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
-  m_PrefabInstance: {fileID: 662385983}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &687294074
 GameObject:
   m_ObjectHideFlags: 0
@@ -60878,42 +60874,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3362606950182679771, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 24.100006
-      objectReference: {fileID: 0}
-    - target: {fileID: 3362606950182679771, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4897697007217067469, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -1.0697937
-      objectReference: {fileID: 0}
-    - target: {fileID: 4897697007217067469, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1.1246033
-      objectReference: {fileID: 0}
-    - target: {fileID: 5389450745138642412, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 3.201477
-      objectReference: {fileID: 0}
-    - target: {fileID: 5389450745138642412, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1.4000244
-      objectReference: {fileID: 0}
-    - target: {fileID: 5500230465244932219, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 27.548004
-      objectReference: {fileID: 0}
-    - target: {fileID: 5500230465244932219, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8257315522402288229, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
-      propertyPath: masterMiniGames
-      value: 
-      objectReference: {fileID: 662385984}
     - target: {fileID: 8285159855341361285, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
       propertyPath: m_Name
       value: Player

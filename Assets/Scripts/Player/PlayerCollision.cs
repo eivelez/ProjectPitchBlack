@@ -56,7 +56,7 @@ public class PlayerCollision : MonoBehaviour
     }
 
     private void PickUpFinger(Collider2D other){
-        playerInventory.fingers += 1;
+        playerInventory.Fingers += 1;
         AudioSource.PlayClipAtPoint(fingerSFX, transform.position);
         Destroy(other.gameObject);
     }

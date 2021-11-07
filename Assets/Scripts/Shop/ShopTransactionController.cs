@@ -24,12 +24,12 @@ public class ShopTransactionController : MonoBehaviour
         HealingItem healingItem = shop.productsDictionary[slot.name];
 
         //We check the amount of money (fingers) of the player
-        if (playerInventory.fingers >= healingItem.price)
+        if (playerInventory.Fingers >= healingItem.price)
         {
             healingItem.Use(playerInventory);
             shop.productsDictionary[slot.name] = null;
             slot.SetActive(false);
-            playerInventory.fingers -= healingItem.price;
+            playerInventory.Fingers -= healingItem.price;
             AudioSource.PlayClipAtPoint(shopSFX, transform.position);
         }
     }

@@ -12,13 +12,25 @@ public class Inventory : MonoBehaviour
     private const int MAXIMUM_DEFENSE = 50;
     public int defense = 0;
     public int lives;
-    public int fingers = 0;
+    private int fingers;
 
     //Controllers
     [SerializeField] private HealthBarController healthBar;
     [SerializeField] private LivesCounterController livesCounter;
-
+    [SerializeField] private FingersCountController fingersCounter;
     public WinAndDeathUI DeathUIController;
+
+    //Properties
+    public int Fingers
+    {
+        get { return fingers; }
+        set
+        {
+            fingers = value;
+            fingersCounter.SetFingerCounter(value);
+        }
+    }
+
     public bool OneStateEnter;
 
     void Start(){
@@ -46,6 +58,7 @@ public class Inventory : MonoBehaviour
         SetPlayerLives();
         SetPlayerMaxHp();
         SetPlayerDefense();
+        SetPlayerFingers();
         Debug.Log("lives: "+lives + "   hp:" + hp);
     }
 
@@ -69,6 +82,10 @@ public class Inventory : MonoBehaviour
             PlayerPrefs.SetInt("Defense", 0);
         }
         defense=PlayerPrefs.GetInt("Defense");
+    }
+
+    private void SetPlayerFingers(){
+        Fingers = 0;
     }
 
     private void ResetPlayerStatsAfterGameOver(){
