@@ -18,7 +18,7 @@ public class Graph : MonoBehaviour
     void Start()
     {
         CreateGraph();
-        RenderGraphForTest();
+        //RenderGraphForTest();
         /*List<Node> test = PathFinding(new Vector2(20.5f, -0.5f), new Vector2(3.5f, 1.5f));
 
         foreach (Node node in test)

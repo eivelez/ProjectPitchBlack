@@ -9,27 +9,21 @@ public class Enemy : MonoBehaviour
 
     EnemyMovement movement;
     EnemyState state;
+    EnemyAnimation enemyAnimation;
+
     // Start is called before the first frame update
     void Start()
     {
         movement = GetComponent<EnemyMovement>();
         state = GetComponent<EnemyState>();
+        enemyAnimation = GetComponent<EnemyAnimation>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateState();
-        UpdateMovement();
-    }
-
-    void UpdateState()
-    {
-        state.UpdateState(this);
-    }
-
-    void UpdateMovement()
-    {
         movement.UpdateMovement(this, velocity);
+        state.UpdateState(this);
+        enemyAnimation.UpdateAnimation(this);
     }
 }
