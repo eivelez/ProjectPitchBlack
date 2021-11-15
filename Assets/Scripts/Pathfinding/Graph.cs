@@ -19,12 +19,6 @@ public class Graph : MonoBehaviour
     {
         CreateGraph();
         //RenderGraphForTest();
-        /*List<Node> test = PathFinding(new Vector2(20.5f, -0.5f), new Vector2(3.5f, 1.5f));
-
-        foreach (Node node in test)
-        {
-            Instantiate(prefab, new Vector3(node.worldX, node.worldY, 0), Quaternion.identity);
-        }*/
 
         IsInitialized = true;
     }
