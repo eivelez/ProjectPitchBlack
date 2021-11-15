@@ -48,12 +48,6 @@ public class Graph : MonoBehaviour
         } 
     }
 
-    private Node GetNode(Vector2 position){
-        int positionXInGraph = (int) (position.x - bounds.min.x);
-        int positionYInGraph = (int) (position.y - bounds.min.y);
-        return nodeGraph[positionXInGraph, positionYInGraph];
-    }
-
     private void RenderGraphForTest(){
         foreach (Node node in nodeGraph)
         {
@@ -79,10 +73,11 @@ public class Graph : MonoBehaviour
 
     public List<Node> PathFinding(Vector2 start, Vector2 goal){
         Node startNode = GetNode(start);
+        Node goalNode = GetNode(goal);
+
         startNode.gValue = 0;
         startNode.hValue = EuclideanDistance(start.x, start.y, goal.x, goal.y);
 
-        Node goalNode = GetNode(goal);
 
         List<Node> TO_VISIT = new List<Node>{startNode};
         List<Node> VISITED = new List<Node>();
@@ -115,6 +110,48 @@ public class Graph : MonoBehaviour
             VISITED.Add(nodeSelected);
         }
 
+        return null;
+    }
+
+    private Node GetNode(Vector2 position){
+        int positionXInGraph = (int) (position.x - bounds.min.x);
+        int positionYInGraph = (int) (position.y - bounds.min.y);
+        Node nodeFound = nodeGraph[positionXInGraph, positionYInGraph];
+
+        //If nodeFound equals null then search for a non-null neighbour
+        while (nodeFound == null){
+            nodeFound = GetAnyNeighbor(positionXInGraph, positionYInGraph);
+        }
+
+        return nodeFound;
+    }
+
+    private Node GetAnyNeighbor(int positionX, int positionY){
+        Node node;
+        for (int x = positionX - 1; x <= positionX + 1; x++)
+        {
+            for (int y = positionY - 1; y <= positionY + 1; y++)
+            {
+                if (x == positionX && y == positionY)
+                {
+                    continue;
+                }
+                try
+                {
+                    node = nodeGraph[x,y];
+                }
+                catch
+                {
+                    continue;
+                }
+                if (node == null)
+                {
+                    continue;
+                }
+
+                return node;
+            }
+        }
         return null;
     }
 

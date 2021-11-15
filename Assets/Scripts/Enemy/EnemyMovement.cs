@@ -21,7 +21,7 @@ public class EnemyMovement : MonoBehaviour
         }
 
         if (timerBool){
-            Invoke("RecalculatePathFinding", 1f);
+            Invoke("RecalculatePathFinding", 0.5f);
             timerBool = false;
         }
 
@@ -30,13 +30,23 @@ public class EnemyMovement : MonoBehaviour
 
     private void RecalculatePathFinding(){
         pathToPlayer = enemy.graph.RecalculatePathFinding(this.transform.position, player.transform.position);
+        if (HasEnemyReachedNode(pathToPlayer[pathToPlayer.Count-1], transform.position))
+        {
+            pathToPlayer.RemoveAt(pathToPlayer.Count-1);
+        }
         timerBool = true;
     }
+
+    private bool HasEnemyReachedNode(Node targetNode, Vector2 enemyPosition)
+    {
+        return (Vector3.Distance(targetNode.GetPosition(), transform.position) < 0.5f);
+    }
+
 
     private void GoToPoint(Node node)
     {
         //We check if enemy reached node to go to the next one, if so we remove it from the list
-        if (Vector3.Distance(node.GetPosition(), transform.position) < 0.1f)
+        if (HasEnemyReachedNode(node, transform.position))
         {
             pathToPlayer.RemoveAt(pathToPlayer.Count-1);
             return;
