@@ -12,7 +12,6 @@ public class EnemyMovement : MonoBehaviour
     public void Setup(Enemy enemy){
         this.enemy = enemy;
         pathToPlayer = enemy.graph.PathFinding(this.transform.position, player.transform.position);
-        Debug.Log("aaaaaaaaaaaaaaaaa");
     }
 
     public void UpdateMovement()
@@ -36,14 +35,17 @@ public class EnemyMovement : MonoBehaviour
 
     private void GoToPoint(Node node)
     {
+        //We check if enemy reached node to go to the next one, if so we remove it from the list
         if (Vector3.Distance(node.GetPosition(), transform.position) < 0.1f)
         {
             pathToPlayer.RemoveAt(pathToPlayer.Count-1);
             return;
         }
 
+        //A vector for the animations
         enemy.direction = (node.GetPosition() - transform.position).normalized;
 
+        //To actually move the enemy
         float step = enemy.SPEED * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, node.GetPosition(), step);
     }
