@@ -21,7 +21,7 @@ public class EnemyMovement : MonoBehaviour
         }
 
         if (timerBool){
-            Invoke("RecalculatePathFinding", 0.5f);
+            Invoke("RecalculatePathFinding", 0.3f);
             timerBool = false;
         }
 
