@@ -59,15 +59,12 @@ public class Graph : MonoBehaviour
             int minimumHeight = Mathf.FloorToInt(objectPosition.y - objectDimensions.y);
             int maximumHeight = Mathf.FloorToInt(objectPosition.y + objectDimensions.y);
 
-            Debug.Log(minimumWidth+ " " +maximumWidth);
-            Debug.Log(minimumHeight+ " " +maximumHeight);
             for (int x = minimumWidth; x <= maximumWidth; x++)
             {
                 for (int y = minimumHeight; y <= maximumHeight; y++)
                 {
                     try
                     {
-                        Debug.Log(x+ " " +y);
                         nodeGraph[x - floorTilemap.cellBounds.min.x, y - floorTilemap.cellBounds.min.y] = null;
                     }
                     catch
