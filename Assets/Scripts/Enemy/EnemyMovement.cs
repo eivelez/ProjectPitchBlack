@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     private Enemy enemy;
     [SerializeField] private GameObject player;
-    private List<Node> pathToPlayer = new List<Node>();
+    private List<GraphNode> pathToPlayer = new List<GraphNode>();
     private bool timerBool = true;
 
     public void Setup(Enemy enemy){
@@ -37,13 +37,13 @@ public class EnemyMovement : MonoBehaviour
         timerBool = true;
     }
 
-    private bool HasEnemyReachedNode(Node targetNode, Vector2 enemyPosition)
+    private bool HasEnemyReachedNode(GraphNode targetNode, Vector2 enemyPosition)
     {
         return (Vector3.Distance(targetNode.GetPosition(), transform.position) < 0.5f);
     }
 
 
-    private void GoToPoint(Node node)
+    private void GoToPoint(GraphNode node)
     {
         //We check if enemy reached node to go to the next one, if so we remove it from the list
         if (HasEnemyReachedNode(node, transform.position))

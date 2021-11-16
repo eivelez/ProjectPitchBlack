@@ -9,7 +9,7 @@ public class Graph : MonoBehaviour
     [SerializeField] private Tilemap floorTilemap;
     [SerializeField] private Tilemap wallTilemap; 
     [SerializeField] private Tilemap objectTilemap; 
-    private Node[,] nodeGraph;
+    private GraphNode[,] nodeGraph;
     [SerializeField] GameObject nodePrefab;
     BoundsInt bounds;
     [HideInInspector] public bool IsInitialized { get; private set;}
@@ -26,8 +26,9 @@ public class Graph : MonoBehaviour
     private void CreateGraph()
     {
         bounds = floorTilemap.cellBounds;
-        nodeGraph = new Node[bounds.size.x, bounds.size.y];
+        nodeGraph = new GraphNode[bounds.size.x, bounds.size.y];
 
+        //Fill the nodeGraphs with nodes and nulls
         for (int x = bounds.x; x < bounds.max.x; x++) {
             for (int y= bounds.min.y; y < bounds.max.y; y++) {
                 TileBase floorTile = floorTilemap.GetTile(new Vector3Int(x,y,0));
@@ -42,14 +43,44 @@ public class Graph : MonoBehaviour
                 } 
                 else 
                 {
-                    nodeGraph[graphX, graphY] = new Node(graphX, graphY, x + 0.5f, y + 0.5f);
+                    nodeGraph[graphX, graphY] = new GraphNode(graphX, graphY, x + 0.5f, y + 0.5f);
                 }
             }
         } 
+
+        //With the graph created, one last thing is to nullify nodes that are on top of HidingPlaces
+        GameObject[] hidingPlaceList = GameObject.FindGameObjectsWithTag("HidingPlace");
+        foreach (GameObject hidingPlace in hidingPlaceList)
+        {
+            Vector2 objectDimensions = (hidingPlace.GetComponent<SpriteRenderer>().bounds.size)/2;
+            Vector2 objectPosition = hidingPlace.transform.position;
+            int minimumWidth = Mathf.FloorToInt(objectPosition.x - objectDimensions.x);
+            int maximumWidth = Mathf.FloorToInt(objectPosition.x + objectDimensions.x);
+            int minimumHeight = Mathf.FloorToInt(objectPosition.y - objectDimensions.y);
+            int maximumHeight = Mathf.FloorToInt(objectPosition.y + objectDimensions.y);
+
+            Debug.Log(minimumWidth+ " " +maximumWidth);
+            Debug.Log(minimumHeight+ " " +maximumHeight);
+            for (int x = minimumWidth; x <= maximumWidth; x++)
+            {
+                for (int y = minimumHeight; y <= maximumHeight; y++)
+                {
+                    try
+                    {
+                        Debug.Log(x+ " " +y);
+                        nodeGraph[x - floorTilemap.cellBounds.min.x, y - floorTilemap.cellBounds.min.y] = null;
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+                }
+            }
+        }
     }
 
     private void RenderGraphForTest(){
-        foreach (Node node in nodeGraph)
+        foreach (GraphNode node in nodeGraph)
         {
             if (node != null){
                 Instantiate(nodePrefab, new Vector3(node.worldX, node.worldY, 0), Quaternion.identity);
@@ -57,13 +88,13 @@ public class Graph : MonoBehaviour
         }
     }
 
-    public List<Node> RecalculatePathFinding(Vector2 start, Vector2 goal){
+    public List<GraphNode> RecalculatePathFinding(Vector2 start, Vector2 goal){
         ResetNodes();
         return PathFinding(start, goal);
     }
 
     private void ResetNodes(){
-        foreach (Node node in nodeGraph)
+        foreach (GraphNode node in nodeGraph)
         {
             if (node != null){
                 node.ResetNode();
@@ -71,28 +102,28 @@ public class Graph : MonoBehaviour
         }
     }
 
-    public List<Node> PathFinding(Vector2 start, Vector2 goal){
-        Node startNode = GetNode(start);
-        Node goalNode = GetNode(goal);
+    public List<GraphNode> PathFinding(Vector2 start, Vector2 goal){
+        GraphNode startNode = GetNode(start);
+        GraphNode goalNode = GetNode(goal);
 
         startNode.gValue = 0;
         startNode.hValue = EuclideanDistance(start.x, start.y, goal.x, goal.y);
 
 
-        List<Node> TO_VISIT = new List<Node>{startNode};
-        List<Node> VISITED = new List<Node>();
+        List<GraphNode> TO_VISIT = new List<GraphNode>{startNode};
+        List<GraphNode> VISITED = new List<GraphNode>();
 
         while (TO_VISIT.Count != 0){
-            Node nodeSelected = TO_VISIT.OrderBy(n=>n.F()).First();
+            GraphNode nodeSelected = TO_VISIT.OrderBy(n=>n.F()).First();
             TO_VISIT.Remove(nodeSelected);
 
             if (nodeSelected == goalNode){
                 return BuildPath(nodeSelected);
             }
 
-            List<Node> neighbors = GetNeighbors(nodeSelected);
+            List<GraphNode> neighbors = GetNeighbors(nodeSelected);
 
-            foreach (Node neighbor in neighbors)
+            foreach (GraphNode neighbor in neighbors)
             {
                 if (VISITED.Contains(neighbor)){
                     continue;
@@ -113,10 +144,10 @@ public class Graph : MonoBehaviour
         return null;
     }
 
-    private Node GetNode(Vector2 position){
+    private GraphNode GetNode(Vector2 position){
         int positionXInGraph = (int) (position.x - bounds.min.x);
         int positionYInGraph = (int) (position.y - bounds.min.y);
-        Node nodeFound = nodeGraph[positionXInGraph, positionYInGraph];
+        GraphNode nodeFound = nodeGraph[positionXInGraph, positionYInGraph];
 
         //If nodeFound equals null then search for a non-null neighbour
         while (nodeFound == null){
@@ -126,8 +157,8 @@ public class Graph : MonoBehaviour
         return nodeFound;
     }
 
-    private Node GetAnyNeighbor(int positionX, int positionY){
-        Node node;
+    private GraphNode GetAnyNeighbor(int positionX, int positionY){
+        GraphNode node;
         for (int x = positionX - 1; x <= positionX + 1; x++)
         {
             for (int y = positionY - 1; y <= positionY + 1; y++)
@@ -161,8 +192,8 @@ public class Graph : MonoBehaviour
         return Mathf.Sqrt(dX * dX + dY * dY);
     }
 
-    private List<Node> GetNeighbors(Node node){
-        List<Node> neighbors = new List<Node>();
+    private List<GraphNode> GetNeighbors(GraphNode node){
+        List<GraphNode> neighbors = new List<GraphNode>();
 
         for (int x = node.graphX - 1; x <= node.graphX + 1; x++)
         {
@@ -171,7 +202,7 @@ public class Graph : MonoBehaviour
                 if (x == node.graphX && y == node.graphY){
                     continue;
                 }
-                Node neighbor;
+                GraphNode neighbor;
                 try{
                     neighbor = nodeGraph[x,y];
                 }
@@ -189,15 +220,47 @@ public class Graph : MonoBehaviour
         return neighbors;
     }
 
-    private List<Node> BuildPath(Node goalNode){
-        List<Node> path = new List<Node>();
+    private List<GraphNode> BuildPath(GraphNode goalNode){
+        List<GraphNode> path = new List<GraphNode>();
 
-        Node currentNode = goalNode;
+        GraphNode currentNode = goalNode;
         while (currentNode != null){
             path.Add(currentNode);
             currentNode = currentNode.cameFrom;
         }
 
         return path;
+    }
+}
+
+
+public class GraphNode
+{
+    public GraphNode cameFrom;
+    public int graphX;
+    public int graphY;
+    public float worldX;
+    public float worldY;
+    public int gValue = int.MaxValue;
+    public float hValue;
+
+    public GraphNode(int graphX, int graphY, float worldX, float worldY){
+        this.graphX = graphX;
+        this.graphY = graphY;
+        this.worldX = worldX;
+        this.worldY = worldY;
+    }
+
+    public void ResetNode(){
+        gValue = int.MaxValue;
+        cameFrom = null;
+    }
+
+    public float F(){
+        return gValue + hValue;
+    }
+
+    public Vector3 GetPosition(){
+        return new Vector3(worldX, worldY, 0);
     }
 }
