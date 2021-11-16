@@ -16,13 +16,13 @@ public class EnemyMovement : MonoBehaviour
 
     public void UpdateMovement()
     {
-        if (pathToPlayer.Count == 0){
-            return;
-        }
-
         if (timerBool){
             Invoke("RecalculatePathFinding", 0.3f);
             timerBool = false;
+        }
+        
+        if (pathToPlayer.Count == 0){
+            return;
         }
 
         GoToPoint(pathToPlayer[pathToPlayer.Count-1]);
@@ -30,9 +30,12 @@ public class EnemyMovement : MonoBehaviour
 
     private void RecalculatePathFinding(){
         pathToPlayer = enemy.graph.RecalculatePathFinding(this.transform.position, player.transform.position);
-        if (HasEnemyReachedNode(pathToPlayer[pathToPlayer.Count-1], transform.position))
+        if (pathToPlayer != null)
         {
-            pathToPlayer.RemoveAt(pathToPlayer.Count-1);
+            if (HasEnemyReachedNode(pathToPlayer[pathToPlayer.Count-1], transform.position))
+            {
+                pathToPlayer.RemoveAt(pathToPlayer.Count-1);
+            }
         }
         timerBool = true;
     }

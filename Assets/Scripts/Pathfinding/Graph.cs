@@ -106,6 +106,10 @@ public class Graph : MonoBehaviour
         GraphNode startNode = GetNode(start);
         GraphNode goalNode = GetNode(goal);
 
+        if (startNode == null || goalNode == null){
+            return null;
+        }
+
         startNode.gValue = 0;
         startNode.hValue = EuclideanDistance(start.x, start.y, goal.x, goal.y);
 
