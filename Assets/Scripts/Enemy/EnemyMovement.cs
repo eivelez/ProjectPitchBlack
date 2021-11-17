@@ -5,19 +5,28 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private Enemy enemy;
-    [SerializeField] private GameObject player;
     private List<GraphNode> pathToPlayer = new List<GraphNode>();
     private bool timerBool = true;
+    private bool waiting = false;
+    private Vector2 randomPoint;
+    private float WAIT_TIME = 3f;
+    private float TIME_TO_RECALCULATE_PATH = 0.3f;
 
     public void Setup(Enemy enemy){
         this.enemy = enemy;
-        pathToPlayer = enemy.graph.PathFinding(this.transform.position, player.transform.position);
+        randomPoint = enemy.spawnPoint;
+        //pathToPlayer = enemy.graph.PathFinding(this.transform.position, enemy.player.transform.position);
     }
 
     public void UpdateMovement()
     {
+        //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa
+    }
+
+    public void Attack()
+    {
         if (timerBool){
-            Invoke("RecalculatePathFinding", 0.3f);
+            Invoke("RecalculatePathFinding", TIME_TO_RECALCULATE_PATH);
             timerBool = false;
         }
         
@@ -25,14 +34,14 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
 
-        GoToPoint(pathToPlayer[pathToPlayer.Count-1]);
+        GoToNode(pathToPlayer[pathToPlayer.Count-1]);
     }
 
     private void RecalculatePathFinding(){
-        pathToPlayer = enemy.graph.RecalculatePathFinding(this.transform.position, player.transform.position);
+        pathToPlayer = enemy.graph.RecalculatePathFinding(this.transform.position, enemy.player.transform.position);
         if (pathToPlayer != null)
         {
-            if (HasEnemyReachedNode(pathToPlayer[pathToPlayer.Count-1], transform.position))
+            if (HasEnemyReachedPoint(pathToPlayer[pathToPlayer.Count-1].GetPosition()))
             {
                 pathToPlayer.RemoveAt(pathToPlayer.Count-1);
             }
@@ -40,26 +49,61 @@ public class EnemyMovement : MonoBehaviour
         timerBool = true;
     }
 
-    private bool HasEnemyReachedNode(GraphNode targetNode, Vector2 enemyPosition)
+    private bool HasEnemyReachedPoint(Vector2 point)
     {
-        return (Vector3.Distance(targetNode.GetPosition(), transform.position) < 0.5f);
+        return (Vector3.Distance(point, transform.position) < 0.5f);
     }
 
 
-    private void GoToPoint(GraphNode node)
+    private void GoToNode(GraphNode node)
     {
         //We check if enemy reached node to go to the next one, if so we remove it from the list
-        if (HasEnemyReachedNode(node, transform.position))
+        if (HasEnemyReachedPoint(node.GetPosition()))
         {
             pathToPlayer.RemoveAt(pathToPlayer.Count-1);
             return;
         }
 
-        //A vector for the animations
-        enemy.direction = (node.GetPosition() - transform.position).normalized;
-
         //To actually move the enemy
+        GoToPoint(node.GetPosition());
+    }
+
+    public void Roam()
+    {
+        if (HasEnemyReachedPoint(randomPoint) && !waiting)
+        {
+            waiting = true;
+            StartCoroutine(WaitBeforeMoving(WAIT_TIME));
+        }
+
+        GoToPoint(randomPoint);
+    }
+
+    IEnumerator WaitBeforeMoving(float time)
+    {
+        yield return new WaitForSeconds(time);
+        randomPoint = ((Vector2) enemy.spawnPoint) + Random.insideUnitCircle * enemy.RADIUS_OF_SPAWN;
+        
+        //If the randomPoint is though a wall, the randomPoint will be change to be the wall
+        Vector2 direction = randomPoint - (Vector2)transform.position;
+        RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, direction, Vector2.Distance(randomPoint, transform.position));
+        if (raycastHit2D.collider != null)
+        {
+            randomPoint = raycastHit2D.point;
+        }
+        waiting = false;
+    }
+
+    private void GoToPoint(Vector2 point)
+    {
+        //A vector for the animations
+        enemy.direction = (point - (Vector2)transform.position).normalized;
+
         float step = enemy.SPEED * Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, node.GetPosition(), step);
+        transform.position = Vector2.MoveTowards(transform.position, point, step);
+    }
+
+    public void Return(){
+        GoToPoint(enemy.spawnPoint);
     }
 }

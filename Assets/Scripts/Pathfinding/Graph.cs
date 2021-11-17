@@ -18,7 +18,7 @@ public class Graph : MonoBehaviour
     void Start()
     {
         CreateGraph();
-        RenderGraphForTest();
+        //RenderGraphForTest();
 
         IsInitialized = true;
     }
