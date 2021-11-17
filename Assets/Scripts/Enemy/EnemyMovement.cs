@@ -5,9 +5,10 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private Enemy enemy;
-    private List<GraphNode> pathToPlayer = new List<GraphNode>();
+    private List<GraphNode> pathToTarget = new List<GraphNode>();
     private bool timerBool = true;
     private bool waiting = false;
+    private bool pathToSpawnCalculated = false;
     private Vector2 randomPoint;
     private float WAIT_TIME = 3f;
     private float TIME_TO_RECALCULATE_PATH = 0.3f;
@@ -18,32 +19,28 @@ public class EnemyMovement : MonoBehaviour
         //pathToPlayer = enemy.graph.PathFinding(this.transform.position, enemy.player.transform.position);
     }
 
-    public void UpdateMovement()
-    {
-        //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa
-    }
-
     public void Attack()
     {
+        pathToSpawnCalculated = false;
         if (timerBool){
             Invoke("RecalculatePathFinding", TIME_TO_RECALCULATE_PATH);
             timerBool = false;
         }
         
-        if (pathToPlayer.Count == 0){
+        if (pathToTarget == null || pathToTarget.Count == 0){
             return;
         }
 
-        GoToNode(pathToPlayer[pathToPlayer.Count-1]);
+        GoToNode(pathToTarget[pathToTarget.Count-1]);
     }
 
     private void RecalculatePathFinding(){
-        pathToPlayer = enemy.graph.RecalculatePathFinding(this.transform.position, enemy.player.transform.position);
-        if (pathToPlayer != null)
+        pathToTarget = enemy.graph.RecalculatePathFinding(this.transform.position, enemy.player.transform.position);
+        if (pathToTarget != null)
         {
-            if (HasEnemyReachedPoint(pathToPlayer[pathToPlayer.Count-1].GetPosition()))
+            if (HasEnemyReachedPoint(pathToTarget[pathToTarget.Count-1].GetPosition()))
             {
-                pathToPlayer.RemoveAt(pathToPlayer.Count-1);
+                pathToTarget.RemoveAt(pathToTarget.Count-1);
             }
         }
         timerBool = true;
@@ -60,7 +57,7 @@ public class EnemyMovement : MonoBehaviour
         //We check if enemy reached node to go to the next one, if so we remove it from the list
         if (HasEnemyReachedPoint(node.GetPosition()))
         {
-            pathToPlayer.RemoveAt(pathToPlayer.Count-1);
+            pathToTarget.RemoveAt(pathToTarget.Count-1);
             return;
         }
 
@@ -70,6 +67,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void Roam()
     {
+        pathToSpawnCalculated = false;
         if (HasEnemyReachedPoint(randomPoint) && !waiting)
         {
             waiting = true;
@@ -104,6 +102,12 @@ public class EnemyMovement : MonoBehaviour
     }
 
     public void Return(){
-        GoToPoint(enemy.spawnPoint);
+        if (!pathToSpawnCalculated || pathToTarget.Count == 0)
+        {
+            pathToTarget = enemy.graph.RecalculatePathFinding(this.transform.position, enemy.spawnPoint);
+            pathToSpawnCalculated = true;
+        }
+
+        GoToNode(pathToTarget[pathToTarget.Count-1]);
     }
 }
