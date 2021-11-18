@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public GameObject player;
     [HideInInspector] public Vector2 direction = Vector2.down;
     public float SPEED = 4f;
-    public float RADIUS_OF_SPAWN = 2f;
+    public float RADIUS_OF_SPAWN = 3f;
     [HideInInspector] public Vector2 spawnPoint;
     public Graph graph;
     private bool enemyInitialized = false;

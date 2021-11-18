@@ -16,6 +16,7 @@ public class EnemyDecisionTree : MonoBehaviour
     private ObjectDecision TreeConstruction(){
         //Decisions
         ObjectDecision playerNear = new ObjectDecision(new IsPlayerNearEnemy(enemy.player, gameObject));
+        ObjectDecision playerHiding = new ObjectDecision(new IsPlayerHiding(enemy.player));
         ObjectDecision spawnPointFarAway = new ObjectDecision(new IsEnemyFarFromSpawnPoint(enemy.spawnPoint, gameObject));
 
         //Actions
@@ -24,8 +25,11 @@ public class EnemyDecisionTree : MonoBehaviour
         ActionNode returnToSpawn = new ActionNode("Return");
         
         //Tree assembly
-        playerNear.yesNode = attack;
+        playerNear.yesNode = playerHiding;
         playerNear.noNode = spawnPointFarAway;
+
+        playerHiding.yesNode = returnToSpawn;
+        playerHiding.noNode = attack;
 
         spawnPointFarAway.yesNode = returnToSpawn;
         spawnPointFarAway.noNode = roam;
