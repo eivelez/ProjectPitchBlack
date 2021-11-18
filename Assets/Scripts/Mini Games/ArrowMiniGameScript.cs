@@ -33,6 +33,7 @@ public class ArrowMiniGameScript : MonoBehaviour
     private float minGreenZone;
     private RectTransform auxGreenZone;
     private Animator transition;
+    [SerializeField] private MasterMiniGame masterMiniGame;
 
     public void Setup(Animator transition)
     {
@@ -40,7 +41,7 @@ public class ArrowMiniGameScript : MonoBehaviour
     }
 
     void OnEnable(){
-        EnemyImage.GetComponent<Image>().sprite=gameObject.GetComponent<MasterMiniGame>().Enemy;
+        EnemyImage.GetComponent<Image>().sprite=masterMiniGame.Enemy.GetComponent<SpriteRenderer>().sprite;
         gameObject.transform.localScale = new Vector3(1, 1, 1);
         Success.SetActive(false);
         Fail.SetActive(false);
@@ -160,10 +161,11 @@ public class ArrowMiniGameScript : MonoBehaviour
         //Wait for 3 seconds
         yield return new WaitForSecondsRealtime(3);
         transition.SetTrigger("Start");
-        AudioSource.PlayClipAtPoint(gameObject.GetComponent<MasterMiniGame>().ExitSound, transform.position);
+        AudioSource.PlayClipAtPoint(masterMiniGame.ExitSound, transform.position);
         yield return new WaitForSecondsRealtime(1);
         ResetVariables(position);
         yield return new WaitForSecondsRealtime(1);
+        masterMiniGame.EnemyFinishedAttacking();
         Time.timeScale = 1;
         stopper=true;
         gameObject.SetActive(false);

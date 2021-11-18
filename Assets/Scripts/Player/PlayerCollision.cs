@@ -50,7 +50,7 @@ public class PlayerCollision : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("enter Enemy");
-            masterMiniGames.GetComponent<MasterMiniGame>().setEnemy(collision.gameObject.GetComponent<SpriteRenderer>().sprite);
+            masterMiniGames.GetComponent<MasterMiniGame>().setEnemy(collision.gameObject);
             masterMiniGames.SetActive(true);
         }
     }

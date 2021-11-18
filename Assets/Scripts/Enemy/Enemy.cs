@@ -8,9 +8,25 @@ public class Enemy : MonoBehaviour
     [HideInInspector] public Vector2 direction = Vector2.down;
     public float SPEED = 4f;
     public float RADIUS_OF_SPAWN = 0.5f;
+    [SerializeField] private float SECONDS_BEFORE_MOVING_AGAIN = 3f;
     [HideInInspector] public Vector2 spawnPoint;
     public Graph graph;
     private bool enemyInitialized = false;
+    private bool justAttacked = false;
+    private CapsuleCollider2D enemyCollider;
+    [HideInInspector] public bool JustAttacked
+    {
+        get { return justAttacked; }
+        set
+        {
+            if (value == true)
+            {
+                enemyCollider.enabled = false;
+                StartCoroutine(DelayEnemyActivity());
+            }
+            justAttacked = value;
+        }
+    }
 
     //Controllers
     [HideInInspector] public EnemyMovement enemyMovement;
@@ -21,6 +37,7 @@ public class Enemy : MonoBehaviour
     IEnumerator Start()
     {
         spawnPoint = transform.position;
+        enemyCollider = GetComponent<CapsuleCollider2D>();
         enemyMovement = GetComponent<EnemyMovement>();
         enemyAnimation = GetComponent<EnemyAnimation>();
         enemyDecisionTree = GetComponent<EnemyDecisionTree>();
@@ -36,9 +53,14 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         if (enemyInitialized){
-            //enemyMovement.UpdateMovement();
             enemyAnimation.UpdateAnimation(this);
             enemyDecisionTree.UpdateDecision();
         }
+    }
+
+    private IEnumerator DelayEnemyActivity(){
+        yield return new WaitForSeconds(SECONDS_BEFORE_MOVING_AGAIN);
+        enemyCollider.enabled = true;
+        JustAttacked = false;
     }
 }

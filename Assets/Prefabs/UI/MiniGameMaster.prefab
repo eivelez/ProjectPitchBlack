@@ -2309,6 +2309,7 @@ MonoBehaviour:
   keyText: {fileID: 4444390952778889716}
   countDownText: {fileID: 4444390953176741616}
   numberOfMash: {fileID: 4444390953124262627}
+  masterMiniGame: {fileID: 4444390953150835864}
 --- !u!114 &4444390953150835866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2332,6 +2333,7 @@ MonoBehaviour:
   keyText5: {fileID: 4444390952913259103}
   countDownText: {fileID: 4444390952330719504}
   numberOfSequence: {fileID: 4444390953432611218}
+  masterMiniGame: {fileID: 4444390953150835864}
 --- !u!114 &5859042157477004332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2356,6 +2358,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   countDownText: {fileID: 1332933166}
   pointerSpeed: 3000
+  masterMiniGame: {fileID: 4444390953150835864}
 --- !u!1 &4444390953166655604
 GameObject:
   m_ObjectHideFlags: 0

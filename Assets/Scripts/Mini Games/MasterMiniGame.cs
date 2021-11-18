@@ -11,7 +11,7 @@ public class MasterMiniGame : MonoBehaviour
     [SerializeField] private AudioClip EnterSound;
     [SerializeField] public AudioClip ExitSound;
 
-    public Sprite Enemy;
+    public GameObject Enemy;
 
     [SerializeField] private Animator transition;
 
@@ -70,8 +70,12 @@ public class MasterMiniGame : MonoBehaviour
         selectedMiniGame.SetActive(true);
     }
 
-    public void setEnemy(Sprite enemyPassed){
+    public void setEnemy(GameObject enemyPassed){
         Enemy=enemyPassed;
+    }
+
+    public void EnemyFinishedAttacking(){
+        Enemy.GetComponent<Enemy>().JustAttacked = true;
     }
 
 }

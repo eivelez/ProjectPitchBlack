@@ -40,6 +40,11 @@ public class EnemyDecisionTree : MonoBehaviour
 
     public void UpdateDecision()
     {
+        //Check first if the enemy just attacked the player to give it time to escape
+        if (enemy.JustAttacked){
+            return;
+        }
+
         ActionNode result = (ActionNode) root.Decide();
         //Debug.Log(result.name);
 
