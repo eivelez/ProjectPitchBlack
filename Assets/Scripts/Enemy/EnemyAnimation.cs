@@ -18,5 +18,6 @@ public class EnemyAnimation : MonoBehaviour
         animator.SetFloat("Horizontal", enemy.direction.x);
         animator.SetFloat("Vertical", enemy.direction.y);
         animator.SetFloat("Speed", enemy.direction.sqrMagnitude);
+        animator.SetBool("JustAttacked", enemy.JustAttacked);
     }
 }
