@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class DialogUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text textLable;
+    public GameObject EKey;
     public GameObject Image1;
     public GameObject Image2;
     public GameObject Image3;
@@ -113,7 +114,7 @@ public class DialogUI : MonoBehaviour
                 dialogIndex++;
                 break;
             case 10:
-                SceneManager.LoadScene("AlphaVersion");
+                SceneManager.LoadScene("Level1");
                 break;
             }
         }
@@ -121,10 +122,12 @@ public class DialogUI : MonoBehaviour
 
     IEnumerator DialogCoroutine(string dialog,int time)
     {
+        EKey.SetActive(false);
         next=false;
         GetComponent<TextWritter>().Run(dialog,textLable); 
         yield return new WaitForSeconds(time);
         next=true;
+        EKey.SetActive(true);
 
     }
 
