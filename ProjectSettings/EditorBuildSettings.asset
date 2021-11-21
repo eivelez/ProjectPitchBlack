@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AlphaVersion.unity
     guid: d772df7850d2bbe4abde8b4741d1b822
+  - enabled: 1
+    path: Assets/Scenes/IntroCutscene.unity
+    guid: d0ece13d17733674ca01faecce8c161b
   m_configObjects: {}

@@ -53,6 +53,6 @@ public class IntroController : MonoBehaviour
                 break;
             }
         }
-        SceneManager.LoadScene("AlphaVersion");
+        SceneManager.LoadScene("IntroCutscene");
     }
 }

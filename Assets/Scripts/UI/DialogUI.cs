@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogUI : MonoBehaviour
 {
@@ -108,8 +109,11 @@ public class DialogUI : MonoBehaviour
                 textLable.text="";
                 Image9.SetActive(false);
                 //GetComponent<TextWritter>().Run("PLZZZ Just Start the Game",textLable);
-                StartCoroutine(DialogCoroutine("Con lo poco que tiene, John se arma de valor y se dirige a la torre fragma a afrontar los horrores de la niebla y así escapar de lo que queda del pueblo",18));
+                StartCoroutine(DialogCoroutine("Con lo poco que tiene, John se arma de valor y se dirige a la torre fragma a afrontar los horrores de la niebla y así escapar de lo que queda del pueblo",16));
                 dialogIndex++;
+                break;
+            case 10:
+                SceneManager.LoadScene("AlphaVersion");
                 break;
             }
         }
