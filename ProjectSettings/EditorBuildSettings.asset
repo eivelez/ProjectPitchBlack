@@ -15,12 +15,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1.unity
     guid: d772df7850d2bbe4abde8b4741d1b822
   - enabled: 1
-    path: Assets/Scenes/IntroCutscene.unity
+    path: Assets/Scenes/Cutscenes + Transitions/MidCutscene.unity
+    guid: e1425000d076a8b4d9877d1d25897327
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes + Transitions/IntroCutscene.unity
     guid: d0ece13d17733674ca01faecce8c161b
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 09955ad102366ab41800b5fa6a9a16e8
   - enabled: 1
-    path: Assets/Scenes/Level 1-2 Trans.unity
+    path: Assets/Scenes/Cutscenes + Transitions/Level 1-2 Trans.unity
     guid: d9e94b84a59bbc2468f80cffbe83a071
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes + Transitions/FinalCutscene.unity
+    guid: e9ae05fe6c9c37a4b90b65d7426829c2
   m_configObjects: {}
