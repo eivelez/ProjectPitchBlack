@@ -12,20 +12,44 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: a38c0243fb297474b910c337e62622ee
   - enabled: 1
+    path: Assets/Scenes/Cutscenes + Transitions/IntroCutscene.unity
+    guid: d0ece13d17733674ca01faecce8c161b
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: d772df7850d2bbe4abde8b4741d1b822
   - enabled: 1
-    path: Assets/Scenes/Cutscenes + Transitions/MidCutscene.unity
-    guid: e1425000d076a8b4d9877d1d25897327
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes + Transitions/IntroCutscene.unity
-    guid: d0ece13d17733674ca01faecce8c161b
+    path: Assets/Scenes/Cutscenes + Transitions/Level 1-2 Transition.unity
+    guid: d9e94b84a59bbc2468f80cffbe83a071
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 09955ad102366ab41800b5fa6a9a16e8
   - enabled: 1
-    path: Assets/Scenes/Cutscenes + Transitions/Level 1-2 Trans.unity
-    guid: d9e94b84a59bbc2468f80cffbe83a071
+    path: Assets/Scenes/Cutscenes + Transitions/Level 2-3 Transition.unity
+    guid: 0fa80643282b2604d89cae66f81e861c
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: e8894eb5731fe3c42bf1c4067d377526
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes + Transitions/MidCutscene.unity
+    guid: e1425000d076a8b4d9877d1d25897327
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes + Transitions/Level 3-4 Transition.unity
+    guid: 3d9ca9db8cd993e46877fdde8b1026ff
+  - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: 8f4d094d10567914fae033dcb8709cd4
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes + Transitions/Level 4-5 Transition.unity
+    guid: 22d21cce299d84449966743d919f3360
+  - enabled: 1
+    path: Assets/Scenes/Level5.unity
+    guid: 36b8a30504965ce4a88067999a0b945b
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes + Transitions/Level 5-6 Transition.unity
+    guid: 71f58c795fbf7d24fae453364f5545ed
+  - enabled: 1
+    path: Assets/Scenes/Level6.unity
+    guid: bfe8d1a518f8138488533abbdb10e96f
   - enabled: 1
     path: Assets/Scenes/Cutscenes + Transitions/FinalCutscene.unity
     guid: e9ae05fe6c9c37a4b90b65d7426829c2

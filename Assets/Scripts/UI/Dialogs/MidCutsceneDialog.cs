@@ -10,6 +10,7 @@ public class MidCutsceneDialog : MonoBehaviour
     public GameObject EKey;
     public GameObject Image1;
     public GameObject Image2;
+    public AudioSource audioSource;
     private int dialogIndex=0;
     private bool next=false;
 
@@ -49,9 +50,10 @@ public class MidCutsceneDialog : MonoBehaviour
                 break;
             case 3:
                 textLable.text="";
+                audioSource.Play();
                 //Image1.SetActive(false);
                 //GetComponent<TextWritter>().Run("More Lore For Fuck Sake",textLable);
-                StartCoroutine(DialogCoroutine("La criatura se abalanza sobre John lo que resulta en ambos cayendo por las escaleras",8));
+                StartCoroutine(DialogCoroutine("La criatura se abalanza sobre John lo que resulta en ambos cayendo por las escaleras",9));
                 dialogIndex++;
                 break;
             case 4:
@@ -69,7 +71,7 @@ public class MidCutsceneDialog : MonoBehaviour
                 dialogIndex++;
                 break;
             case 6:
-                SceneManager.LoadScene("Level1");
+                SceneManager.LoadScene("Level 3-4 Transition");
                 break;
             }
         }

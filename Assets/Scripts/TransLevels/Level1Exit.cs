@@ -12,7 +12,7 @@ public class Level1Exit : MonoBehaviour
 
         if (player.tag.Equals("Player")) 
         {
-            SceneManager.LoadScene("Level 1-2 Trans");
+            SceneManager.LoadScene("Level 1-2 Transition");
         }
     }
 }

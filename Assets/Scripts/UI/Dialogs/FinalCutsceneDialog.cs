@@ -57,7 +57,7 @@ public class FinalCutsceneDialog : MonoBehaviour
                 textLable.text="";
                 //Image4.SetActive(false);
                 //GetComponent<TextWritter>().Run("PLZZZ Just Start the Game",textLable);
-                StartCoroutine(DialogCoroutine("John, casi con lágrimas en los ojos, mira al helicóptero acercarse solo que para momentos después pierda toda la esperanza al ser ignorado por su rescate",19));
+                StartCoroutine(DialogCoroutine("John, casi con lágrimas en los ojos, mira al helicóptero acercarse solo que para momentos después pierda toda la esperanza al ser ignorado por su rescate",17));
                 dialogIndex++;
                 break;
 
