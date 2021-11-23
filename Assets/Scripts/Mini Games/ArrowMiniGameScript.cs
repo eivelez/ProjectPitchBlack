@@ -99,20 +99,20 @@ public class ArrowMiniGameScript : MonoBehaviour
     }
 
     void DamageCalc(float position){
-        /*Debug.Log(position);
-        Debug.Log(minYellowZone+" "+maxYellowZone);
-        if(position>minGreenZone && position<maxGreenZone){
+        //Debug.Log(position);
+        //Debug.Log(LeftLimitYellow.transform.position.x+" "+RightLimitYellow.transform.position.x);
+        if(Pointer.transform.position.x>LeftLimitGreen.transform.position.x && Pointer.transform.position.x<RightLimitGreen.transform.position.x+8){
             //Red Zone
             Debug.Log("Green Zone");
             //Fail.SetActive(true);
             inventory.TakeDamage(10*(100-inventory.defense)/100);
-        }else if(position>minBrownZone && position<maxBrownZone){
+        }else if(position>LeftLimitBrown.transform.position.x && position<RightLimitBrown.transform.position.x){
             //Yellow Zone
             Debug.Log("Brown Zone");
             //Fail.SetActive(true);
             inventory.TakeDamage(30*(100-inventory.defense)/100);
         }
-        else if(position>minYellowZone && position<maxYellowZone){
+        else if(position>LeftLimitYellow.transform.position.x && position<RightLimitYellow.transform.position.x){
             //Brown Zone
             Debug.Log("Yellow Zone");
             //Fail.SetActive(true);
@@ -122,7 +122,7 @@ public class ArrowMiniGameScript : MonoBehaviour
             Debug.Log("Red Zone");
             //Success.SetActive(true);
             inventory.TakeDamage(50*(100-inventory.defense)/100);
-        }*/
+        }
     }
 
 

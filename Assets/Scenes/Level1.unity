@@ -31689,6 +31689,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4444390953150835865, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1743967472}
+    - target: {fileID: 4444390953150835866, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1743967472}
     - target: {fileID: 4444390953150835867, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
       propertyPath: m_Name
       value: MiniGameMaster
@@ -31697,6 +31705,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859042157477004332, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1743967472}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
 --- !u!1001 &1340358738
@@ -89999,6 +90011,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8285159855341361310, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
   m_PrefabInstance: {fileID: 873109968}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1743967472 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8276814141226552303, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
+  m_PrefabInstance: {fileID: 873109968}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743967470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 265acdebb5e4523479c58a923cbf6e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1769920420
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -37,8 +37,8 @@ public class MasterMiniGame : MonoBehaviour
         mashMinigameScript= gameObject.GetComponent<MashMinigameScript>();
         sequenceMiniGameScript= gameObject.GetComponent<SequenceMiniGameScript>();
         arrowMiniGameScript= gameObject.GetComponent<ArrowMiniGameScript>();
-        listOfMiniGames[0]=ArrowMiniGame;
-        listOfMiniGames[1]=ArrowMiniGame;
+        listOfMiniGames[0]=MashMiniGame;
+        listOfMiniGames[1]=SequenceMiniGame;
         listOfMiniGames[2]=ArrowMiniGame;
 
         for (int i = 0; i < listOfMiniGames.Length; i++) 
