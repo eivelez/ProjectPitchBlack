@@ -878,6 +878,7 @@ GameObject:
   - component: {fileID: 8207106227623002790}
   - component: {fileID: 8276814141226552303}
   - component: {fileID: 4170862091041522833}
+  - component: {fileID: 9018969101036950369}
   - component: {fileID: 7469955275503722190}
   m_Layer: 0
   m_Name: Player
@@ -1161,6 +1162,18 @@ MonoBehaviour:
   noKeyIcon: {fileID: 976584274496281834}
   eKeyIcon: {fileID: 191440828046153558}
   TOTAL_NUMBER_OF_KEYS: 1
+--- !u!114 &9018969101036950369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8285159855341361285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba7b13b1cc370f143a051bb73e2a6f13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!81 &7469955275503722190
 AudioListener:
   m_ObjectHideFlags: 0
