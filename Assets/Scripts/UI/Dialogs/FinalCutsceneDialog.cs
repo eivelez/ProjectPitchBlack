@@ -18,7 +18,7 @@ public class FinalCutsceneDialog : MonoBehaviour
     void Start()
     {
         
-        StartCoroutine(DialogCoroutine("John logra derrotar a la criatura con un ultimo golpe a la cabeza",8));
+        StartCoroutine(DialogCoroutine("John manages to defeat the creature with a final blow to the head",7));
           
     }
 
@@ -32,7 +32,7 @@ public class FinalCutsceneDialog : MonoBehaviour
                 textLable.text="";
                 //Image1.SetActive(false);
                 //GetComponent<TextWritter>().Run("More Lore For Fuck Sake",textLable);
-                StartCoroutine(DialogCoroutine("Herido y cansado John finalmente puede descansar y esperar por su rescate",8));
+                StartCoroutine(DialogCoroutine("Wounded and tired John can finally rest and wait for rescue",7));
                 dialogIndex++;
 
                 break;
@@ -41,7 +41,7 @@ public class FinalCutsceneDialog : MonoBehaviour
                 textLable.text="";
                 Image1.SetActive(false);
                 //GetComponent<TextWritter>().Run("PLZZZ Just Start the Game",textLable);
-                StartCoroutine(DialogCoroutine("Después de un tiempo John escucha el helicóptero acercarse y empieza a gritar para que lo salven",9));
+                StartCoroutine(DialogCoroutine("After a while John hears the helicopter approaching and starts shouting to be saved",9));
                 dialogIndex++;
                 break;
 
@@ -49,7 +49,7 @@ public class FinalCutsceneDialog : MonoBehaviour
                 textLable.text="";
                 //Image3.SetActive(false);
                 //GetComponent<TextWritter>().Run("More Lore For Fuck Sake",textLable);
-                StartCoroutine(DialogCoroutine("Las aspas del helicóptero se escuchan cada vez más cerca y hacen que se disipe la niebla alrededor de la azotea",12));
+                StartCoroutine(DialogCoroutine("Helicopter blades can be heard getting closer and closer, causing the fog around the rooftop to dissipate",12));
                 dialogIndex++;
                 break;
 
@@ -57,7 +57,7 @@ public class FinalCutsceneDialog : MonoBehaviour
                 textLable.text="";
                 //Image4.SetActive(false);
                 //GetComponent<TextWritter>().Run("PLZZZ Just Start the Game",textLable);
-                StartCoroutine(DialogCoroutine("John, casi con lágrimas en los ojos, mira al helicóptero acercarse solo que para momentos después pierda toda la esperanza al ser ignorado por su rescate",17));
+                StartCoroutine(DialogCoroutine("John, almost in tears, watches the helicopter approach only to lose all hope moments later as he is ignored by his rescuers",13));
                 dialogIndex++;
                 break;
 
@@ -65,7 +65,7 @@ public class FinalCutsceneDialog : MonoBehaviour
                 textLable.text="";
                 Image2.SetActive(false);
                 //GetComponent<TextWritter>().Run("More Lore For Fuck Sake",textLable);
-                StartCoroutine(DialogCoroutine("John sin entender porque no lo rescatan se percata, ya con la niebla semi disipada, que un par de cuadras más allá de donde está hay otro edificio más alto que el de fragma",19));
+                StartCoroutine(DialogCoroutine("John, not understanding why he is not being rescued, notices, when the fog has dissipated, that a couple of blocks away from where he is, there is another building taller than the phragma building",19));
                 dialogIndex++;
                 break;
 
@@ -73,7 +73,7 @@ public class FinalCutsceneDialog : MonoBehaviour
                 textLable.text="";
                 //Image6.SetActive(false);
                 //GetComponent<TextWritter>().Run("PLZZZ Just Start the Game",textLable);
-                StartCoroutine(DialogCoroutine("John se da cuenta que el edificio más alto que debía subir no es fragma",9));
+                StartCoroutine(DialogCoroutine("John realizes that the tallest building he was supposed to climb is not phragma",8));
                 dialogIndex++;
                 break;
 
@@ -81,7 +81,7 @@ public class FinalCutsceneDialog : MonoBehaviour
                 textLable.text="";
                 Image3.SetActive(false);
                 //GetComponent<TextWritter>().Run("PLZZZ Just Start the Game",textLable);
-                StartCoroutine(DialogCoroutine("Su última esperanza se esfuma frente a él",5));
+                StartCoroutine(DialogCoroutine("His last hope vanishes in front of him",4));
                 dialogIndex++;
                 break;
 
@@ -89,7 +89,7 @@ public class FinalCutsceneDialog : MonoBehaviour
                 textLable.text="";
                 //Image6.SetActive(false);
                 //GetComponent<TextWritter>().Run("PLZZZ Just Start the Game",textLable);
-                StartCoroutine(DialogCoroutine("John derrotado deja que la niebla lo envuelva y consuma",7));
+                StartCoroutine(DialogCoroutine("John defeated lets the fog envelop and consume him",6));
                 dialogIndex++;
                 break;
 
@@ -97,7 +97,7 @@ public class FinalCutsceneDialog : MonoBehaviour
                 textLable.text="";
                 Image4.SetActive(false);
                 //GetComponent<TextWritter>().Run("More Lore For Fuck Sake",textLable);
-                StartCoroutine(DialogCoroutine("Fin …?",3));
+                StartCoroutine(DialogCoroutine("The End …?",3));
                 dialogIndex++;
                 break;
             case 9:

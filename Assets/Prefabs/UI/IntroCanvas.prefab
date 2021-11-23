@@ -611,7 +611,6 @@ GameObject:
   - component: {fileID: 1128266413293052684}
   - component: {fileID: 1128266413293052687}
   - component: {fileID: 1128266413293052686}
-  - component: {fileID: 1128266413293052685}
   m_Layer: 5
   m_Name: Dialog
   m_TagString: Untagged
@@ -668,8 +667,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sample Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f35b3366fe992794e9c1aad3ac0081f3, type: 2}
+  m_sharedMaterial: {fileID: 4429915847355139773, guid: f35b3366fe992794e9c1aad3ac0081f3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -688,15 +687,15 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 2194
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 70
+  m_fontSize: 90
+  m_fontSizeBase: 90
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 60
   m_fontStyle: 0
@@ -735,19 +734,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1128266413293052685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128266413293052675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8de03de160fdb0c42a1253ee144451b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textComponent: {fileID: 1128266413293052686}
 --- !u!1 &1128266413339565036
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,6 +824,7 @@ GameObject:
   - component: {fileID: 1128266413576587102}
   - component: {fileID: 1128266413576587101}
   - component: {fileID: 1128266413576587103}
+  - component: {fileID: 1995933905}
   m_Layer: 5
   m_Name: IntroCanvas
   m_TagString: Untagged
@@ -1072,6 +1059,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1995933905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128266413576587088}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de03de160fdb0c42a1253ee144451b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1128266413293052686}
 --- !u!1 &1128266413681631512
 GameObject:
   m_ObjectHideFlags: 0

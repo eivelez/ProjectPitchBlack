@@ -17,7 +17,7 @@ public class MidCutsceneDialog : MonoBehaviour
     void Start()
     {
         
-        StartCoroutine(DialogCoroutine("John sigue su ascensión del edifico cuando siente algo por la espalda. Una sensación de que alguien lo observa",12));
+        StartCoroutine(DialogCoroutine("John continues his ascent of the building when he feels something on his back. A feeling that someone is watching him",12));
           
     }
 
@@ -31,21 +31,21 @@ public class MidCutsceneDialog : MonoBehaviour
                 textLable.text="";
                 //Image1.SetActive(false);
                 //GetComponent<TextWritter>().Run("More Lore For Fuck Sake",textLable);
-                StartCoroutine(DialogCoroutine("John se da vuelta creyendo poder ver a alguien detrás de el en las escaleras. Podria ser otro sobreviviente",11));
+                StartCoroutine(DialogCoroutine("John turns around thinking he can see someone behind him on the stairs. It could be another survivor",11));
                 dialogIndex++;
                 break;
             case 1:
                 textLable.text="";
                 //Image1.SetActive(false);
                 //GetComponent<TextWritter>().Run("More Lore For Fuck Sake",textLable);
-                StartCoroutine(DialogCoroutine("John se acerca lentamente hasta poder ver mejor la figura delante de él",8));
+                StartCoroutine(DialogCoroutine("John slowly approaches trying to get a better look at the figure in front of him",9));
                 dialogIndex++;
                 break;
             case 2:
                 textLable.text="";
                 Image1.SetActive(false);
                 //GetComponent<TextWritter>().Run("More Lore For Fuck Sake",textLable);
-                StartCoroutine(DialogCoroutine("Para cuando John se percata que lo que tiene al frente no es humano, ya es muy tarde para él",10));
+                StartCoroutine(DialogCoroutine("By the time John realizes that what is in front of him is not human, it is too late for him",10));
                 dialogIndex++;
                 break;
             case 3:
@@ -53,21 +53,21 @@ public class MidCutsceneDialog : MonoBehaviour
                 audioSource.Play();
                 //Image1.SetActive(false);
                 //GetComponent<TextWritter>().Run("More Lore For Fuck Sake",textLable);
-                StartCoroutine(DialogCoroutine("La criatura se abalanza sobre John lo que resulta en ambos cayendo por las escaleras",9));
+                StartCoroutine(DialogCoroutine("The creature lunges at John resulting in both of them falling down the stairs",9));
                 dialogIndex++;
                 break;
             case 4:
                 textLable.text="";
                 Image2.SetActive(false);
                 //GetComponent<TextWritter>().Run("More Lore For Fuck Sake",textLable);
-                StartCoroutine(DialogCoroutine("John se despierta tiempo después adolorido por la caída. La criatura se ha escapado",10));
+                StartCoroutine(DialogCoroutine("John wakes up some time later in pain from the fall. The creature has escaped",9));
                 dialogIndex++;
                 break;
             case 5:
                 textLable.text="";
                 //Image1.SetActive(false);
                 //GetComponent<TextWritter>().Run("More Lore For Fuck Sake",textLable);
-                StartCoroutine(DialogCoroutine("John agradece estar vivo y continua con su ascensión",5));
+                StartCoroutine(DialogCoroutine("John is thankful to be alive and continues his ascension",7));
                 dialogIndex++;
                 break;
             case 6:

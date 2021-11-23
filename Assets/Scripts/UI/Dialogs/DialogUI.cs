@@ -23,7 +23,7 @@ public class DialogUI : MonoBehaviour
     void Start()
     {
         
-        StartCoroutine(DialogCoroutine("Pragma, EE. UU. - 1998. Un pueblo remoto pero desarrollado",7));
+        StartCoroutine(DialogCoroutine("Pragma, USA. - 1998. A remote but developed town",5));
           
     }
 
@@ -37,7 +37,7 @@ public class DialogUI : MonoBehaviour
                 textLable.text="";
                 Image1.SetActive(false);
                 //GetComponent<TextWritter>().Run("More Lore For Fuck Sake",textLable);
-                StartCoroutine(DialogCoroutine("El principal vestigio de la ciudad es el edificio fragma. La farmacéutica más reconocida en el país",12));
+                StartCoroutine(DialogCoroutine("The main landmark of the city is the phragma building. The most recognized pharmaceutical company in the country",12));
                 dialogIndex++;
 
                 break;
@@ -46,7 +46,7 @@ public class DialogUI : MonoBehaviour
                 textLable.text="";
                 Image2.SetActive(false);
                 //GetComponent<TextWritter>().Run("PLZZZ Just Start the Game",textLable);
-                StartCoroutine(DialogCoroutine("John Doe trabaja para fragma. Su dedicación al trabajo ha resultado en el siendo una persona muy sola y aislada",12));
+                StartCoroutine(DialogCoroutine("John Doe works for phragma. His dedication to the job has resulted in him being a very lonely and isolated person",12));
                 dialogIndex++;
                 break;
 
@@ -54,7 +54,7 @@ public class DialogUI : MonoBehaviour
                 textLable.text="";
                 Image3.SetActive(false);
                 //GetComponent<TextWritter>().Run("More Lore For Fuck Sake",textLable);
-                StartCoroutine(DialogCoroutine("La aparición de una extraña niebla ha desatado el caos dentro del pueblo",10));
+                StartCoroutine(DialogCoroutine("The appearance of a strange fog has unleashed chaos on the streets",8));
                 dialogIndex++;
                 break;
 
@@ -62,7 +62,7 @@ public class DialogUI : MonoBehaviour
                 textLable.text="";
                 Image4.SetActive(false);
                 //GetComponent<TextWritter>().Run("PLZZZ Just Start the Game",textLable);
-                StartCoroutine(DialogCoroutine("Criaturas aterradoras emergen de la niebla destruyendo y matando todo a su alrededor",10));
+                StartCoroutine(DialogCoroutine("Terrifying creatures emerge from the fog destroying and killing everything around them",9));
                 dialogIndex++;
                 break;
 
@@ -70,7 +70,7 @@ public class DialogUI : MonoBehaviour
                 textLable.text="";
                 Image5.SetActive(false);
                 //GetComponent<TextWritter>().Run("More Lore For Fuck Sake",textLable);
-                StartCoroutine(DialogCoroutine("John se refugia en su casa esperando que la tragedia pase en un par de días. Quizás la niebla se disipe sola",12));
+                StartCoroutine(DialogCoroutine("John takes refuge in his house hoping that the tragedy will pass in a couple of days. Maybe the fog will dissipate on its own",14));
                 dialogIndex++;
                 break;
 
@@ -78,7 +78,7 @@ public class DialogUI : MonoBehaviour
                 textLable.text="";
                 Image6.SetActive(false);
                 //GetComponent<TextWritter>().Run("PLZZZ Just Start the Game",textLable);
-                StartCoroutine(DialogCoroutine("Después de casi una semana las provisiones de John se han agotado. La única posibilidad de sobrevivir es salir y aventurarse dentro de la niebla",15));
+                StartCoroutine(DialogCoroutine("After almost a week John's supplies have run out. The only chance of survival is to get out and venture into the fog",12));
                 dialogIndex++;
                 break;
 
@@ -86,7 +86,7 @@ public class DialogUI : MonoBehaviour
                 textLable.text="";
                 Image7.SetActive(false);
                 //GetComponent<TextWritter>().Run("More Lore For Fuck Sake",textLable);
-                StartCoroutine(DialogCoroutine("John deambula por las silenciosas calles del pueblo hasta que se topa con un cadáver de lo que solía ser un soldado",12));
+                StartCoroutine(DialogCoroutine("John wanders through the quiet streets of the town until he stumbles upon a corpse of what used to be a soldier",12));
                 dialogIndex++;
                 break;
 
@@ -94,7 +94,7 @@ public class DialogUI : MonoBehaviour
                 textLable.text="";
                 Image8.SetActive(false);
                 //GetComponent<TextWritter>().Run("PLZZZ Just Start the Game",textLable);
-                StartCoroutine(DialogCoroutine("Entre las pertenencias John solo logra recuperar una linterna y una radio la cual repite una y otra vez el mismo mensaje",14));
+                StartCoroutine(DialogCoroutine("Among the belongings John only manages to recover a flashlight and a radio which repeats the same message over and over again",13));
                 dialogIndex++;
                 break;
 
@@ -102,7 +102,7 @@ public class DialogUI : MonoBehaviour
                 textLable.text="";
                 //Image2.SetActive(false);
                 //GetComponent<TextWritter>().Run("PLZZZ Just Start the Game",textLable);
-                StartCoroutine(DialogCoroutine("Extracción de emergencia en la torre más alta del pueblo a media noche. Extracción de emergencia en la torre más alta del pueblo a media noche",17));
+                StartCoroutine(DialogCoroutine("Midnight emergency extraction at the highest tower in town. Midnight emergency extraction at the highest tower in town",12));
                 dialogIndex++;
                 break;
 
@@ -110,7 +110,7 @@ public class DialogUI : MonoBehaviour
                 textLable.text="";
                 Image9.SetActive(false);
                 //GetComponent<TextWritter>().Run("PLZZZ Just Start the Game",textLable);
-                StartCoroutine(DialogCoroutine("Con lo poco que tiene, John se arma de valor y se dirige a la torre fragma a afrontar los horrores de la niebla y así escapar de lo que queda del pueblo",16));
+                StartCoroutine(DialogCoroutine("With what little he has, John plucks up his courage and heads to the phragma tower to face the horrors of the fog and escape from what is left of the town",16));
                 dialogIndex++;
                 break;
             case 10:
