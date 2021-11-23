@@ -14,24 +14,21 @@ public class ArrowMiniGameScript : MonoBehaviour
     public GameObject BrownZone;
     public GameObject GreenZone;
     public GameObject EnemyImage;
+
+    public GameObject LeftLimit;
+    public GameObject RightLimit;
+    public GameObject LeftLimitYellow;
+    public GameObject RightLimitYellow;
+    public GameObject LeftLimitBrown;
+    public GameObject RightLimitBrown;
+    public GameObject LeftLimitGreen;
+    public GameObject RightLimitGreen;
+
     public Inventory inventory;
     public Text countDownText;
     private bool stopper=true;
     private float currentTime=6f;
-    public float pointerSpeed=3000f;
-    private float pointerPosition;
-    private float maxRedZone;
-    private float minRedZone;
-    private RectTransform auxRedZone;
-    private float maxYellowZone;
-    private float minYellowZone;
-    private RectTransform auxYellowZone;
-    private float maxBrownZone;
-    private float minBrownZone;
-    private RectTransform auxBrownZone;
-    private float maxGreenZone;
-    private float minGreenZone;
-    private RectTransform auxGreenZone;
+    private float pointerSpeed=3000f;
     private Animator transition;
     [SerializeField] private MasterMiniGame masterMiniGame;
 
@@ -45,31 +42,6 @@ public class ArrowMiniGameScript : MonoBehaviour
         gameObject.transform.localScale = new Vector3(1, 1, 1);
         Success.SetActive(false);
         Fail.SetActive(false);
-        //Debug.Log("Poniter "+pointerPosition);
-
-        //RED ZONE
-        auxRedZone=(RectTransform)RedZone.transform;
-        maxRedZone=1650;
-        minRedZone=300;
-        //Debug.Log("Red "+maxRedZone+" "+minRedZone);
-
-        //YELLOW ZONE
-        auxYellowZone=(RectTransform)YellowZone.transform;
-        maxYellowZone=1450;
-        minYellowZone=500;
-        //Debug.Log("Yellow "+maxYellowZone+" "+minYellowZone);
-
-        //BROWN ZONE
-        auxBrownZone=(RectTransform)BrownZone.transform;
-        maxBrownZone=1230;
-        minBrownZone=715;
-        //Debug.Log("Brown "+maxBrownZone+" "+minBrownZone);
-
-        //GREEN ZONE
-        auxGreenZone=(RectTransform)GreenZone.transform;
-        maxGreenZone=1050;
-        minGreenZone=900;
-        //Debug.Log("Green "+maxGreenZone+" "+minGreenZone);
     }
 
     // Update is called once per frame
@@ -86,7 +58,7 @@ public class ArrowMiniGameScript : MonoBehaviour
             if (Input.GetKeyDown("e") && stopper) {
                 pointerSpeed=0;
                 stopper=false;
-                if(Pointer.transform.position.x>minGreenZone && Pointer.transform.position.x<maxGreenZone){
+                if(Pointer.transform.position.x>LeftLimitGreen.transform.position.x && Pointer.transform.position.x<RightLimitGreen.transform.position.x){
                     Success.SetActive(true);
                 }else{
                     Fail.SetActive(true);
@@ -101,15 +73,15 @@ public class ArrowMiniGameScript : MonoBehaviour
                 stopper=false;
                 Fail.SetActive(true);
                 //Player Recive full damage
-                StartCoroutine(waiterNReset(maxRedZone+10f));
+                StartCoroutine(waiterNReset(1000000000f));
             }
 
 
             //MOVIMIENTO FLECHA
-            if(Pointer.transform.position.x>maxRedZone || Pointer.transform.position.x<minRedZone){
+            if(Pointer.transform.position.x<LeftLimit.transform.position.x || Pointer.transform.position.x>RightLimit.transform.position.x+8){
                 pointerSpeed *= -1; 
             }
-            Pointer.transform.position= new Vector3(Pointer.transform.position.x+(pointerSpeed*Time.unscaledDeltaTime),103,0);
+            Pointer.transform.position= new Vector3(Pointer.transform.position.x+(pointerSpeed*Time.unscaledDeltaTime),Screen.height/13,0);
             //Debug.Log("Pointer x loc "+(Pointer.transform.position.x));
             //pointerPosition+=pointerSpeed;
         }
@@ -127,7 +99,7 @@ public class ArrowMiniGameScript : MonoBehaviour
     }
 
     void DamageCalc(float position){
-        Debug.Log(position);
+        /*Debug.Log(position);
         Debug.Log(minYellowZone+" "+maxYellowZone);
         if(position>minGreenZone && position<maxGreenZone){
             //Red Zone
@@ -150,9 +122,8 @@ public class ArrowMiniGameScript : MonoBehaviour
             Debug.Log("Red Zone");
             //Success.SetActive(true);
             inventory.TakeDamage(50*(100-inventory.defense)/100);
-        }
+        }*/
     }
-
 
 
     IEnumerator waiterNReset(float position)
