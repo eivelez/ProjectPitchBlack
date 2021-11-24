@@ -30920,11 +30920,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8285159855341361310, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.25
+      value: -27.8
       objectReference: {fileID: 0}
     - target: {fileID: 8285159855341361310, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.4
+      value: -4.58
       objectReference: {fileID: 0}
     - target: {fileID: 8285159855341361310, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
       propertyPath: m_LocalPosition.z
@@ -31413,6 +31413,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99edb2ab97442b24a8ea85658a358d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &1214142788 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3368641088670290654, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
+  m_PrefabInstance: {fileID: 1318255315}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1235656056
 GameObject:
   m_ObjectHideFlags: 0
@@ -31697,6 +31702,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4444390953150835864, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
+      propertyPath: ZombieSprite
+      value: 
+      objectReference: {fileID: 1214142788}
     - target: {fileID: 4444390953150835865, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
       propertyPath: inventory
       value: 
