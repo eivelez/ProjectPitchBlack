@@ -47,10 +47,10 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Zombie")
         {
-            Debug.Log("enter Enemy");
-            masterMiniGames.GetComponent<MasterMiniGame>().setEnemy(collision.gameObject);
+            //Debug.Log("enter Enemy");
+            masterMiniGames.GetComponent<MasterMiniGame>().setEnemy("Zombie",collision.gameObject);
             masterMiniGames.SetActive(true);
         }
     }

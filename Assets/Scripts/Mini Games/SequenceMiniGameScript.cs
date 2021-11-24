@@ -33,7 +33,7 @@ public class SequenceMiniGameScript : MonoBehaviour
     }
 
     void OnEnable(){
-        EnemyImage.GetComponent<Image>().sprite=masterMiniGame.Enemy.GetComponent<SpriteRenderer>().sprite;
+        EnemyImage.GetComponent<Image>().sprite=masterMiniGame.EnemySprite.GetComponent<SpriteRenderer>().sprite;
         gameObject.transform.localScale = new Vector3(1, 1, 1);
         keybuttons[0]=keyText1;
         keybuttons[1]=keyText2;

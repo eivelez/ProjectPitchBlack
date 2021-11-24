@@ -12,6 +12,10 @@ public class MasterMiniGame : MonoBehaviour
     [SerializeField] public AudioClip ExitSound;
 
     public GameObject Enemy;
+    public SpriteRenderer EnemySprite;
+
+    //EnemySpriteIndex
+    public SpriteRenderer ZombieSprite;
 
     [SerializeField] private Animator transition;
 
@@ -70,8 +74,13 @@ public class MasterMiniGame : MonoBehaviour
         selectedMiniGame.SetActive(true);
     }
 
-    public void setEnemy(GameObject enemyPassed){
+    public void setEnemy(string enemyTag,GameObject enemyPassed){
         Enemy=enemyPassed;
+        switch(enemyTag){
+            case "Zombie":
+                EnemySprite=ZombieSprite;
+            break;
+        }
     }
 
     public void EnemyFinishedAttacking(){

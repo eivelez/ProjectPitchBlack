@@ -38,7 +38,7 @@ public class ArrowMiniGameScript : MonoBehaviour
     }
 
     void OnEnable(){
-        EnemyImage.GetComponent<Image>().sprite=masterMiniGame.Enemy.GetComponent<SpriteRenderer>().sprite;
+        EnemyImage.GetComponent<Image>().sprite=masterMiniGame.EnemySprite.GetComponent<SpriteRenderer>().sprite;
         gameObject.transform.localScale = new Vector3(1, 1, 1);
         Success.SetActive(false);
         Fail.SetActive(false);
@@ -58,7 +58,7 @@ public class ArrowMiniGameScript : MonoBehaviour
             if (Input.GetKeyDown("e") && stopper) {
                 pointerSpeed=0;
                 stopper=false;
-                if(Pointer.transform.position.x>LeftLimitGreen.transform.position.x && Pointer.transform.position.x<RightLimitGreen.transform.position.x){
+                if(Pointer.transform.position.x>LeftLimitGreen.transform.position.x && Pointer.transform.position.x<RightLimitGreen.transform.position.x+8){
                     Success.SetActive(true);
                 }else{
                     Fail.SetActive(true);
@@ -106,13 +106,13 @@ public class ArrowMiniGameScript : MonoBehaviour
             Debug.Log("Green Zone");
             //Fail.SetActive(true);
             inventory.TakeDamage(10*(100-inventory.defense)/100);
-        }else if(position>LeftLimitBrown.transform.position.x && position<RightLimitBrown.transform.position.x){
+        }else if(position>LeftLimitBrown.transform.position.x && position<RightLimitBrown.transform.position.x+8){
             //Yellow Zone
             Debug.Log("Brown Zone");
             //Fail.SetActive(true);
             inventory.TakeDamage(30*(100-inventory.defense)/100);
         }
-        else if(position>LeftLimitYellow.transform.position.x && position<RightLimitYellow.transform.position.x){
+        else if(position>LeftLimitYellow.transform.position.x && position<RightLimitYellow.transform.position.x+8){
             //Brown Zone
             Debug.Log("Yellow Zone");
             //Fail.SetActive(true);

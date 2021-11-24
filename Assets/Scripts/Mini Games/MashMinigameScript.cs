@@ -29,7 +29,7 @@ public class MashMinigameScript : MonoBehaviour
     }
 
     void OnEnable(){
-        EnemyImage.GetComponent<Image>().sprite=masterMiniGame.Enemy.GetComponent<SpriteRenderer>().sprite;
+        EnemyImage.GetComponent<Image>().sprite=masterMiniGame.EnemySprite.GetComponent<SpriteRenderer>().sprite;
         gameObject.transform.localScale = new Vector3(1, 1, 1);
         Success.SetActive(false);
         Fail.SetActive(false);
