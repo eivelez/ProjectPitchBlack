@@ -41,6 +41,7 @@ public class Inventory : MonoBehaviour
     void Update(){
         if (lives <= 0 && OneStateEnter)
         {
+            ResetPlayerStatsAfterGameOver();
             DeathUIController.Death();
         }
         else if (hp<=0 && OneStateEnter){
@@ -48,7 +49,8 @@ public class Inventory : MonoBehaviour
             lives-=1;
             PlayerPrefs.SetInt("Lives", lives);
             hp=MAXIMUM_HP;
-            healthBar.SetHealth(hp);
+            PlayerPrefs.SetInt("HP", hp);
+            healthBar.SetMaxHealth(hp);
             livesCounter.SetLivesCounter(lives);
             DeathUIController.Continue();
         }
@@ -56,10 +58,10 @@ public class Inventory : MonoBehaviour
 
     private void SetPlayerStats(){
         SetPlayerLives();
-        SetPlayerMaxHp();
+        SetPlayerHp();
         SetPlayerDefense();
         SetPlayerFingers();
-        Debug.Log("lives: "+lives + "   hp:" + hp);
+        Debug.Log("lives: "+lives + "   hp:" + hp + " defense:" + defense + " fingers:" + fingers);
     }
 
     private void SetPlayerLives(){
@@ -71,9 +73,13 @@ public class Inventory : MonoBehaviour
         livesCounter.SetLivesCounter(lives);
     }
 
-    private void SetPlayerMaxHp(){
-        hp = MAXIMUM_HP;
-        healthBar.SetMaxHealth(hp);
+    private void SetPlayerHp(){
+        if (!PlayerPrefs.HasKey("HP"))
+        {
+            PlayerPrefs.SetInt("HP", MAXIMUM_HP);
+        }
+        hp = PlayerPrefs.GetInt("HP");
+        healthBar.SetHealth(hp);
     }
 
     private void SetPlayerDefense(){
@@ -85,12 +91,18 @@ public class Inventory : MonoBehaviour
     }
 
     private void SetPlayerFingers(){
-        Fingers = 0;
+        if (!PlayerPrefs.HasKey("Fingers"))
+        {
+            PlayerPrefs.SetInt("Fingers", 0);
+        }
+        Fingers = PlayerPrefs.GetInt("Fingers");
     }
 
     private void ResetPlayerStatsAfterGameOver(){
         PlayerPrefs.SetInt("Lives", 3);
+        PlayerPrefs.SetInt("HP", MAXIMUM_HP);
         PlayerPrefs.SetInt("Defense", 0);
+        PlayerPrefs.SetInt("Fingers", 0);
     }
 
     public void TakeDamage(int damageTaken){
@@ -119,5 +131,13 @@ public class Inventory : MonoBehaviour
             defense += addedDefense;
         }
         PlayerPrefs.SetInt("Defense", defense);
+    }
+
+    //To save the stats of the player before going to the next level
+    public void SavePlayerStats(){
+        PlayerPrefs.SetInt("Lives", lives);
+        PlayerPrefs.SetInt("HP", hp);
+        PlayerPrefs.SetInt("Defense", defense);
+        PlayerPrefs.SetInt("Fingers", fingers);
     }
 }

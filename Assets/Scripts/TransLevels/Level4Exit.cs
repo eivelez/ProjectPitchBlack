@@ -11,6 +11,7 @@ public class Level4Exit : MonoBehaviour
 
         if (player.tag.Equals("Player")) 
         {
+            player.GetComponent<Inventory>().SavePlayerStats();
             SceneManager.LoadScene("Level 4-5 Transition");
         }
     }

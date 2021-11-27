@@ -102,7 +102,7 @@ public class DialogUI : MonoBehaviour
                 textLable.text="";
                 //Image2.SetActive(false);
                 //GetComponent<TextWritter>().Run("PLZZZ Just Start the Game",textLable);
-                StartCoroutine(DialogCoroutine("Midnight emergency extraction at the highest tower in town. Midnight emergency extraction at the highest tower in town",12));
+                StartCoroutine(DialogCoroutine("'Midnight emergency extraction at the highest tower in town'. 'Midnight emergency extraction at the highest tower in town'",12));
                 dialogIndex++;
                 break;
 
