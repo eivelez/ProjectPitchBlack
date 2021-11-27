@@ -16,6 +16,7 @@ public class MasterMiniGame : MonoBehaviour
 
     //EnemySpriteIndex
     public SpriteRenderer ZombieSprite;
+    public SpriteRenderer SkeletonSprite;
 
     [SerializeField] private Animator transition;
 
@@ -79,7 +80,11 @@ public class MasterMiniGame : MonoBehaviour
         switch(enemyTag){
             case "Zombie":
                 EnemySprite=ZombieSprite;
-            break;
+                break;
+            case "Skeleton":
+                EnemySprite = SkeletonSprite;
+                break;
+
         }
     }
 

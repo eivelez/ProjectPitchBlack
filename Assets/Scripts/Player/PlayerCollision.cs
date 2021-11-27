@@ -49,8 +49,12 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Zombie")
         {
-            //Debug.Log("enter Enemy");
             masterMiniGames.GetComponent<MasterMiniGame>().setEnemy("Zombie",collision.gameObject);
+            masterMiniGames.SetActive(true);
+        }
+        else if (collision.gameObject.tag == "Skeleton")
+        {
+            masterMiniGames.GetComponent<MasterMiniGame>().setEnemy("Skeleton", collision.gameObject);
             masterMiniGames.SetActive(true);
         }
     }

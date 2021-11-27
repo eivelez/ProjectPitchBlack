@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 1594834300}
   m_Layer: 8
   m_Name: Skeleton
-  m_TagString: Enemy
+  m_TagString: Skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   direction: {x: 0, y: -1}
-  SPEED: 6
+  SPEED: 4
   RADIUS_OF_SPAWN: 2
   SECONDS_BEFORE_MOVING_AGAIN: 3
   spawnPoint: {x: 0, y: 0}

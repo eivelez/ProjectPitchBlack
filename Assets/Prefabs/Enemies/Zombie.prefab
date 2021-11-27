@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 4792366549204476595}
   m_Layer: 8
   m_Name: Zombie
-  m_TagString: Enemy
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,9 +119,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   direction: {x: 0, y: -1}
-  SPEED: 4
+  SPEED: 2
   RADIUS_OF_SPAWN: 2
-  spawnPoint: {fileID: 0}
+  SECONDS_BEFORE_MOVING_AGAIN: 3
+  spawnPoint: {x: 0, y: 0}
   graph: {fileID: 0}
   enemyMovement: {fileID: 0}
 --- !u!114 &8812875404415853975
@@ -136,9 +137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ee3749a29a4d440b396a915516b97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &3440783877927351613
 MonoBehaviour:
   m_ObjectHideFlags: 0

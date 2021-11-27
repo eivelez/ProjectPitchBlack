@@ -16,6 +16,7 @@ TagManager:
   - Item
   - Zombie
   - LeftLimit
+  - Skeleton
   layers:
   - Default
   - TransparentFX
