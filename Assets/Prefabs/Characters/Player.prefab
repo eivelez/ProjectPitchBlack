@@ -1123,7 +1123,7 @@ MonoBehaviour:
   fingerSFX: {fileID: 8300000, guid: 655960bcc011ab540a0ab3582cac17de, type: 3}
   bulletproofVestSFX: {fileID: 8300000, guid: 7697626ccce1fea4fb401c684c4406d2, type: 3}
   medikit_bandaid_SFX: {fileID: 8300000, guid: 3dc843ec02575804aae906ea1b690c10, type: 3}
-  extraLifeSFX: {fileID: 8300000, guid: c71b4541e0048c043acc6129cf549509, type: 3}
+  extraLifeSFX: {fileID: 8300000, guid: 702c0524462281f48912ec8480aa0511, type: 3}
   keySound: {fileID: 8300000, guid: fdd2e321b1a0f9245b0f9cffb44a82cf, type: 3}
 --- !u!114 &8276814141226552303
 MonoBehaviour:

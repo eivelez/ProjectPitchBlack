@@ -57,6 +57,11 @@ public class PlayerCollision : MonoBehaviour
             masterMiniGames.GetComponent<MasterMiniGame>().setEnemy("Skeleton", collision.gameObject);
             masterMiniGames.SetActive(true);
         }
+        else if (collision.gameObject.tag == "Mummy")
+        {
+            masterMiniGames.GetComponent<MasterMiniGame>().setEnemy("Mummy", collision.gameObject);
+            masterMiniGames.SetActive(true);
+        }
     }
 
     private void PickUpFinger(Collider2D other){

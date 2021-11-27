@@ -17,6 +17,7 @@ TagManager:
   - Zombie
   - LeftLimit
   - Skeleton
+  - Mummy
   layers:
   - Default
   - TransparentFX
