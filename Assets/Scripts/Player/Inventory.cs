@@ -33,20 +33,12 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private bool OneStateEnter;
-
     void Start(){
-        OneStateEnter = true;
         SetPlayerStats();
     }
 
     void Update(){
-        if (lives <= 0 && OneStateEnter)
-        {
-            ResetPlayerStatsAfterGameOver();
-            DeathUIController.Death();
-        }
-        else if (hp<=0 && OneStateEnter){
+        if (hp<=0){
             Time.timeScale = 0;
             lives-=1;
             PlayerPrefs.SetInt("Lives", lives);
@@ -54,7 +46,15 @@ public class Inventory : MonoBehaviour
             PlayerPrefs.SetInt("HP", hp);
             healthBar.SetMaxHealth(hp);
             livesCounter.SetLivesCounter(lives);
-            DeathUIController.Continue();
+            if (lives <= 0)
+            {
+                ResetPlayerStatsAfterGameOver();
+                DeathUIController.Death();
+            }
+            else
+            {
+                DeathUIController.Continue();
+            }
         }
     }
 
