@@ -1162,6 +1162,7 @@ MonoBehaviour:
   noKeyIcon: {fileID: 976584274496281834}
   eKeyIcon: {fileID: 191440828046153558}
   TOTAL_NUMBER_OF_KEYS: 1
+  doorOpening: {fileID: 8300000, guid: 0bb41eee3a0beb74da8d063d9bda519a, type: 3}
 --- !u!114 &9018969101036950369
 MonoBehaviour:
   m_ObjectHideFlags: 0

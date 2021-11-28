@@ -14,6 +14,7 @@ public class UnlockExit : MonoBehaviour
     public int TOTAL_NUMBER_OF_KEYS = 3;
     private bool unlockDoor = false;
     private bool colliderDoorOff = false;
+    [SerializeField] private AudioClip doorOpening;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,9 @@ public class UnlockExit : MonoBehaviour
             if (unlockDoor && !colliderDoorOff) 
             {
                 boxColliderDoor.enabled = !boxColliderDoor.enabled;
-                boxColliderDoor.gameObject.SetActive(false);
+                AudioSource.PlayClipAtPoint(doorOpening, transform.position);
+                //boxColliderDoor.gameObject.SetActive(false);
+                boxColliderDoor.gameObject.GetComponent<Animator>().SetBool("Unlocked", true);
                 colliderDoorOff = true;
                 RemovePlayerKeys();
             }
