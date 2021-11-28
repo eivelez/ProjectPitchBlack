@@ -79,6 +79,7 @@ public class PlayerCollision : MonoBehaviour
     private void PickUpKey(Collider2D key)
     {
         playerInventory.keys += 1;
+        playerInventory.SetKeyItemInUI(key.gameObject.GetComponent<SpriteRenderer>().sprite);
         AudioSource.PlayClipAtPoint(keySound, transform.position);
         Destroy(key.gameObject);
     }

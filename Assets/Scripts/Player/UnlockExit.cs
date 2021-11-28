@@ -110,6 +110,7 @@ public class UnlockExit : MonoBehaviour
     private void RemovePlayerKeys() 
     {
         inventory.keys = 0;
+        inventory.RemoveKeyItemUI();
     }
 
     private void DisaibleAllIcons() 

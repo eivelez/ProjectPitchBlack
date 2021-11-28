@@ -14,10 +14,12 @@ public class Inventory : MonoBehaviour
     public int lives;
     private int fingers;
 
-    //Controllers
+    //UI Controllers
     [SerializeField] private HealthBarController healthBar;
     [SerializeField] private LivesCounterController livesCounter;
     [SerializeField] private FingersCountController fingersCounter;
+    [SerializeField] private KeyItemSlotController keyItemSlot;
+
     public WinAndDeathUI DeathUIController;
 
     //Properties
@@ -31,7 +33,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public bool OneStateEnter;
+    private bool OneStateEnter;
 
     void Start(){
         OneStateEnter = true;
@@ -139,5 +141,15 @@ public class Inventory : MonoBehaviour
         PlayerPrefs.SetInt("HP", hp);
         PlayerPrefs.SetInt("Defense", defense);
         PlayerPrefs.SetInt("Fingers", fingers);
+    }
+
+    public void SetKeyItemInUI(Sprite keyItemSprite)
+    {
+        keyItemSlot.SetKeyItemIcon(keyItemSprite);
+    }
+
+    public void RemoveKeyItemUI()
+    {
+        keyItemSlot.RemoveKeyItemIcon();
     }
 }
