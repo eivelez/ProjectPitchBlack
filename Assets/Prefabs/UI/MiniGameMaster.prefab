@@ -2920,6 +2920,7 @@ MonoBehaviour:
   MashMiniGame: {fileID: 4444390953996925578}
   SequenceMiniGame: {fileID: 4444390953747421160}
   ArrowMiniGame: {fileID: 167944713}
+  inventory: {fileID: 0}
   EnterSound: {fileID: 8300000, guid: b90a7e1641175c745ace4ad7655a7e17, type: 3}
   ExitSound: {fileID: 8300000, guid: 1d0598974999de6449b2f9defa1b591d, type: 3}
   Enemy: {fileID: 6724303687778353271, guid: ff7983473a1006346846e77a35d0b438, type: 3}
@@ -3008,6 +3009,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   countDownText: {fileID: 1332933166}
   masterMiniGame: {fileID: 4444390953150835864}
+  HitSound: {fileID: 8300000, guid: cafbac61d0c00af47be3ce05942235eb, type: 3}
 --- !u!1 &4444390953166655604
 GameObject:
   m_ObjectHideFlags: 0

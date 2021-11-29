@@ -33,6 +33,7 @@ public class ArrowMiniGameScript : MonoBehaviour
     private float pointerSpeed=3000f;
     private Animator transition;
     [SerializeField] private MasterMiniGame masterMiniGame;
+    [SerializeField] public AudioClip HitSound;
 
     public void Setup(Animator transition)
     {
@@ -65,8 +66,7 @@ public class ArrowMiniGameScript : MonoBehaviour
                 stopper=false;
                 if(Pointer.transform.position.x>LeftLimitGreen.transform.position.x && Pointer.transform.position.x<RightLimitGreen.transform.position.x+8){
                     if(hammer){
-                        Time.timeScale = 1;
-                        SceneManager.LoadScene("FinalCutscene");
+                        StartCoroutine(FinalHit());
                     }
                     Success.SetActive(true);
                 }else{
@@ -149,5 +149,14 @@ public class ArrowMiniGameScript : MonoBehaviour
         Time.timeScale = 1;
         stopper=true;
         gameObject.SetActive(false);
+    }
+
+    IEnumerator FinalHit()
+    {
+        AudioSource.PlayClipAtPoint(HitSound, inventory.transform.position);
+        //Wait for 3 seconds
+        yield return new WaitForSecondsRealtime(2);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("FinalCutscene");
     }
 }

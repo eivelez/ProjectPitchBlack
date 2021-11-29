@@ -8,7 +8,7 @@ public class TransScript4 : MonoBehaviour
     public GameObject player;
     public GameObject Key;
     private bool mover=false;
-    private bool mover2=false;
+    //private bool mover2=false;
     public GameObject sprite1;
     public GameObject sprite2;
     public GameObject sprite3;
@@ -28,9 +28,9 @@ public class TransScript4 : MonoBehaviour
         if(mover){
             player.transform.position= Vector3.MoveTowards(player.transform.position,new Vector3(-1f,3.8f,0),2f*Time.deltaTime);
         }
-        if(mover2){
+        /*if(mover2){
             player.transform.position= Vector3.MoveTowards(player.transform.position,new Vector3(-0.4f,3.2f,0),0.25f*Time.deltaTime);
-        }
+        }*/
         if(Input.GetKeyDown("e") && next){
             SceneManager.LoadScene("Level5");
         }
@@ -77,13 +77,13 @@ public class TransScript4 : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(0.5f);
+        /*yield return new WaitForSeconds(0.5f);
         audioSource2.Play();
         yield return new WaitForSeconds(1f);
-        audioSource2.Play();
+        audioSource2.Play();*/
 
 
-        yield return new WaitForSeconds(2);
+        /*yield return new WaitForSeconds(2);
         mover=false;
         mover2=true;
 
@@ -110,7 +110,7 @@ public class TransScript4 : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         sprite2.SetActive(false);
         sprite1.SetActive(true);
-        audioSource.Play();
+        audioSource.Play();*/
 
         yield return new WaitForSeconds(1);
         Key.SetActive(true);
