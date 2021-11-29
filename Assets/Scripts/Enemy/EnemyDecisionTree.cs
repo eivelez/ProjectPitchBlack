@@ -10,10 +10,19 @@ public class EnemyDecisionTree : MonoBehaviour
     public void Setup(Enemy enemy)
     {
         this.enemy = enemy;
-        root = TreeConstruction();
+        
+        //We see the tag if it is the boss or a common enemy:
+        if (enemy.tag == "Boss")
+        {
+            root = BossTreeConstruction();
+        }
+        else
+        {
+            root = EnemyTreeConstruction();
+        }
     }
 
-    private ObjectDecision TreeConstruction(){
+    private ObjectDecision EnemyTreeConstruction(){
         //Decisions
         ObjectDecision playerNear = new ObjectDecision(new IsPlayerNearEnemy(enemy.player, gameObject));
         ObjectDecision playerHiding = new ObjectDecision(new IsPlayerHiding(enemy.player));
@@ -35,6 +44,23 @@ public class EnemyDecisionTree : MonoBehaviour
         spawnPointFarAway.noNode = roam;
 
         ObjectDecision root = playerNear;
+        return root;
+    }
+
+    private ObjectDecision BossTreeConstruction()
+    {
+        //Its a very simple tree because the boss will ALWAYS attack the player
+
+        //Decisions
+        ObjectDecision playerHiding = new ObjectDecision(new IsPlayerHiding(enemy.player));
+        //Actions
+        ActionNode attack = new ActionNode("Attack");
+        
+        //Tree assembly
+        playerHiding.yesNode = null;
+        playerHiding.noNode = attack;
+
+        ObjectDecision root = playerHiding;
         return root;
     }
 
