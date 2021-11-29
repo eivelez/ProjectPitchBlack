@@ -30,7 +30,7 @@ public class ArrowMiniGameScript : MonoBehaviour
     private bool stopper=true;
     private bool hammer=false;
     private float currentTime=6f;
-    private float pointerSpeed=3000f;
+    private float pointerSpeed=2000f;
     private Animator transition;
     [SerializeField] private MasterMiniGame masterMiniGame;
     [SerializeField] public AudioClip HitSound;
@@ -101,7 +101,7 @@ public class ArrowMiniGameScript : MonoBehaviour
         Fail.SetActive(false);
         Success.SetActive(false);
         currentTime=6f;
-        pointerSpeed=3000f;
+        pointerSpeed=2000f;
         //gameObject.SetActive(false);
         gameObject.transform.localScale = new Vector3(0, 0, 0);
         //SceneManager.LoadScene(0);
