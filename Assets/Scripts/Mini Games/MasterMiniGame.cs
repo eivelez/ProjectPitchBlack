@@ -8,6 +8,8 @@ public class MasterMiniGame : MonoBehaviour
     public GameObject SequenceMiniGame;
     public GameObject ArrowMiniGame;
 
+    public Inventory inventory;
+
     [SerializeField] private AudioClip EnterSound;
     [SerializeField] public AudioClip ExitSound;
 
@@ -18,6 +20,7 @@ public class MasterMiniGame : MonoBehaviour
     public SpriteRenderer ZombieSprite;
     public SpriteRenderer SkeletonSprite;
     public SpriteRenderer MummySprite;
+    public SpriteRenderer BossSprite;
 
     [SerializeField] private Animator transition;
 
@@ -52,6 +55,9 @@ public class MasterMiniGame : MonoBehaviour
           listOfMiniGames[i].SetActive(false);
         }
         selectedMiniGame=listOfMiniGames[Random.Range (0, listOfMiniGames.Length)];
+        if(inventory.hammer==true){
+            selectedMiniGame=ArrowMiniGame;
+        }
         StartCoroutine(waiter());
         
     }
@@ -87,6 +93,9 @@ public class MasterMiniGame : MonoBehaviour
                 break;
             case "Mummy":
                 EnemySprite = MummySprite;
+                break;
+            case "Boss":
+                EnemySprite = BossSprite;
                 break;
 
         }

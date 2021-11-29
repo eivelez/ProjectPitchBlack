@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ArrowMiniGameScript : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class ArrowMiniGameScript : MonoBehaviour
     public Inventory inventory;
     public Text countDownText;
     private bool stopper=true;
+    private bool hammer=false;
     private float currentTime=6f;
     private float pointerSpeed=3000f;
     private Animator transition;
@@ -42,6 +44,9 @@ public class ArrowMiniGameScript : MonoBehaviour
         gameObject.transform.localScale = new Vector3(1, 1, 1);
         Success.SetActive(false);
         Fail.SetActive(false);
+        if(inventory.hammer){
+            hammer=true;
+        }
     }
 
     // Update is called once per frame
@@ -59,6 +64,10 @@ public class ArrowMiniGameScript : MonoBehaviour
                 pointerSpeed=0;
                 stopper=false;
                 if(Pointer.transform.position.x>LeftLimitGreen.transform.position.x && Pointer.transform.position.x<RightLimitGreen.transform.position.x+8){
+                    if(hammer){
+                        Time.timeScale = 1;
+                        SceneManager.LoadScene("FinalCutscene");
+                    }
                     Success.SetActive(true);
                 }else{
                     Fail.SetActive(true);

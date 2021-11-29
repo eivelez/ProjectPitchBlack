@@ -14,6 +14,7 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField] private AudioClip medikit_bandaid_SFX;
     [SerializeField] private AudioClip extraLifeSFX;
     [SerializeField] private AudioClip keySound;
+    [SerializeField] private AudioClip hammersound;
 
     public void Setup(Player player){
         playerInventory = player.inventory; 
@@ -43,6 +44,9 @@ public class PlayerCollision : MonoBehaviour
         else if (other.tag == "Key"){
             PickUpKey(other);
         }
+        else if (other.tag == "Hammer"){
+            PickUpHammer(other);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -60,6 +64,11 @@ public class PlayerCollision : MonoBehaviour
         else if (collision.gameObject.tag == "Mummy")
         {
             masterMiniGames.GetComponent<MasterMiniGame>().setEnemy("Mummy", collision.gameObject);
+            masterMiniGames.SetActive(true);
+        }
+        else if (collision.gameObject.tag == "Boss")
+        {
+            masterMiniGames.GetComponent<MasterMiniGame>().setEnemy("Boss", collision.gameObject);
             masterMiniGames.SetActive(true);
         }
     }
@@ -82,5 +91,13 @@ public class PlayerCollision : MonoBehaviour
         playerInventory.SetKeyItemInUI(key.gameObject.GetComponent<SpriteRenderer>().sprite);
         AudioSource.PlayClipAtPoint(keySound, transform.position);
         Destroy(key.gameObject);
+    }
+
+    private void PickUpHammer(Collider2D hammer)
+    {
+        playerInventory.hammer =true;
+        playerInventory.SetKeyItemInUI(hammer.gameObject.GetComponent<SpriteRenderer>().sprite);
+        AudioSource.PlayClipAtPoint(hammersound, transform.position);
+        Destroy(hammer.gameObject);
     }
 }

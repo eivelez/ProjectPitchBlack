@@ -1126,6 +1126,7 @@ MonoBehaviour:
   medikit_bandaid_SFX: {fileID: 8300000, guid: 3dc843ec02575804aae906ea1b690c10, type: 3}
   extraLifeSFX: {fileID: 8300000, guid: 702c0524462281f48912ec8480aa0511, type: 3}
   keySound: {fileID: 8300000, guid: fdd2e321b1a0f9245b0f9cffb44a82cf, type: 3}
+  hammersound: {fileID: 8300000, guid: 0c42832994d32094dbd16908d8f1d489, type: 3}
 --- !u!114 &8276814141226552303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1140,6 +1141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keys: 0
   hp: 100
+  hammer: 0
   defense: 0
   lives: 0
   healthBar: {fileID: 959680329044749017}

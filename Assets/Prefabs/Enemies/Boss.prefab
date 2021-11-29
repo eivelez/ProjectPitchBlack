@@ -10,16 +10,16 @@ GameObject:
   m_Component:
   - component: {fileID: 2827196503172800511}
   - component: {fileID: 2827196503172800510}
-  - component: {fileID: 2827196503172800505}
   - component: {fileID: 2827196503172800482}
   - component: {fileID: 2827196503172800508}
   - component: {fileID: 8264591256087990102}
   - component: {fileID: 6733346816980600954}
   - component: {fileID: 6733346815610336960}
   - component: {fileID: 2301410590328920280}
+  - component: {fileID: 1908133069}
   m_Layer: 8
   m_Name: Boss
-  m_TagString: Zombie
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 6724303687778353271, guid: ff7983473a1006346846e77a35d0b438, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37e52591c66612f4e9fab14cd064efc4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -89,22 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &2827196503172800505
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2827196503172800504}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.021752834, y: -0.021752834}
-  m_Size: {x: 0.66645527, y: 1.0138674}
-  m_Direction: 0
 --- !u!114 &2827196503172800482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +156,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e78456eac02c51f49a01a3883b48ac9b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 30cf02dbcaa4b2b4a998c4a34e69982f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.39
   m_Pitch: 1
@@ -266,7 +250,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2827196503172800504}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: feee4cc4863978c4692d1868a339b407, type: 2}
   m_CullingMode: 0
@@ -277,3 +261,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &1908133069
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2827196503172800504}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 1}
+  m_Direction: 0
