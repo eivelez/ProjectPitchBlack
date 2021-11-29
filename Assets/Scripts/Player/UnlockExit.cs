@@ -4,47 +4,28 @@ using UnityEngine;
 
 public class UnlockExit : MonoBehaviour
 {
-    Inventory inventory;
-    BoxCollider2D boxColliderDoor;
+    private Inventory inventory;
 
-    public GameObject keyIcon;
-    public GameObject noKeyIcon;
-    public GameObject eKeyIcon;
+    //Icons
+    [SerializeField] private  GameObject eKeyIcon;
+    [SerializeField] private  GameObject keyIcon;
+    [SerializeField] private  GameObject noKeyIcon;
+    [SerializeField] private GameObject axeIcon;
+    [SerializeField] private GameObject noAxeIcon;
+    [SerializeField] private GameObject extintorIcon;
+    [SerializeField] private  GameObject noExtintorIcon;
 
-    public int TOTAL_NUMBER_OF_KEYS = 3;
-    private bool unlockDoor = false;
-    private bool colliderDoorOff = false;
+    //Audio Clips
+    [SerializeField] private AudioClip doorResistant;
     [SerializeField] private AudioClip doorOpening;
+    [SerializeField] private AudioClip doorCutting;
+    [SerializeField] private AudioClip extintorSound;
 
     // Start is called before the first frame update
     void Start()
     {
         inventory = GetComponent<Inventory>();
-        boxColliderDoor = GameObject.FindGameObjectWithTag("LockDoor").GetComponent<BoxCollider2D>();
-
-        DisaibleAllIcons();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        UnLockDoor();
-    }
-
-    private void UnLockDoor() 
-    {
-        if (Input.GetKeyDown(KeyCode.E)) 
-        {
-            if (unlockDoor && !colliderDoorOff) 
-            {
-                boxColliderDoor.enabled = !boxColliderDoor.enabled;
-                AudioSource.PlayClipAtPoint(doorOpening, transform.position);
-                //boxColliderDoor.gameObject.SetActive(false);
-                boxColliderDoor.gameObject.GetComponent<Animator>().SetBool("Unlocked", true);
-                colliderDoorOff = true;
-                RemovePlayerKeys();
-            }
-        }
+        DisableAllIcons();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -55,7 +36,7 @@ public class UnlockExit : MonoBehaviour
         {
             eKeyIcon.SetActive(true);
 
-            if (PlayerHasAllTheKeys())
+            if (PlayerHasKeys())
             {
                 keyIcon.SetActive(true);
             }
@@ -64,8 +45,35 @@ public class UnlockExit : MonoBehaviour
                 noKeyIcon.SetActive(true);
             }
         }
-    }
 
+        if (door.tag.Equals("WoodDoor"))
+        {
+            eKeyIcon.SetActive(true);
+
+            if (PlayerHasKeys())
+            {
+                axeIcon.SetActive(true);
+            }
+            else 
+            {
+                noAxeIcon.SetActive(true);
+            }
+        }
+
+        if (door.tag.Equals("Fire"))
+        {
+            eKeyIcon.SetActive(true);
+
+            if (PlayerHasKeys())
+            {
+                extintorIcon.SetActive(true);
+            }
+            else 
+            {
+                noExtintorIcon.SetActive(true);
+            }
+        }
+    }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -73,14 +81,45 @@ public class UnlockExit : MonoBehaviour
 
         if (door.tag.Equals("LockDoor"))
         {
-            if (PlayerHasAllTheKeys())
+            if (Input.GetKeyDown(KeyCode.E)) 
             {
-                keyIcon.SetActive(true);
-                unlockDoor = true;
+                if (PlayerHasKeys())
+                {
+                    AudioSource.PlayClipAtPoint(doorOpening, transform.position);
+                    door.GetComponent<Animator>().SetBool("Unlocked", true);
+                    RemovePlayerKeys();
+                }
+                else
+                {
+                    AudioSource.PlayClipAtPoint(doorResistant, transform.position);
+                }
             }
-            else
+        }
+
+        if (door.tag.Equals("WoodDoor"))
+        {
+            if (Input.GetKeyDown(KeyCode.E)) 
             {
-                noKeyIcon.SetActive(true);
+                if (PlayerHasKeys())
+                {
+                    AudioSource.PlayClipAtPoint(doorCutting, transform.position);
+                    door.SetActive(false);
+                    RemovePlayerKeys();       
+                }
+                else
+                {
+                    AudioSource.PlayClipAtPoint(doorResistant, transform.position);
+                }
+            }
+        }
+
+        if (door.tag.Equals("Fire"))
+        {
+            if (Input.GetKeyDown(KeyCode.E) && PlayerHasKeys()) 
+            {
+                AudioSource.PlayClipAtPoint(extintorSound, transform.position);
+                door.SetActive(false);
+                RemovePlayerKeys();       
             }
         }
     }
@@ -89,15 +128,15 @@ public class UnlockExit : MonoBehaviour
     {
         GameObject door = collision.gameObject;
 
-        if (door.tag.Equals("LockDoor"))
+        if (door.tag.Equals("LockDoor") || door.tag.Equals("WoodDoor") || door.tag.Equals("Fire"))
         {
-            DisaibleAllIcons();
+            DisableAllIcons();
         }
     }
 
-    private bool PlayerHasAllTheKeys() 
+    private bool PlayerHasKeys() 
     {
-        if (inventory.keys == TOTAL_NUMBER_OF_KEYS)
+        if (inventory.keys >= 1)
         {
             return true;
         }
@@ -113,10 +152,14 @@ public class UnlockExit : MonoBehaviour
         inventory.RemoveKeyItemUI();
     }
 
-    private void DisaibleAllIcons() 
+    private void DisableAllIcons() 
     {
+        eKeyIcon.SetActive(false);
         keyIcon.SetActive(false);
         noKeyIcon.SetActive(false);
-        eKeyIcon.SetActive(false);
+        axeIcon.SetActive(false);
+        noAxeIcon.SetActive(false);
+        extintorIcon.SetActive(false);
+        noExtintorIcon.SetActive(false);
     }
 }
