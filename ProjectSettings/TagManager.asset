@@ -20,6 +20,7 @@ TagManager:
   - Mummy
   - Boss
   - Hammer
+  - WoodDoor
   layers:
   - Default
   - TransparentFX

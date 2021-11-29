@@ -252,6 +252,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wood Door
       objectReference: {fileID: 0}
+    - target: {fileID: 2628878807040292987, guid: 75237db9a9feb6a4db8fe0e87f9f9e6b, type: 3}
+      propertyPath: m_TagString
+      value: WoodDoor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75237db9a9feb6a4db8fe0e87f9f9e6b, type: 3}
 --- !u!4 &104033603 stripped
@@ -16549,11 +16553,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8285159855341361310, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.4866216
+      value: -4.49
       objectReference: {fileID: 0}
     - target: {fileID: 8285159855341361310, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3135925
+      value: -0.18
       objectReference: {fileID: 0}
     - target: {fileID: 8285159855341361310, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
       propertyPath: m_LocalPosition.z
