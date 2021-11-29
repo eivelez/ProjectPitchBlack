@@ -44,10 +44,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level5.unity
     guid: 36b8a30504965ce4a88067999a0b945b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Cutscenes + Transitions/Level 5-6 Transition.unity
     guid: 71f58c795fbf7d24fae453364f5545ed
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level6.unity
     guid: bfe8d1a518f8138488533abbdb10e96f
   - enabled: 1
