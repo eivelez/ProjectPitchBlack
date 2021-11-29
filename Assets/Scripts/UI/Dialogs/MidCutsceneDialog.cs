@@ -75,6 +75,10 @@ public class MidCutsceneDialog : MonoBehaviour
                 break;
             }
         }
+
+        if(Input.GetKeyDown("space")){
+            SceneManager.LoadScene("Level 3-4 Transition");
+        }
     }
 
     IEnumerator DialogCoroutine(string dialog,int time)

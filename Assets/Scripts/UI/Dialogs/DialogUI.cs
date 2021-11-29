@@ -118,6 +118,10 @@ public class DialogUI : MonoBehaviour
                 break;
             }
         }
+
+        if(Input.GetKeyDown("space")){
+            SceneManager.LoadScene("Level1");
+        }
     }
 
     IEnumerator DialogCoroutine(string dialog,int time)

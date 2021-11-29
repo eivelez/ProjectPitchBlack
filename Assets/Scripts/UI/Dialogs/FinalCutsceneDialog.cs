@@ -105,6 +105,10 @@ public class FinalCutsceneDialog : MonoBehaviour
                 break;
             }
         }
+
+        if(Input.GetKeyDown("space")){
+            SceneManager.LoadScene("Intro");
+        }
     }
 
     IEnumerator DialogCoroutine(string dialog,int time)
