@@ -31633,6 +31633,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4444390953150835864, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1743967472}
+    - target: {fileID: 4444390953150835864, guid: c32a62961b51e90499b5564c14e0fc0e, type: 3}
       propertyPath: ZombieSprite
       value: 
       objectReference: {fileID: 1214142788}
