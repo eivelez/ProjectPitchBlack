@@ -1413,14 +1413,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eKeyIcon: {fileID: 191440828046153558}
   keyIcon: {fileID: 4327769438065578006}
+  noKeyIcon: {fileID: 976584274496281834}
   axeIcon: {fileID: 3601066730401586690}
   noAxeIcon: {fileID: 7636329722390674684}
-  noKeyIcon: {fileID: 976584274496281834}
   extintorIcon: {fileID: 8157048872553733442}
   noExtintorIcon: {fileID: 8825177512295202280}
   doorResistant: {fileID: 8300000, guid: 58d0673c417fccd4a88b722d4f856699, type: 3}
   doorOpening: {fileID: 8300000, guid: 0bb41eee3a0beb74da8d063d9bda519a, type: 3}
   doorCutting: {fileID: 8300000, guid: 165fe4316dcd5cf40b823129dedb3f63, type: 3}
+  extintorSound: {fileID: 8300000, guid: 8ff04480e0059a14f9576ff190c2faf7, type: 3}
 --- !u!114 &9018969101036950369
 MonoBehaviour:
   m_ObjectHideFlags: 0

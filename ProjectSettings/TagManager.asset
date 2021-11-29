@@ -21,6 +21,7 @@ TagManager:
   - Boss
   - Hammer
   - WoodDoor
+  - Fire
   layers:
   - Default
   - TransparentFX

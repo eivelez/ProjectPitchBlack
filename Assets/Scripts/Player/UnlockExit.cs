@@ -19,6 +19,7 @@ public class UnlockExit : MonoBehaviour
     [SerializeField] private AudioClip doorResistant;
     [SerializeField] private AudioClip doorOpening;
     [SerializeField] private AudioClip doorCutting;
+    [SerializeField] private AudioClip extintorSound;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,20 @@ public class UnlockExit : MonoBehaviour
             else 
             {
                 noAxeIcon.SetActive(true);
+            }
+        }
+
+        if (door.tag.Equals("Fire"))
+        {
+            eKeyIcon.SetActive(true);
+
+            if (PlayerHasKeys())
+            {
+                extintorIcon.SetActive(true);
+            }
+            else 
+            {
+                noExtintorIcon.SetActive(true);
             }
         }
     }
@@ -97,13 +112,23 @@ public class UnlockExit : MonoBehaviour
                 }
             }
         }
+
+        if (door.tag.Equals("Fire"))
+        {
+            if (Input.GetKeyDown(KeyCode.E) && PlayerHasKeys()) 
+            {
+                AudioSource.PlayClipAtPoint(extintorSound, transform.position);
+                door.SetActive(false);
+                RemovePlayerKeys();       
+            }
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         GameObject door = collision.gameObject;
 
-        if (door.tag.Equals("LockDoor") || door.tag.Equals("WoodDoor"))
+        if (door.tag.Equals("LockDoor") || door.tag.Equals("WoodDoor") || door.tag.Equals("Fire"))
         {
             DisableAllIcons();
         }
@@ -136,6 +161,5 @@ public class UnlockExit : MonoBehaviour
         noAxeIcon.SetActive(false);
         extintorIcon.SetActive(false);
         noExtintorIcon.SetActive(false);
-        
     }
 }
