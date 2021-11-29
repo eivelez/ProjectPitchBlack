@@ -1297,7 +1297,7 @@ PrefabInstance:
       objectReference: {fileID: 684605217}
     - target: {fileID: 8276814141226552303, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
       propertyPath: hammer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8276814141226552303, guid: dcaa45f210ef5184fb45192dac010277, type: 3}
       propertyPath: DeathUIController
