@@ -24,27 +24,28 @@ public class ExtraCommandAndCheats : MonoBehaviour
         //Progession Cheats
         if(Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey("1") || Input.GetKeyDown("1") && Input.GetKey(KeyCode.LeftShift))
         {
+            Time.timeScale = 1;
             SceneManager.LoadScene("Level1");
         }
         if(Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey("2") || Input.GetKeyDown("2") && Input.GetKey(KeyCode.LeftShift))
         {
+            Time.timeScale = 1;
             SceneManager.LoadScene("Level2");
         }
         if(Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey("3") || Input.GetKeyDown("3") && Input.GetKey(KeyCode.LeftShift))
         {
+            Time.timeScale = 1;
             SceneManager.LoadScene("Level3");
         }
         if(Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey("4") || Input.GetKeyDown("4") && Input.GetKey(KeyCode.LeftShift))
         {
+            Time.timeScale = 1;
             SceneManager.LoadScene("Level4");
         }
         if(Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey("5") || Input.GetKeyDown("5") && Input.GetKey(KeyCode.LeftShift))
         {
+            Time.timeScale = 1;
             SceneManager.LoadScene("Level5");
-        }
-        if(Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey("6") || Input.GetKeyDown("6") && Input.GetKey(KeyCode.LeftShift))
-        {
-            SceneManager.LoadScene("Level6");
         }
 
         //CHEATS FOR ITEMS
