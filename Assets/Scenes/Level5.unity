@@ -3021,6 +3021,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 87942651}
     m_Modifications:
+    - target: {fileID: 2301410590328920280, guid: 38f585f2458a7754db16da845e7d7bb5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301410590328920280, guid: 38f585f2458a7754db16da845e7d7bb5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 10b015b61f6cda049afdeee7868dcacd, type: 2}
     - target: {fileID: 2827196503172800482, guid: 38f585f2458a7754db16da845e7d7bb5, type: 3}
       propertyPath: graph
       value: 
