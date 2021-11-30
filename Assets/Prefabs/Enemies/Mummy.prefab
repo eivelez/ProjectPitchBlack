@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   direction: {x: 0, y: -1}
-  SPEED: 3
+  SPEED: 3.5
   RADIUS_OF_SPAWN: 2
   SECONDS_BEFORE_MOVING_AGAIN: 3
   spawnPoint: {x: 0, y: 0}
