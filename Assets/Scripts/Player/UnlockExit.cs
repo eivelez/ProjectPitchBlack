@@ -28,9 +28,9 @@ public class UnlockExit : MonoBehaviour
         DisableAllIcons();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        GameObject door = collision.gameObject;
+        GameObject door = collider.gameObject;
 
         if (door.tag.Equals("LockDoor"))
         {
@@ -75,9 +75,9 @@ public class UnlockExit : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collider)
     {
-        GameObject door = collision.gameObject;
+        GameObject door = collider.gameObject;
 
         if (door.tag.Equals("LockDoor"))
         {
@@ -95,7 +95,7 @@ public class UnlockExit : MonoBehaviour
                 }
             }
         }
-
+        
         if (door.tag.Equals("WoodDoor"))
         {
             if (Input.GetKeyDown(KeyCode.E)) 
@@ -124,9 +124,9 @@ public class UnlockExit : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collider)
     {
-        GameObject door = collision.gameObject;
+        GameObject door = collider.gameObject;
 
         if (door.tag.Equals("LockDoor") || door.tag.Equals("WoodDoor") || door.tag.Equals("Fire"))
         {

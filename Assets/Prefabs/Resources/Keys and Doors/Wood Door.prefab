@@ -92,6 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1105104977723374282}
   - component: {fileID: 4239445642860889379}
+  - component: {fileID: 975914762}
   m_Layer: 8
   m_Name: Wood Door
   m_TagString: WoodDoor
@@ -108,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 2628878807040292987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.084, y: -2.2048, z: 0}
-  m_LocalScale: {x: 2.2867527, y: 2.2909849, z: 1}
+  m_LocalScale: {x: 3.1535983, y: 1.6189291, z: 1}
   m_Children:
   - {fileID: 3769771787923263480}
   - {fileID: 8533179882074093238}
@@ -140,6 +141,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.31, y: 0.6}
+  m_EdgeRadius: 0
+--- !u!61 &975914762
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2628878807040292987}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.004801959, y: -0.011419803}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.37093985, y: 1.3793852}
   m_EdgeRadius: 0
 --- !u!1 &7463678694549810827
 GameObject:
