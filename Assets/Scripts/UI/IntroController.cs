@@ -53,6 +53,6 @@ public class IntroController : MonoBehaviour
                 break;
             }
         }
-        SceneManager.LoadScene("IntroCutscene");
+        SceneManager.LoadScene("IntroCutscene", LoadSceneMode.Single);
     }
 }

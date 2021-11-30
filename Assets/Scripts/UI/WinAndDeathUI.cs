@@ -18,7 +18,7 @@ public class WinAndDeathUI : MonoBehaviour
     public void OnNoClick()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Intro");
+        SceneManager.LoadScene("Intro", LoadSceneMode.Single);
     }
 
     public void OnYesClick()
@@ -29,7 +29,7 @@ public class WinAndDeathUI : MonoBehaviour
         YesBtn.SetActive(false);
         NoBtn.SetActive(false);
         WinTxt.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
 
     public void Death()
@@ -62,7 +62,7 @@ public class WinAndDeathUI : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(3);
         Time.timeScale = 1;
-        SceneManager.LoadScene("Intro");
+        SceneManager.LoadScene("Intro", LoadSceneMode.Single);
     }
 
     public void Win()

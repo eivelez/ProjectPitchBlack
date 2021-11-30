@@ -114,13 +114,13 @@ public class DialogUI : MonoBehaviour
                 dialogIndex++;
                 break;
             case 10:
-                SceneManager.LoadScene("Level1");
+                SceneManager.LoadScene("Level1", LoadSceneMode.Single);
                 break;
             }
         }
 
         if(Input.GetKeyDown("space")){
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("Level1", LoadSceneMode.Single);
         }
     }
 

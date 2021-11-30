@@ -12,7 +12,7 @@ public class AuxLevel6Exit : MonoBehaviour
 
         if (player.tag.Equals("Player")) 
         {
-            SceneManager.LoadScene("FinalCutscene");
+            SceneManager.LoadScene("FinalCutscene", LoadSceneMode.Single);
         }
     }
 }
