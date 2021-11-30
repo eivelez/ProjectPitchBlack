@@ -36,19 +36,12 @@ public class EnemyMovement : MonoBehaviour
 
     private void RecalculatePathFinding(){
         pathToTarget = enemy.graph.RecalculatePathFinding(this.transform.position, enemy.player.transform.position);
-        if (pathToTarget != null)
-        {
-            if (HasEnemyReachedPoint(pathToTarget[pathToTarget.Count-1].GetPosition()))
-            {
-                pathToTarget.RemoveAt(pathToTarget.Count-1);
-            }
-        }
         timerBool = true;
     }
 
     private bool HasEnemyReachedPoint(Vector2 point)
     {
-        return (Vector3.Distance(point, transform.position) < 0.5f);
+        return (Vector3.Distance(point, transform.position) < 0.01f);
     }
 
 

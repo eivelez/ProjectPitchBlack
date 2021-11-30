@@ -229,7 +229,7 @@ public class Graph : MonoBehaviour
             path.Add(currentNode);
             currentNode = currentNode.cameFrom;
         }
-
+        path.RemoveAt(path.Count-1);
         return path;
     }
 }
