@@ -101,13 +101,13 @@ public class FinalCutsceneDialog : MonoBehaviour
                 dialogIndex++;
                 break;
             case 9:
-                SceneManager.LoadScene("Intro");
+                SceneManager.LoadScene("Intro", LoadSceneMode.Single);
                 break;
             }
         }
 
         if(Input.GetKeyDown("space")){
-            SceneManager.LoadScene("Intro");
+            SceneManager.LoadScene("Intro", LoadSceneMode.Single);
         }
     }
 

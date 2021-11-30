@@ -12,7 +12,7 @@ public class Level2Exit : MonoBehaviour
         if (player.tag.Equals("Player")) 
         {
             player.GetComponent<Inventory>().SavePlayerStats();
-            SceneManager.LoadScene("Level 2-3 Transition");
+            SceneManager.LoadScene("Level 2-3 Transition", LoadSceneMode.Single);
         }
     }
 }

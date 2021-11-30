@@ -27,7 +27,7 @@ public class TransScript1 : MonoBehaviour
             player.transform.position= Vector3.MoveTowards(player.transform.position,new Vector3(-2.14f,-2.6f,0),2f*Time.deltaTime);
         }
         if(Input.GetKeyDown("e") && next){
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene("Level2", LoadSceneMode.Single);
         }
 
     }

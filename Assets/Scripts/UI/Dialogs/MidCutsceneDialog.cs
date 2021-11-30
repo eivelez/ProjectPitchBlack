@@ -71,13 +71,13 @@ public class MidCutsceneDialog : MonoBehaviour
                 dialogIndex++;
                 break;
             case 6:
-                SceneManager.LoadScene("Level 3-4 Transition");
+                SceneManager.LoadScene("Level 3-4 Transition", LoadSceneMode.Single);
                 break;
             }
         }
 
         if(Input.GetKeyDown("space")){
-            SceneManager.LoadScene("Level 3-4 Transition");
+            SceneManager.LoadScene("Level 3-4 Transition", LoadSceneMode.Single);
         }
     }
 

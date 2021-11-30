@@ -12,7 +12,7 @@ public class Level3Exit : MonoBehaviour
         if (player.tag.Equals("Player")) 
         {
             player.GetComponent<Inventory>().SavePlayerStats();
-            SceneManager.LoadScene("MidCutscene");
+            SceneManager.LoadScene("MidCutscene", LoadSceneMode.Single);
         }
     }
 }

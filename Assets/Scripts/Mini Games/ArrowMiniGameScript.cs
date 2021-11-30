@@ -157,6 +157,6 @@ public class ArrowMiniGameScript : MonoBehaviour
         //Wait for 3 seconds
         yield return new WaitForSecondsRealtime(2);
         Time.timeScale = 1;
-        SceneManager.LoadScene("FinalCutscene");
+        SceneManager.LoadScene("FinalCutscene", LoadSceneMode.Single);
     }
 }

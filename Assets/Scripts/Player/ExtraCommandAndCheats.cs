@@ -13,7 +13,7 @@ public class ExtraCommandAndCheats : MonoBehaviour
         //Back to Menu
         if(Input.GetKeyDown(KeyCode.Backspace))
         {
-            SceneManager.LoadScene("Intro");
+            SceneManager.LoadScene("Intro", LoadSceneMode.Single);
         }
         //Exit Game
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -25,27 +25,27 @@ public class ExtraCommandAndCheats : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey("1") || Input.GetKeyDown("1") && Input.GetKey(KeyCode.LeftShift))
         {
             Time.timeScale = 1;
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("Level1", LoadSceneMode.Single);
         }
         if(Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey("2") || Input.GetKeyDown("2") && Input.GetKey(KeyCode.LeftShift))
         {
             Time.timeScale = 1;
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene("Level2", LoadSceneMode.Single);
         }
         if(Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey("3") || Input.GetKeyDown("3") && Input.GetKey(KeyCode.LeftShift))
         {
             Time.timeScale = 1;
-            SceneManager.LoadScene("Level3");
+            SceneManager.LoadScene("Level3", LoadSceneMode.Single);
         }
         if(Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey("4") || Input.GetKeyDown("4") && Input.GetKey(KeyCode.LeftShift))
         {
             Time.timeScale = 1;
-            SceneManager.LoadScene("Level4");
+            SceneManager.LoadScene("Level4", LoadSceneMode.Single);
         }
         if(Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey("5") || Input.GetKeyDown("5") && Input.GetKey(KeyCode.LeftShift))
         {
             Time.timeScale = 1;
-            SceneManager.LoadScene("Level5");
+            SceneManager.LoadScene("Level5", LoadSceneMode.Single);
         }
 
         //CHEATS FOR ITEMS
