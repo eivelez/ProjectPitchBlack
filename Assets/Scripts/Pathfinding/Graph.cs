@@ -103,8 +103,13 @@ public class Graph : MonoBehaviour
         GraphNode startNode = GetNode(start);
         GraphNode goalNode = GetNode(goal);
 
-        if (startNode == null || goalNode == null){
+        if (startNode == null){
             return null;
+        }
+
+        if (goalNode == null)
+        {
+            goalNode = startNode;
         }
 
         startNode.gValue = 0;
@@ -113,7 +118,6 @@ public class Graph : MonoBehaviour
 
         List<GraphNode> TO_VISIT = new List<GraphNode>{startNode};
         List<GraphNode> VISITED = new List<GraphNode>();
-
         while (TO_VISIT.Count != 0){
             GraphNode nodeSelected = TO_VISIT.OrderBy(n=>n.F()).First();
             TO_VISIT.Remove(nodeSelected);
@@ -151,7 +155,9 @@ public class Graph : MonoBehaviour
         GraphNode nodeFound = nodeGraph[positionXInGraph, positionYInGraph];
 
         //If nodeFound equals null then search for a non-null neighbour
-        while (nodeFound == null){
+        int i = 0;
+        while (nodeFound == null && i<8){
+            i++;
             nodeFound = GetAnyNeighbor(positionXInGraph, positionYInGraph);
         }
 
