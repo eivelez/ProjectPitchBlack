@@ -106,6 +106,9 @@ public class EnemyMovement : MonoBehaviour
             pathToSpawnCalculated = true;
         }
 
-        GoToNode(pathToTarget[pathToTarget.Count-1]);
+        if (pathToTarget.Count > 0)
+        {
+            GoToNode(pathToTarget[pathToTarget.Count-1]);
+        }
     }
 }
