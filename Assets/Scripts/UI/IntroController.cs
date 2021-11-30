@@ -8,18 +8,14 @@ public class IntroController : MonoBehaviour
     public GameObject playButton;
     public GameObject canvas;
     bool fastEnter = false;
+    
     // Start is called before the first frame update
     void Start()
     {
         PlayerPrefs.SetInt("Lives", 3);
+        PlayerPrefs.SetInt("HP", 100);
         PlayerPrefs.SetInt("Defense", 0);
-        StartCoroutine(ButtonAppear());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        PlayerPrefs.SetInt("Fingers", 0);
     }
 
     IEnumerator ButtonAppear()
