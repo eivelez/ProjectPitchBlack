@@ -61,13 +61,18 @@ public class EnemyMovement : MonoBehaviour
     public void Roam()
     {
         pathToSpawnCalculated = false;
-        if (HasEnemyReachedPoint(randomPoint) && !waiting)
+        if (HasEnemyReachedRoamPoint(randomPoint) && !waiting)
         {
             waiting = true;
             StartCoroutine(WaitBeforeMoving(WAIT_TIME));
         }
 
         GoToPoint(randomPoint);
+    }
+
+    private bool HasEnemyReachedRoamPoint(Vector2 point)
+    {
+        return (Vector3.Distance(point, transform.position) < 0.5f);
     }
 
     IEnumerator WaitBeforeMoving(float time)
